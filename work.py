@@ -6,10 +6,9 @@ import time
 import matplotlib
 import matplotlib.pyplot as plt
 from random import randint
-%matplotlib inline
 
-import findspark
-findspark.init()
+# import findspark
+# findspark.init()
 
 from pyspark.sql import *
 from pyspark.sql.functions import *
