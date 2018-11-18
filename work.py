@@ -7,6 +7,10 @@ from pyspark.sql.functions import min
 from pyspark.sql import SparkSession
 from pyspark import SparkConf, SparkContext
 
+import sys
+
+print(sys.stdout.encoding)
+
 spark = SparkSession.builder.getOrCreate()
 sc = spark.sparkContext
 
