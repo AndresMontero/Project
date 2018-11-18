@@ -1,4 +1,4 @@
-import sys
+# -*- coding: utf-8 -*-
 
 from pyspark.sql import *
 from pyspark.sql.functions import *
@@ -9,8 +9,6 @@ from pyspark import SparkConf, SparkContext
 
 spark = SparkSession.builder.getOrCreate()
 sc = spark.sparkContext
-
-sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf8', buffering=1)
 
 DATA_DIR = '/datasets/twitter_internetarchive/2017/06/16/00/'
 
