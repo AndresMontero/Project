@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import sys
 
 from pyspark.sql import *
@@ -19,4 +18,5 @@ DATA_DIR = '/datasets/twitter_internetarchive/2017/06/16/00/'
 posts = spark.read.json('hdfs://{dir}{name}'.format(dir=DATA_DIR, name='*'))
 
 # Information of the dataset
+print('TEST: ')
 print(posts.show(10))
