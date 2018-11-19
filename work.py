@@ -10,9 +10,9 @@ sc = spark.sparkContext
 
 DATA_DIR = '/datasets/twitter_internetarchive/2017/06/16/00/'
 
-posts = spark.read.json('hdfs://{dir}{name}'.format(dir=DATA_DIR, name='31.json.bz2'))
+posts = spark.read.json('hdfs://{dir}{name}'.format(dir=DATA_DIR, name='*'))
 
 # Information of the dataset
-print('TEST: ')
+print('Number of tweets: ')
 print(posts.count())
 print(posts.take(10))
