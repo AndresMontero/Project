@@ -1,18 +1,19 @@
-# “Depression” a scape through music
-
+# “Hapyness” Share it through music.
+what music is associated with positive sentiment and sharing positive and uplifting messages on social media
 ## Abstract
-Depression is a common and serious medical illness that negatively affects how people feel, the way they think and how they interact with others. If not treated properly, it can lead to serious mental and physical problems, as well as impacting over the interactions with other people. However, if depression is treated on time the problems can be avoided. That is why the main goal of the project is to find patterns presented in social media that help recognizing people with depression feelings and find out what type of music they listen when feeling this way. With this information, we can alert what kind of problems people are having, depending on the genre of music they listen, and in that sense, the support provided to them can be more direct and specific to their needs.
-The dataset that we will be using is ‘twitter as the social media platform’ and ‘millionsong’ as the music database.
+
+People that is happy likes to share it throuhg social media either a picture on instagram with your friends or a tweet about a song that you really like and is making you feel great.
+In this project we will focus on the second scenario, we want to find what type of music is related to a positive sentiment and how this is related with the sharing of positive and uplifting messages on social media.
+The datasets that we will be using are "twitter" as the social media platform and "millionsong" as the music database.
 
 
 ## Research questions
 A list of research questions you would like to address during the project.
 The questions we would like to address are:
 
-* How reliable are the indicators of mental health found in tweets?
-* Time range of listening to a specific genre of music to give an alert.
-* What are the different genres of music that are related to depression problems?
-* How to identify depression problems using tweets?
+* Can we use extra datasets to train our model, for example labeled positive or negative tweets from kaggle?
+* How to identify the genre, artis, or name of the song on a tweet.
+* How to distinguish "happy" music in a quantitive way?
 
 
 
@@ -20,14 +21,14 @@ The questions we would like to address are:
 * Tweets dataset.
 
 1. Exploration and cleaning of data, to find if there are problems with the data so that we can handle them.
-2. Determine keywords related to depression. 
-3. Use ML techniques to classify and filter tweets found on previous step to identify possible depression problems.
+2. Determine keywords related to positive tweets. 
+3. Use ML techniques to classify and filter tweets found on previous step to create the model.
 
 
 * MillionSong dataset
 
 1. Relate the keywords found in the tweet data set with the genre of the song, in the dataset the genre is the “term” field.
-2. Analyze the energy and danceability of the song for each suspected case and determine if this can be considered as a depression case using that data as a start point.
+2. Analyze the energy and danceability of the song for each suspected mention on a tweet and determine if belongs to the "positive" category.
 
 
 
