@@ -19,3 +19,27 @@ def neg_to_zero(quantity):
     # Round quantity to not have float quantities
     return np.rint(new_quantity)
 
+
+def eq_ign_case(a, b):
+    """Function to compare string ignoring the case
+
+    Args:
+        a:  string.
+        b:  string.
+    Returns:
+        Boolean if they are equal ignoring the case
+    """
+    return a.str.lower() == b.str.lower()
+
+
+def not_eq_ign_case(a, b):
+    """Function to compare string ignoring the case
+
+    Args:
+        a:  string.
+        b:  string.
+    Returns:
+        Boolean if they are not equal ignoring the case
+    """
+    return ~eq_ign_case(a, b)
+
