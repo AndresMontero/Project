@@ -182,8 +182,7 @@ def process_albums(albums, year, n_album, n_track):
         n_track = process_tracks(tracks['items'], album['id'], year, n_track)
 
         while tracks['offset'] <= 9980 and tracks['next']:
-            results = sp.next(albums)
-            albums = results['albums']
+            tracks = sp.next(tracks)
             n_track = process_tracks(tracks['items'], album['id'], year, n_track)
 
         n_album += 1
