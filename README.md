@@ -1,53 +1,86 @@
-# “Hapyness” Share it through music.
+# “Politics - can you listen?”
+
 what music is associated with positive sentiment and sharing positive and uplifting messages on social media
+
 ## Abstract
 
-People that is happy likes to share it throuhg social media either a picture on instagram with your friends or a tweet about a song that you really like and is making you feel great.
-In this project we will focus on the second scenario, we want to find what type of music is related to a positive sentiment and how this is related with the sharing of positive and uplifting messages on social media.
-The datasets that we will be using are "twitter" as the social media platform and "millionsong" as the music database.
+The first idea of this project was to work on two different datasets: Million-Song and Twitter, 
+and with them try to find out the relation between the depression state of a user with 
+the kind of music he shares on social media. However, we found a big problem with this 
+approach: how to identify depression on a tweet?.
+After discussing with the TAs the idea to change to: which music is associated with 
+positive sentiments and sharing positive and uplifting messages on social media. 
+However, we encountered the following problems: 
+
+1. Music dataset, it was decided to change from Million-Song dataset to FMA: A Dataset 
+For Music Analysis because the later provide more organized information and 
+fits better for our analysis purposes.
+2. Twitter dataset contained on the cluster does not have labeled data for a possible 
+classification into positive/negative tweets, to tackle this issue we decided to use 
+labeled data from Kaggle. The new tweet dataset is called Sentiment140, this dataset 
+contains 1.6 million tweets.
+3. Relate both datasets, find tweets which are linked somehow to music and/or songs. 
+The main idea was to find the number of tweets which have a links to songs or have 
+the word spotify. The percentage of tweets related to music(spotify) is too low, 0.017% 
+fo the total dataset which is the main reason of why this idea is not feasible.
+
+Due to the infeasibility of the initial proposal, we redefined the project and decided 
+to focus uniquely on FMA dataset and relate its information with an important event 
+of the past years. The new project idea aims to find out the relation of music 
+production in terms of genres, energy, danceability and people’s preference with one 
+of the major political events of the past years which is 2016 US Election and Donald Trump 
+becoming president. We will compare what type of music (genre, energy, danceability, etc)
+people listen/produce on the years 2012-2016 ( Pre-Trump) and what people listen 
+on 2017-2018, in that sense we would like to also find the trend of what type of music
+people will listen in the following years by applying machine learning techniques for
+prediction analysis.
+For this new approach the datasets that we will be using are ‘FMA songs’ and we will complete/update this dataset with music information from Spotify API and LastFM  API for the last years.
 
 
 ## Research questions
+
 A list of research questions you would like to address during the project.
 The questions we would like to address are:
 
-* Can we use extra datasets to train our model, for example labeled positive or negative tweets from kaggle?
-* How to identify the genre, artis, or name of the song on a tweet.
-* How to distinguish "happy" music in a quantitive way?
-
-
+* How reliable are the indicators of “Energy” and  “Valence” of the tracks?
+* How did the music evolve throughout in the last decade in terms of genres’ preferences?.
+* What are the different genres of music that are the closest related to the political events?
+* Does this ‘important’ political event impact music preferences of people? Does it impact the release of new music (differs in terms of genre)?
+* What kind (genre) of music will be listened in the following years?
 
 ## Dataset
-* Tweets dataset.
 
-1. Exploration and cleaning of data, to find if there are problems with the data so that we can handle them.
-2. Determine keywords related to positive tweets. 
-3. Use ML techniques to classify and filter tweets found on previous step to create the model.
+* #### FMA Songs.
 
+1. Exploration and cleaning of data, to find if there are problems with the data 
+so that we can handle them.
+2. Deal with missing values and decide whether it is convenient to remove them or 
+treat them in a different way.
 
-* MillionSong dataset
+* #### Spotify and LastFM API
 
-1. Relate the keywords found in the tweet data set with the genre of the song, in the dataset the genre is the “term” field.
-2. Analyze the energy and danceability of the song for each suspected mention on a tweet and determine if belongs to the "positive" category.
-
-
-
-## A list of internal milestones up until project milestone 2
-1. Create the skeleton of the project in GitHub.
-2. Download a sketch of the datasets to explore and analyze them.
-3. Start to clean data.
+1. Obtain more data from the last years so that we can compare with the pre_trump dataset.
+2. Exploration and cleaning of data, to find if there are problems with the data so that 
+we can handle them.
 
 
+## A list of internal milestones up until project milestone 3
+
+1. Find insights from FMA dataset: relate variables and understand their behaviour 
+on the before and after event intervals.
+2. Structure Spotify and LastFM data as FMA dataset.
+3. Prepare the results for the visualizations.
+4. Present the results on a github-page.
+5. Prepare the report of the project
 
 ## Questions for TAa
 Add here some questions you have for us, in general, or project-specific.
 Does this project correspond to the “social good “topic?
 
-1. Does this project correspond to the “social good“ topic?
-2. What is expected in terms of data visualization?
-3. Is it necessary to take care of advanced data visualization techniques for the project?
-4. Is the concept of the project a good choice?
-5. In your opinion, is it possible to make this project in the time expected or should we just focus on one dataset?
-6. Who is going to be the general audience of the project?
-7. What is the procedure that the team should follow in case we don’t find any interesting insight from the dataset? Can we change the dataset on next steps? Or can we present any result that has logical fundamentals?
+1. Is the project on the right track? Is it possible to achieve/complete before the 
+project deadline?
+2. Since we have many missing values, our dataset reduces considerably (e.g. 50%). 
+How big should the reduced dataset remain to still consider it as representative?
+3. In case we don’t find any effect/relation of this ‘big’ political event with
+ music preferences/production, what should we present?
 
