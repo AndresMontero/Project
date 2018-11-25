@@ -50,14 +50,14 @@ The questions we would like to address are:
 
 ## Dataset
 
-* ##### FMA Songs.
+* #### FMA Songs.
 
 1. Exploration and cleaning of data, to find if there are problems with the data 
 so that we can handle them.
 2. Deal with missing values and decide whether it is convenient to remove them or 
 treat them in a different way.
 
-* ##### Spotify and LastFM API
+* #### Spotify and LastFM API
 
 1. Obtain more data from the last years so that we can compare with the pre_trump dataset.
 2. Exploration and cleaning of data, to find if there are problems with the data so that 
