@@ -71,6 +71,7 @@ we can handle them.
 5. Prepare the report of the project
 
 ## Questions for TAa
+
 Add here some questions you have for us, in general, or project-specific.
 Does this project correspond to the “social good “topic?
 
@@ -80,4 +81,37 @@ project deadline?
 How big should the reduced dataset remain to still consider it as representative?
 3. In case we don’t find any effect/relation of this ‘big’ political event with
  music preferences/production, what should we present?
+ 
+## Project Structure
+
+The project has the following structure:
+
+* /
+    * main.ipynb
+        * Main notebook with all the statistics and analysis
+    * helpers.py 
+        * Helper methods: comparison methods
+    * README.md
+        * Readme of the project
+    * spotify.py
+        * Script to gather data from Spotify and LastFM API
+    * tweets.ipynb
+        * Notebook for tweets analysis
+    * tweets.py
+        * File to access to tweets dataset on DLAB cluster, for the first approach
+    * data/
+        * Folder with all datasets and pickle saved dataframes
+    
+## Contributing
+
+To contribute, look at the project structures, it has files and roles of files well defined. 
+In order to reuse the code, those files can be updated with new methods that correspond 
+to the same class as the file.
+
+## Authors
+
+* **Andres Montero**
+* **Ariel Alba**
+* **Diego Iriarte**
+
 

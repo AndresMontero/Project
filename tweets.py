@@ -1,9 +1,3 @@
-LOCAL = False
-
-if LOCAL:
-    import findspark
-    findspark.init()
-
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.functions import min
