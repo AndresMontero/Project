@@ -88,7 +88,7 @@ The project has the following structure:
 
 * /
     * main.ipynb
-        * Main notebook with all the statistics and analysis
+        * Main notebook with all the statistics and analysis regarding FMA and tweets
     * helpers.py 
         * Helper methods: comparison methods
     * README.md
@@ -96,7 +96,7 @@ The project has the following structure:
     * spotify.py
         * Script to gather data from Spotify and LastFM API
     * tweets.ipynb
-        * Notebook for tweets analysis
+        * Notebook for tweets analysis, just code.
     * tweets.py
         * File to access to tweets dataset on DLAB cluster, for the first approach
     * data/
