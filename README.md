@@ -28,7 +28,7 @@ of the past years. The new project idea aims to find out the relation of music
 production in terms of genres, energy, danceability and people’s preference with one 
 of the major political events of the past years which is 2016 US Election and Donald Trump 
 becoming president. We will compare what type of music (genre, energy, danceability, etc)
-people listen/produce on the years 2012-2016 ( Pre-Trump) and what people listen 
+people listened/produced on the years 2012-2016 ( Pre-Trump) and what people listen 
 on 2017-2018, in that sense we would like to also find the trend of what type of music
 people will listen in the following years by applying machine learning techniques for
 prediction analysis.
@@ -64,8 +64,7 @@ we can handle them.
 
 ## A list of internal milestones up until project milestone 3
 
-1. Find insights from FMA dataset: relate variables and understand their behaviour 
-on the before and after event intervals.
+1. Find insights from FMA dataset: relate variables and understand their behaviour before and after event intervals.
 2. Structure Spotify and LastFM data as FMA dataset.
 3. Prepare the results for the visualizations.
 4. Present the results on a github-page.
