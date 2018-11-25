@@ -1,7 +1,5 @@
 # “Politics - can you listen?”
 
-what music is associated with positive sentiment and sharing positive and uplifting messages on social media
-
 ## Abstract
 
 The first idea of this project was to work on two different datasets: Million-Song and Twitter, 
