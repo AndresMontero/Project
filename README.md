@@ -105,6 +105,7 @@ The project has the following structure:
 ## Contributing
 
 To contribute, look at the project structures, it has files and roles of files well defined. 
+
 In order to reuse the code, those files can be updated with new methods that correspond 
 to the same class as the file.
 
