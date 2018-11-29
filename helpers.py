@@ -1,5 +1,6 @@
 # Helpers module
 import numpy as np
+from IPython.display import display
 
 
 def neg_to_zero(quantity):
@@ -32,6 +33,14 @@ def eq_ign_case(a, b):
     return a.str.lower() == b.str.lower()
 
 
+def pretty_print(df, name, debug=False):
+    print('{name} size: {size}'.format(name=name,
+                                       size=len(df)))
+    if debug:
+        print('\nNaN count by column:\n{}'.format(df.isna().sum(axis=0)))
+    display(df.head())
+
+
 def not_eq_ign_case(a, b):
     """Function to compare string ignoring the case
 
@@ -42,4 +51,8 @@ def not_eq_ign_case(a, b):
         Boolean if they are not equal ignoring the case
     """
     return ~eq_ign_case(a, b)
+
+
+def uniq(a):
+    return list(set(a))
 
