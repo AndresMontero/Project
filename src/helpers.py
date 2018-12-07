@@ -1,7 +1,9 @@
 # Helpers module
 import numpy as np
-from IPython.display import display
+import uuid
 import matplotlib.pyplot as plt
+
+from IPython.display import display
 
 
 IMG_PATH = '../assets/images/'
@@ -106,19 +108,32 @@ def std_plot(plot_func, figsize=FIG_SIZE, title=None, xlabel=None, ylabel=None):
         ylabel_size = ylabel['size']
         ylabel_size = ylabel['text']
 
-    plt.figure(figsize=figsize)
+    fig = plt.figure(figsize=figsize)
 
-    fig = plot_func()
+    plot_func()
 
     plt.title(title_text, size=title_size)
+
+    ax = fig.axes[0]
+
+    if len(xlabel_text) == 0:
+        xlabel_text = ax.get_xlabel()
+
+    if len(ylabel_text) == 0:
+        ylabel_text = ax.get_ylabel()
 
     plt.xlabel(xlabel_text, size=xlabel_size)
 
     plt.ylabel(ylabel_text, size=ylabel_size)
 
-    # fig.show()
+    if len(title_text) > 0:
+        filename = title_text
+    elif len(xlabel_text) > 0 and len(ylabel_text) > 0:
+        filename = '{x}_{y}'.format(x=xlabel_text, y=ylabel_text)
+    else:
+        filename = 'graph_{}'.format(uuid.uuid4())
 
-    filename = title_text.lower().replace(' ', '_')
+    filename = filename.lower().replace(' ', '_')
 
     fig.savefig('{graph}{file}'.format(graph=GRAPH_PATH,
                                        file=filename), bbox_inches='tight')
