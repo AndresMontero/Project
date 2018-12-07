@@ -20,96 +20,128 @@
 </head>
 
 <body class="w3-content" style="max-width:1200px">
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-        <div class="w3-container w3-display-container w3-padding-16">
-            <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-            <h3 class="w3-wide"><b>LOGO</b></h3>
-        </div>
-        <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-            <a href="#" class="w3-bar-item w3-button">Introduction</a>
-            <!--<a href="#" class="w3-bar-item w3-button">Dresses</a>-->
-            <!--<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">-->
-                <!--Jeans <i class="fa fa-caret-down"></i>-->
-            <!--</a>-->
-            <!--<div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">-->
-                <!--<a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>-->
-                <!--<a href="#" class="w3-bar-item w3-button">Relaxed</a>-->
-                <!--<a href="#" class="w3-bar-item w3-button">Bootcut</a>-->
-                <!--<a href="#" class="w3-bar-item w3-button">Straight</a>-->
-            <!--</div>-->
-            <!--<a href="#" class="w3-bar-item w3-button">Jackets</a>-->
-            <!--<a href="#" class="w3-bar-item w3-button">Gymwear</a>-->
-            <!--<a href="#" class="w3-bar-item w3-button">Blazers</a>-->
-            <a href="#" class="w3-bar-item w3-button">Conclusions</a>
-        </div>
-        <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>-->
-        <!--<a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding"-->
-           <!--onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>-->
-        <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>-->
-    </nav>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+        <h3 class="w3-wide">
+            <b>
+                <img src="assets/images/epfl_logo.png" width="200">
+            </b>
+        </h3>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+        <a href="#" class="w3-bar-item w3-button">Introduction</a>
+        <!--<a href="#" class="w3-bar-item w3-button">Dresses</a>-->
+        <!--<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">-->
+        <!--Jeans <i class="fa fa-caret-down"></i>-->
+        <!--</a>-->
+        <!--<div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">-->
+        <!--<a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Relaxed</a>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Bootcut</a>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Straight</a>-->
+        <!--</div>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Jackets</a>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Gymwear</a>-->
+        <!--<a href="#" class="w3-bar-item w3-button">Blazers</a>-->
+        <a href="#" class="w3-bar-item w3-button">Conclusions</a>
+    </div>
+    <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>-->
+    <!--<a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding"-->
+    <!--onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>-->
+    <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>-->
+</nav>
 
-    <!-- Top menu on small screens -->
-    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-        <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i
-                class="fa fa-bars"></i></a>
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide">
+        <img src="assets/images/epfl_black.png" width="100">
+    </div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i
+            class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+     id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <header class="w3-container w3-xlarge">
+        <p class="w3-left">
+            <b>
+                Music, from 90's to Milenials
+            </b>
+        </p>
+        <p class="w3-right">
+            <!--<i class="fa fa-shopping-cart w3-margin-right"></i>-->
+            <!--<i class="fa fa-search"></i>-->
+        </p>
     </header>
 
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
-         id="myOverlay"></div>
+    <div class="w3-display-container w3-container">
+        Have you ever wondered how did music evolve in the last years? Today with the explosion of the internet,
+        music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to obtain
+        and share music. This project aims to find the evolution of music since 1990's, evaluate the key features
+        of the tracks, such as energy, valence and danceability. We want to show how and what was the most popular
+        genre in the last years, the most popular song, the most important artist and what were the trends of the
+        key features of this hits.
 
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:250px">
+        <br/>
+        <br/>
 
-        <!-- Push down content on small screens -->
-        <div class="w3-hide-large" style="margin-top:83px"></div>
+        For this purpose, we'll work with two datasets:
 
-        <!-- Top header -->
-        <header class="w3-container w3-xlarge">
-            <p class="w3-left">Music Evolution</p>
-            <p class="w3-right">
-                <!--<i class="fa fa-shopping-cart w3-margin-right"></i>-->
-                <!--<i class="fa fa-search"></i>-->
-            </p>
-        </header>
+        <br/>
+        <ul>
+            <li>
+                <a href="https://arxiv.org/pdf/1612.01840.pdf">FMA: A Dataset For Music Analysis</a>
+            </li>
+            <li>
+                Our crawled dataset created using Spotify and LastFM API
+            </li>
+        </ul>
 
-        <div class="w3-display-container w3-container">
-            HELLO WORLD!
-        </div>
-
-        <div class="w3-black w3-center w3-padding-24">Powered by Chuchusmote Team 2018</a>
-        </div>
-
-        <!-- End page content -->
+        <img src="assets/images/graphs/top_10_countries_that_produce_tracks.png">
     </div>
 
-    <script>
-        // Accordion
-        function myAccFunc() {
-            let x = document.getElementById("demoAcc");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
+    <div class="w3-black w3-center w3-padding-24">Powered by Chuchusmote Team 2018</a>
+    </div>
 
-        // Click on the "Jeans" link on page load to open the accordion for demo purposes
-        document.getElementById("myBtn").click();
+    <!-- End page content -->
+</div>
 
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
-            document.getElementById("myOverlay").style.display = "block";
-        }
+<script>
+    // Accordion
+    // function myAccFunc() {
+    //     let x = document.getElementById("demoAcc");
+    //     if (x.className.indexOf("w3-show") == -1) {
+    //         x.className += " w3-show";
+    //     } else {
+    //         x.className = x.className.replace(" w3-show", "");
+    //     }
+    // }
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-            document.getElementById("myOverlay").style.display = "none";
-        }
-    </script>
+    // Click on the "Jeans" link on page load to open the accordion for demo purposes
+    // document.getElementById("myBtn").click();
+
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
 </body>
 </html>
 
