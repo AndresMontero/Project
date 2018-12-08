@@ -108,13 +108,19 @@ def std_plot(plot_func, figsize=FIG_SIZE, title=None, xlabel=None, ylabel=None):
         ylabel_size = ylabel['size']
         ylabel_size = ylabel['text']
 
-    fig = plt.figure(figsize=figsize)
+    fig_default = plt.figure(figsize=figsize)
 
-    plot_func()
+    ax = plot_func()
+
+    if ax is None:
+        fig = fig_default
+        ax = fig.axes[0]
+    else:
+        fig = ax.figure
+
+    fig.set_size_inches(figsize[0], figsize[1])
 
     plt.title(title_text, size=title_size)
-
-    ax = fig.axes[0]
 
     if len(xlabel_text) == 0:
         xlabel_text = ax.get_xlabel()
