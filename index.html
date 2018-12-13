@@ -32,6 +32,7 @@
     </div>
     <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
         <a href="#" class="w3-bar-item w3-button">Introduction</a>
+        <a href="#" class="w3-bar-item w3-button">FMA Dataset</a>
         <!--<a href="#" class="w3-bar-item w3-button">Dresses</a>-->
         <!--<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">-->
         <!--Jeans <i class="fa fa-caret-down"></i>-->
@@ -113,7 +114,7 @@
         <h3><b> FMA Dataset </b></h3>
 
         Free Music Archive (FMA), is an open and easily accessible dataset suitable.
-        The FMA dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
+        The dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
         arranged in a hierarchical taxonomy of 161 genres. It provides full-length and high-quality audio,
         pre-computed features, together with track- and user-level metadata, tags, and free-form text such as biographies.
         For the project purposes, we focused on user-level metadata obtained in the following files:
@@ -137,8 +138,55 @@
         </ul>
 
         For such information, only important and useful features were extracted. Those features will help us with further analysis.
-        From the previous list of files, only tracks, genres and echonest were considered, due to te
-        The useful data extracted includes, genres, artists, popularity, valence, energy, danceability and others.
+        From the previous list of files, only tracks, genres and echonest were considered, because, feature files has
+        information about the musical attributes of the tracks, however, the objective of the story does not tak into account
+        that information.
+
+        The useful data extracted includes, genres, artists, popularity, valence, energy, danceability and many others
+        explained in the next list.
+
+        Finally, using main features, and to avoid confusion, there were created 5 dataframes to
+        represent the data in a relational way.
+
+        <ul>
+            <li>
+                <h5><b> Genres: </b></h5>
+
+                <h5><b> Artists: </b></h5>
+                <h5><b> Albums: </b></h5>
+                <h5><b> Tracks: </b></h5>
+                <h5><b> Track-Genre: </b></h5>
+
+                ['track_id', 'album_date_created',
+               'album_date_released', 'album_id',
+               'album_listens', 'album_title',
+               'artist_id', 'artist_latitude',
+               'artist_longitude', 'artist_name',
+               'track_duration', 'track_genre_top',
+               'track_genres_all', 'track_language',
+               'track_listens', 'track_tags',
+               'track_title']
+            </li>
+            <li>
+                <h5><b> From genres.csv: </b></h5>
+
+            </li>
+            <li>
+                <h5><b> From echonest:</b></h5>
+                ['track_id', 'danceability', 'energy',
+                'valence', 'artist_latitude',
+                'artist_longitude', 'artist_name',
+                'artist_discovery', 'artist_family',
+                'artist_hotness', 'song_currency',
+                'song_hotness']
+            </li>
+        </ul>
+
+
+
+
+
+
 
 
         WHAT INFORMATION WAS EXTRACTED FROM FMA? WHY SUCH INFORMATION WAS EXTRACTED…DESCRIBIR LOS FEATURES: QUE ES ARTIST HOTNESS?, TRACK DANCEABILITY/ENERGY/VALENCE Y OTROS? COMO SE MIDE CADA UNO Y SU ESCALA (DE 0 A 1)?
