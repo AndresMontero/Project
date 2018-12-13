@@ -86,12 +86,14 @@
     </header>
 
     <div class="w3-display-container w3-container">
+        <h3><b> Introduction </b></h3>
+
         Have you ever wondered how did music evolve in the last years? Today with the explosion of the internet,
         music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to obtain
-        and share music. This project aims to find the evolution of music since 1990's, evaluate the key features
-        of the tracks, such as energy, valence and danceability. We want to show how and what was the most popular
-        genre in the last years, the most popular song, the most important artist and what were the trends of the
-        key features of this hits.
+        and share music. This project aims to find the evolution of music since 2000's in terms of songs/genres/artists
+        popularity and preferences, evaluate the key features of the tracks, such as energy, valence and danceability.
+        We want to show how and which was the most popular genre in the last years, the most popular songs,
+        the most important artist and what were the trends of the key features of those hits.
 
         <br/>
         <br/>
@@ -107,6 +109,187 @@
                 Our crawled dataset created using Spotify and LastFM API
             </li>
         </ul>
+
+        <h3><b> FMA Dataset </b></h3>
+
+        Free Music Archive (FMA), is an open and easily accessible dataset suitable.
+        The FMA dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
+        arranged in a hierarchical taxonomy of 161 genres. It provides full-length and high-quality audio,
+        pre-computed features, together with track- and user-level metadata, tags, and free-form text such as biographies.
+        For the project purposes, we focused on user-level metadata obtained in the following files:
+        <ul>
+            <li>
+                <h5><b> tracks.csv: </b></h5>
+                Per track metadata such as ID, title, artist, genres, tags and play counts, for all 106,574 tracks.
+            </li>
+            <li>
+                <h5><b> genres.csv: </b></h5>
+                All 163 genre IDs with their name and parent (used to infer the genre hierarchy and top-level genres).
+            </li>
+            <li>
+                <h5><b> features.csv:</b></h5>
+                Common features extracted with librosa.
+            </li>
+            <li>
+                <h5><b> echonest.csv:</b></h5>
+                Audio features provided by Echonest (now Spotify) for a subset of 13,129 tracks.
+            </li>
+        </ul>
+
+        For such information, only important and useful features were extracted. Those features will help us with further analysis.
+        From the previous list of files, only tracks, genres and echonest were considered, due to te
+        The useful data extracted includes, genres, artists, popularity, valence, energy, danceability and others.
+
+
+        WHAT INFORMATION WAS EXTRACTED FROM FMA? WHY SUCH INFORMATION WAS EXTRACTED…DESCRIBIR LOS FEATURES: QUE ES ARTIST HOTNESS?, TRACK DANCEABILITY/ENERGY/VALENCE Y OTROS? COMO SE MIDE CADA UNO Y SU ESCALA (DE 0 A 1)?
+        SOME INFORMATION ABOUT NAN VALUES (HOW MANY, FOR WHICH VARIABLES), AND HOW WE’LL HANDLE THEM (we keep columns and rows with NaN values because they may contain useful information in a different feature, but are not considered for some calculations)
+        EXPLAIN A BIT ABOUT THE CLEANING PHASE OF DATA,
+        TYPE OF DATA
+        DATETIME CONVERSION
+        GET LOCATION WITH LONGITUDE, LATITUDE OTHERS
+
+
+         <h3><b> Spotify and LastFM API Dataset </b></h3>
+
+        To complete the information gathered from FMA dataset, we used Spotify and LastFM API for years 2015-2018,
+        due to the fact that the FMA dataset does not contain representative information of the last 4 years.
+
+        To obtain this information http requests were used, each request first pointed to Spotify API url ().
+        Whe
+
+        By the fact that FMA
+
+        Data cleaning
+
+        WHY DID WE DECIDE TO COMPLETE DATASET WITH SPOTIFY API?
+        HOW DID WE OBTAIN SUCH INFORMATION?
+        SAMPLING??
+        FOR WHAT YEARS?
+        DO BOTH DATASETS CONTAIN SIMILAR INFORMATION? HOW DID WE MERGE BOTH OF THEM?
+        HOW WAS THE DATA CLEANING….
+
+
+
+
+        Research questions
+        Here we  answer each of the research questions, (WE WILL PRESENT THEM AS A STORY, WE’LL REMOVE QUESTIONS, OR WE CAN REPLACE THEM BY WORDS OR SHORT PHRASES
+        (e.g.
+        Who is your favorite? ,
+        Ranking Tracks,
+        Have you listened to it?
+        Feeling happy?, might be valence
+        Feeling cold? Just Dance..
+        Push up the Energy!
+        Streaming your music…
+        Maluma baby
+        Otros
+
+
+
+
+        How did music/genre/artists preferences evolve in the last decade?
+
+Once we obtained a complete and clean version of the dataset, we start with the analysis. We aim to understand the evolution of music since 2000, our first observations rely on music evolution in terms of number of tracks and albums produced over the years:
+
+
+
+The production of tracks and albums has increased exponentially over the years and as expected, the production of albums is correlated with the production of tracks. (POR QUE REDUCE DESDE AL 2014?, TALVEZ PODEMOS ENCONTRAR EL MOTIVO POR EL QUE REDUCE???) LA OTRA OPCION ES COMPLETAR CON DATOS Y MOSTRAR QUE CRECE EXPONENCIALMENTE? TALVEZ LA OPCION 1 ES MAS FACIL (INTENTAR DE BUSCAR UNA RAZON POR QUE BAJA)
+In the last year (2018), we see a decrement of music production, it is due to data collection which is limited to X month.
+We now present some general results about songs and albums that were found to be the most listened in the analyzed time interval, we list the top 10 songs and albums. For this purpose, we used the feature called number of listens for each track/album provided in the dataset.
+
+
+
+We found that album DAWN was the most listened in the analyzed time interval (TALVEZ PODEMOS VALIDAR LOS RESULTADOS QUE VAMOS SACANDO CON ALGUNA FUENTE, (e.g. we obtained that DAWN is the most listened album which validates the information of webpage XXX that lists it as the one of the most influencing/popular albums of the 2000s, e incluir el link). Regarding tracks, we find that Pumped Up Kicks is the most listened track, some other items completing the list of top 10 tracks are Electric Feel, Stairway to Heaven, Heartbeats, Zombie.
+SE PODRIA PONER LAS TOP 10 CANCIONES/ALBUMS POR AÑO? ALGUNA FORMA CREATIVA/INTERACTIVA DE VISUALIZAR ESTO (LOS 18 PLOTS)? SI TENEMOS ESTOS PLOTS AYUDA PARA RESPONDER LA SEGUNDA RESEARCH QUESTION..
+SON 18 ANOS, TALVEZ PODEMOS AGRUPAR CADA 3 ANOS
+
+
+Now we present the overall genre preferences over the years, which we measured with two different metrics: number of tracks produced, and genre hotness. We present the results for the top 10 genres:
+
+
+As seen on the plots, depending on the metric we obtain different results. On one side we can see that Experimental was the genre that produced more number of tracks since year 2000, followed by Electronic, Rock, etc, but it does not guarantee the highest popularity or hotness of the genres. As seen on the  other plot, we have that Rap is the most popular genre, followed by Tango, Latin, etc. We can see that Experimental is the genre that repeats in both plots, being the one that produced the highest number of tracks and appears in the top 10 of most popular genres.
+
+ACA TAMBIEN PODEMOS INTENTAR INCLUIR TOP GENRE POR ANHO (TOTAL 18) E INTENTAR PRESENTAR DE ALGUNA FORMA CREATIVA/INTERACTIVA, ASI VEMOS EVOLUCION DE ALGUNOS GENEROS….
+ESTABA PENSANDO EN UNA FORMA DE PRESENTAR. PODRIA SER TOMAR EL TOP 10 DE GENRES GENERAL (PLOTS DE ARRIBA) Y VEAMOS LA EVOLUCION DE ESOS 10 GENEROS EN LOS 18 ANHOS. PODRIA SER INTERACTIVO, EL USUARIO VAYA CAMBIANDO EL ANHO Y SE MUESTRA COMO VAN EVOLUCIONANDO/CAMBIANDO LOS GENRES, COMO QUE SE VA DIBUJANDO UNA LINEA A MEDIDA QUE AVANZAN LOS ANHOS Y SE VE COMO ESAS LINEAS SUBEN Y BAJAN DE ACUERDO A SU EVOLUCION.
+
+Regarding the artists, we also gather their popularity over the years expressed by the feature hotness in the metadata and present an overall result of all the years. A different way to measure their popularity is by getting the mean of their tracks hotness. Both representations of artist popularity are presented in the following plots: (INCLUI TOP 20, POR QUE NO SE NOTABA MUCHA DIFERENCIA ENTRE LOS 10 PRIMEROS)
+
+
+ACA PODEMOS INTENTAR EXPLICAR POR QUE AMBOS PLOTS DAN DIFERENTES ARTISTAS ….SI NO SE PUEDE...NOS QUEDAMOS CON UNO SOLO...EL DE LA DERECHA MUESTRA MÁS DIFERENCIA ENTRE ARTISTAS.
+
+
+
+To better visualize the evolution of artists popularity, we present how was such behaviour every year starting from 2000 in the following plots:
+
+......Y LOS OTROS
+
+ESTOS PLOTS SON TOP ARTIST POR TRACK HOTNESS. PODEMOS INCLUIR LOS 18 PLOTS (TODOS LOS ANHOS) E INTENTAR HACER UNA VISUALIZACION CREATIVA/INTERACTIVA CON LOS 18 ANHOS Y COMO VARIAN LOS ARTISTAS. AGREGAMOS ALGUNA CONCLUSIÓN (e.g.  el artista X fue el mas popular por Y anhos consecutivos, o el artista Lalo Ebratt (que es el top 1 en el general) recien se hizo popular el anho Z y su popularidad fue muy alta, por eso que el general lo pone como 1. O si algun artista en especifico muestra un crecimiento a traves de los anhos..)
+LA OTRA OPCION ES HACER LO MISMO QUE PROPUSE ARRIBA QUE ESTA RESALTADO CON VERDE. TOMAR EL TOP 10 (O 20) DE ARTISTAS GENERAL Y VER SU EVOLUCIÓN EN LOS ANHOS, DE FORMA INTERACTIVA…****VER DOS PAGINAS ARRIBA
+
+
+
+
+Do prefered songs/artists (e.g. top 10) for a given year have any similarities in terms of genre, song’s features or others? Or do they completely differ from each other?
+
+ESTO ESTARIA EN BASE A LOS 18 PLOTS POR ANHO QUE TENEMOS DE CADA CANCION, ARTISTA DE LA PREGUNTA 1. IGUAL TENEMOS QUE PENSAR EN UNA FORMA CREATIVA DE VISUALIZAR. LO QUE SE ME OCURRE ES HACER UN SCATTER PLOT DE TRES DIMENSIONES (ENERGY/VALENCE/DANCEABILITY). CADA PUNTO REPRESENTA UN TRACK Y LO PINTAMOS DE UN COLOR DE ACUERDO AL GENERO. LO UBICAMOS EN EL ESPACIO DE TRES DIMENSIONES Y PODEMOS VER QUE TAN LEJOS/CERCA ESTAN ENTRE LOS QUE TIENEN MISMO GENERO. (SI NOS VA MAL CON TRES DIMENSIONES- -> PODEMOS REDUCIR A DOS DIMENSIONES Y TOMAR SOLO DOS FEATURES QUE PUEDEN SER OTROS e.g. fecha, hotness...etc)
+ALGO SIMILAR CON ARTISTAS (PODEMOS SACAR ALGUNOS FEATURES DE LOS ARTISTAS) Y HACER EL SCATTER PLOT.
+
+TENEMOS DOS OPCIONES: HACER UNO GENERAL DE LOS 18 ANHOS..O HACER UNO POR ANHO Y VER LA FORMA CREATIVA/INTERACTIVA DE PRESENTAR.
+
+How do song features such as valence/energy/danceability relate to each other? Do they depend on the genre of the songs?
+
+CON EL SCATTER PLOT DE LA PREGUNTA 2 TALVEZ PUEDE AYUDAR A CONCLUIR ALGO.
+DEPUES PODEMOS SACAR CORRELACIONES (SPEARMAN/PEARSON COEFFICIENT CON P VALUES) ENTRE:
+VALENCE/ENERGY
+VALENCE/DANCEABILITY
+ENERGY/DANCEABILITY
+De esto ya tenemos algunos, solo tenemos que ordenarlo y poner los plots.
+
+
+VALENCE/GENRE
+ENERGY/GENRE
+DANCEABILITY/GENRE
+PARA LOS ULTIMOS TRES TENDRIAMOS QUE ASIGNAR NUMEROS A LOS GENEROS)
+
+
+
+How do song features such as valence/energy/danceability vary during the year? Do they have any correlation with the season of the year? How do such features vary over the years?
+
+Feeling happy? Might be valence
+(VERIFICAR LAS FECHAS DE LAS SEASONS?), ESTA CON SEASONS HEMISFERIO NORTE O SUR?
+We aim to show the variation of the features previously presented (energy, danceability and valence) during the year. In order to see such evolutions, we compute those values for every season of the year, meaning that we group the items that belong to certain time interval (e.g summer, winter, autumn and spring) and get the mean of their valence, danceability and energy. For valence we present the results obtained:
+
+
+
+What we can observe that, in most cases and specially in the last 8 years valence is higher during winter seasons compared to summer season, which leads us to conclude that music preferences/production vary according to weather variations. This makes a lot of sense, artists may produce “happier” music (higher valence) during winter seasons.
+We can also see that in most of the years, the valence for autumn and spring seasons are similar, which reinforces the idea that weather relates to music production, since weather during both seasons is more or less the same.
+Feeling cold? Just Dance!
+Same analysis was performed for music danceability and its variation over the four seasons of the year. The mean of the danceability of the tracks grouped by their season of the year was calculated and we obtained the following results:
+
+As in the case of valence, we find that danceability of songs released during winter is higher than the songs released on summer. As presented previously, danceability and valence are moderately correlated (VERIFICAR, and the results seem to be very logical. Tracks with higher danceability are released during cold seasons since most people stay indoors and consume this type of music (inventar algo mas)
+
+Push Up the Energy!
+As in the previous two cases, same analysis was done with energy of the songs. Results are the following:
+
+In the last years, energy of the songs has increased, (tratar de encontrar una razon)  and in the last 8 years, the energy of the tracks during summer is higher that the energy of the songs during winter, which again sounds very logical, since summer season has more movement of people and events such as parties or concerts.
+
+
+
+
+
+
+
+Are genre/songs popularity related to any specific event or events occurring in the world during the last decade?
+
+COMO TENEMOS LOS GENRE POPULARITY POR ANHOS (18 ANHOS), PODEMOS RELACIONAR CON ALGUNOS EVENTOS EN INTERNET, O SI APARECIO UNA PLATAFORMA (e.g RED SOCIAL), O EL BOOM DEL INTERNET, DE FACEBOOK, SUPONGO QUE PODEMOS ENCONTRAR ALGO.
+
+
+What is the effect/impact of music streaming services on music preferences/popularity?
+DE LAS ANTERIORES PREGUNTAS YA TENDRIAMOS COMO VARIAN LOS GENEROS/ARTISTAS DURANTE LOS 18 ANHOS (ANHO POR ANHO). EL BOOM DE LOS STREAMING SERVICES CREO QUE FUE 2014. LO QUE DEBERIA PASAR ES QUE SE INTERNACIONALIZE MAS EL CONSUMO DE MUSICA (e.g. SE ESCUCHE MAS MUSICA LATINA O EN ESPANHOL), PODEMOS INTENTAR ENCONTRAR EL ANHO DONDE HAY ESE CRECIMIENTO.
+BOOM DE YOUTUBE TALVEZ TUVO UN EFECTO EN LA PRODUCCION DE MUSICA Y LA FORMA DE LLEGAR AL PUBLICO..PODEMOS VER ESOS ANHOS Y TRATAR DE ENCONTRAR ALGO
+
+
+
 
         <img src="assets/images/graphs/top_10_countries_that_produce_tracks.png">
     </div>
