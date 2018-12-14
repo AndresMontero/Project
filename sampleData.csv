@@ -1,16 +1,16 @@
-Rock
-Electronic
-Experimental
-Hip-Hop
-Folk
-Instrumental
-Pop
-International
-Clasical
-Historic
-Jazz
-Country
-Soul
-Spoken
-Blues
-Easy Listening
+Artist,Britney,Justin Bienber,test,test,test,Nirvana,Metallica,Camry,GS 450h,HS 250h,Altima,LS 600hL,Vue,Tahoe,Malibu,Aura,Durango,Silverado,Fusion,S400,ML450,E320,Tribute,X6,Activehybrid3&5&7,CR-z,MKZ,Cayenne,CT 200h,Touareg,Q70 (M35h),Sonata,LaCrosse,Regal,Panamera S,Optima,ILX,C-Max,ES Hybrid,Q5 Hybrid,Avalon,Jetta,E400H,Q50,Impala Hybrid,QX60,Pathfinder Hybrid,XV,RLX,NX Hybrid,RAV4,NSX,Niro Hybrid,Ioniq Hybrid,Volt,Prius Plug-in,C-Max Energi,Accord,Fusion Energi,Panamera S E-Hybrid,ELR,i8,Cayenne S E-hybrid,S550 Plug,XC90 Plug In,X5,Sonata Plug In,A3 Plug In,3-series Plug-In,GLE 550e,7-series Plug-in,C350We,Optima Plug-in,LEAF,ED,I EV,Active E,Focus,Fit EV,Model S,RAV4 EV,Spark,500E,i3,B-Class,e-Golf,Soul EV,Model X,Bolt,Tucson,Mirai,Clarity,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Genero,Rock,Rock,Rock,Rock,Rock,Rock,Rock,Rock,Rock,Rock,Electronic,Electronic,Electronic,Electronic,Electronic,Electronic,Electronic,Electronic,Electronic,Electronic,Experimental,Experimental,Experimental,Experimental,Experimental,Experimental,Experimental,Experimental,Experimental,Experimental,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Hip-Hop,Folk,Folk,Folk,Folk,Folk,Folk,Folk,Folk,Folk,Folk,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Instrumental,Pop,Pop,Pop,Pop,Pop,Pop,Pop,Pop,Pop,Pop,International,International,International,International,International,International,International,International,International,International,Clasical,Clasical,Clasical,Clasical,Clasical,Clasical,Clasical,Clasical,Clasical,Clasical,Historic,Historic,Historic,Historic,Historic,Historic,Historic,Historic,Historic,Historic,Jazz,Jazz,Jazz,Jazz,Jazz,Jazz,Jazz,Jazz,Jazz,Jazz,Country,Country,Country,Country,Country,Country,Country,Country,Country,Country,Soul,Soul,Soul,Soul,Soul,Soul,Soul,Soul,Soul,Soul,Spoken,Spoken,Spoken,Spoken,Spoken,Spoken,Spoken,Spoken,Spoken,Spoken,Blues,Blues,Blues,Blues,Blues,Blues,Blues,Blues,Blues,Blues,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening,Easy Listening
+2005-01,7,5566,1169,908,805,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2006-01,22,7078,1353,1092,855,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2007-01,56,10236,2896,1569,1862,,13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Instrumental,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2008-01,90,11345,3466,1705,2023,,2345,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Pop,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2009-01,52,9461,1895,1234,1314,35,2931,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2010-01,69,9622,1852,1126,1080,2869,2605,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2011-01,68,9691,2329,1168,1376,2564,2262,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Country,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2012-01,80,9850,4146,1363,2336,2925,2607,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soul,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2013-01,83,8193,1916,1808,2352,2715,2113,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Spoken,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2014-01,37,9939,231,1313,1266,2330,1904,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Blues,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2015-01,60,7889,2083,1121,837,2353,1722,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Easy Listening,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2016-01,42,9027,2528,1553,720,2198,2172,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2017-01,59,7654,3166,898,351,2263,1477,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2018-01,72,6547,1781,1341,783,2631,1803,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
