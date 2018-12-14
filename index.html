@@ -89,12 +89,12 @@
     <div class="w3-display-container w3-container">
         <h3><b> Introduction </b></h3>
 
-        Have you ever wondered how did music evolve in the last years? Today with the explosion of the internet,
-        music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to obtain
-        and share music. This project aims to find the evolution of music since 2000's in terms of songs/genres/artists
-        popularity and preferences, evaluate the key features of the tracks, such as energy, valence and danceability.
-        We want to show how and which was the most popular genre in the last years, the most popular songs,
+        Have you ever wondered how music evolved in the last years? Today with the explosion of the internet,
+        music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to access, obtain and share music. This project aims to find the evolution of music since 2000's in terms of songs/genres/artists popularity and preferences, evaluate the key features of the songs, such as energy, valence and danceability.
+        We aim to understand and show how and which was the most popular genre in the last years, the most popular songs,
         the most important artist and what were the trends of the key features of those hits.
+        
+       
 
         <br/>
         <br/>
@@ -113,11 +113,12 @@
 
         <h3><b> FMA Dataset </b></h3>
 
-        Free Music Archive (FMA), is an open and easily accessible dataset suitable.
+        Free Music Archive (FMA), is an open and easily accessible music dataset.
         The dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
         arranged in a hierarchical taxonomy of 161 genres. It provides full-length and high-quality audio,
         pre-computed features, together with track- and user-level metadata, tags, and free-form text such as biographies.
         For the project purposes, we focused on user-level metadata obtained in the following files:
+        
         <ul>
             <li>
                 <h5><b> tracks.csv: </b></h5>
@@ -129,7 +130,7 @@
             </li>
             <li>
                 <h5><b> features.csv:</b></h5>
-                Common features extracted with librosa.
+                Common features extracted with <a href="https://librosa.github.io/librosa/">librosa</a>
             </li>
             <li>
                 <h5><b> echonest.csv:</b></h5>
@@ -137,15 +138,48 @@
             </li>
         </ul>
 
-        For such information, only important and useful features were extracted. Those features will help us with further analysis.
-        From the previous list of files, only tracks, genres and echonest were considered, because, feature files has
-        information about the musical attributes of the tracks, however, the objective of the story does not tak into account
-        that information.
 
-        The useful data extracted includes, genres, artists, popularity, valence, energy, danceability and many others
-        explained in the next list.
+                From the previous list of files, we only considered tracks.csv, genres.csv and echonest.csv, but features.csv was not used since it contains musical attributes of the tracks and such information does not fit on the scope of the project.<br />
+                
 
-        Finally, using main features, and to avoid confusion, there were created 5 dataframes to
+                Then, we analyzed the information contained in the three mentioned csv files and extracted the ones that were aligned with the objectives of the project. The features extracted are:
+                
+                
+                <ul>
+                    <li>
+                        <h5><b> From tracks.csv: </b></h5>
+                        <ol>
+                            <li>track_id</li>
+                            <li>danceability</li>
+                            <li>energy</li>
+                            <li>valence</li>
+                            <li>artist_latitude</li>
+                            <li>artist_longitude</li>
+                            <li>artist_name</li>
+                            <li>artist_discovery</li>
+                            <li>artist_hotness</li>
+                            <li>song_currency</li>
+                            <li>song_hotness</li>
+                        </ol>
+                        
+                  
+                        
+
+                    </li>
+                    <li>
+                        <h5><b> From genres.csv: </b></h5>
+
+                    </li>
+                    <li>
+                        <h5><b> echonest.csv:</b></h5>
+                    </li>
+                </ul>
+                
+                
+                
+                include: genres, artists, popularity, artist hotness, track valence, track energy, track danceability and other important features.<br />
+  
+        Finally, using main features, and to avoid confusion, 5 dataframes were created to
         represent the data in a relational way.
 
         <ul>
