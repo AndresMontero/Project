@@ -1,0 +1,96 @@
+ /*Lots of new CSS rules!*/
+/** {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+
+/*body {*/
+    /*font-family: Helvetica, Arial, sans-serif;*/
+    /*background-color: #eee;*/
+/*}*/
+
+/*#container {*/
+    /*width: 1000px;*/
+    /*margin: 25px auto 25px auto;*/
+    /*padding: 50px 50px 50px 50px;*/
+    /*background-color: white;*/
+    /*box-shadow: 0 0 20px #ccc;*/
+/*}*/
+
+/*h1 {*/
+    /*margin-bottom: 25px;*/
+    /*font-size: 24px;*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*h2 {*/
+    /*margin-top: 30px;*/
+    /*margin-left: 20px;*/
+    /*font-size: 14px;*/
+/*}*/
+
+/*p {*/
+    /*margin-bottom: 25px;*/
+    /*font-size: 14px;*/
+    /*line-height: 18px;*/
+/*}*/
+
+/*button {*/
+    /*padding: 15px;*/
+/*}*/
+
+/*#footer p {*/
+    /*margin-top: 50px;*/
+    /*margin-bottom: 0;*/
+    /*font-size: 10px;*/
+    /*line-height: 14px;*/
+    /*color: gray;*/
+/*}*/
+
+/*#footer p a {*/
+    /*color: gray;*/
+/*}*/
+
+
+/* Chart styles */
+svg {
+    display: block;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.area {
+    stroke: black;
+    cursor: pointer;
+}
+
+.area:hover {
+    fill: rgb(175, 240, 91);
+}
+
+#backButton {
+    cursor: pointer;
+}
+
+#backButton rect {
+    fill: rgb(175, 240, 91);
+}
+
+#backButton text {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    fill: black;
+}
+
+#backButton:hover rect {
+    fill: rgb(26, 199, 194);
+}
+
+#backButton:hover text {
+    fill: white;
+}
+
+.unclickable {
+    pointer-events: none;
+}
