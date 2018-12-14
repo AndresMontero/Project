@@ -5,8 +5,10 @@ Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatt
         });
     }
 
-    var trace1 = {
-        x: unpack(rows, 'x1'), y: unpack(rows, 'y1'), z: unpack(rows, 'z1'),
+    let trace1 = {
+        x: unpack(rows, 'x1'),
+        y: unpack(rows, 'y1'),
+        z: unpack(rows, 'z1'),
         mode: 'markers',
         marker: {
             size: 12,
@@ -19,8 +21,10 @@ Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatt
         type: 'scatter3d'
     };
 
-    var trace2 = {
-        x: unpack(rows, 'x2'), y: unpack(rows, 'y2'), z: unpack(rows, 'z2'),
+    let trace2 = {
+        x: unpack(rows, 'x2'),
+        y: unpack(rows, 'y2'),
+        z: unpack(rows, 'z2'),
         mode: 'markers',
         marker: {
             color: 'rgb(127, 127, 127)',
@@ -35,8 +39,8 @@ Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/3d-scatt
         type: 'scatter3d'
     };
 
-    var data = [trace1, trace2];
-    var layout = {
+    let data = [trace1, trace2];
+    let layout = {
         title: 'Music cluster',
         paper_bgcolor: 'rgb(5,65,65)',
         legend: {
