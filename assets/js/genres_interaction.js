@@ -1,35 +1,37 @@
 //Width and height
-var w = 1000;
-var h = 300;
-var padding = 20;
+const w = 1000;
+const h = 300;
+const padding = 20;
 
 //Tracks view state.  Possible values:
 // 0 = default (areas types)
 // 1 = areas (of one type)
 // 2 = areas (singular)
-var viewState = 0;
+let viewState = 0;
 
 //Tracks most recently viewed/clicked 'type'.  Possible values:
 //"Heavy_Machinery", "Single_Pumps" or undefined
-var viewType;
+let viewType;
 
-var dataset, thisTypeDataset, xScale, yScale, xAxis, yAxis, area;  //Empty, for now
+let dataset, thisTypeDataset, xScale, yScale,
+    xAxis, yAxis, area;  //Empty, for now
 
 //For converting strings to Dates
-var parseTime = d3.timeParse("%Y-%m");
+let parseTime = d3.timeParse("%Y-%m");
 
 //For converting Dates to strings
-var formatTime = d3.timeFormat("%Y");
+let formatTime = d3.timeFormat("%Y");
 
 //Define key function, to be used when binding data
-var key = function (d) {
+let key = function (d) {
     return d.key;
 };
 
 //Set up stack methods
-var areaStack = d3.stack();
-var typeStack = d3.stack();
+let areaStack = d3.stack();
+let typeStack = d3.stack();
 let genreDiv;
+let description;
 
 const DATA = 'assets/csv/Book3.csv';
 
@@ -63,7 +65,7 @@ let initializeGenreGraph = () => {
 
             //Loop once for each row of the CSV, starting at row 3,
             //since rows 0-2 contain only area info, not area values.
-            for (var i = 2; i < rows.length; i++) {
+            for (let i = 2; i < rows.length; i++) {
 
                 //Create a new object
                 dataset[i - 2] = {
@@ -71,12 +73,12 @@ let initializeGenreGraph = () => {
                 };
 
                 //Loop once for each area in this row (i.e., for this date)
-                for (var j = 1; j < rows[i].length; j++) {
+                for (let j = 1; j < rows[i].length; j++) {
 
-                    var sector = rows[0][j];
-                    var mining_type = rows[1][j];
-                    var mining_type_sector = rows[1][j] + " " + rows[0][j];  //
-                    var area_val = rows[i][j];
+                    let sector = rows[0][j];
+                    let mining_type = rows[1][j];
+                    let mining_type_sector = rows[1][j] + " " + rows[0][j];  //
+                    let area_val = rows[i][j];
                     //If area value exists…
                     if (area_val) {
                         area_val = parseInt(area_val);  //Convert from string to int
@@ -86,7 +88,6 @@ let initializeGenreGraph = () => {
 
                     //Append a new object with data for this row
                     dataset[i - 2][mining_type_sector] = {
-
                         "mining_type": mining_type,
                         "sector": sector,
                         "area_val": area_val
@@ -168,7 +169,6 @@ let initializeGenreGraph = () => {
             var typeSeries = typeStack(typeDataset);
             console.log(typeSeries);
 
-
             //
             // MAKE THE CHART
             //
@@ -196,7 +196,6 @@ let initializeGenreGraph = () => {
                         for (var i = 0; i < types.length; i++) {
                             sum += d[types[i]];
                         }
-                        ;
 
                         return sum;
                     })
@@ -248,7 +247,6 @@ let initializeGenreGraph = () => {
                 .attr("opacity", 1)
                 .attr("d", area)
                 .attr("fill", function (d) {
-
                     //Which type is this?
                     var thisType = d.key;
 
@@ -309,6 +307,7 @@ let initializeGenreGraph = () => {
 
                     // Update div text
                     updateGenreText(thisType);
+                    description.text(thisType);
 
                     //Update this for later reference
                     viewType = thisType;
@@ -395,14 +394,10 @@ let initializeGenreGraph = () => {
                         .attr("opacity", 0)
                         .on("end", function (d, i) {
                             //Reveal back button
-                            if (i == 0) {
+                            if (i === 0) {
                                 toggleBackButton();
                             }
                         });
-
-                    //
-                    // areas
-                    //
 
                     //Get all possible keys (make + model), but toss out 'date'
                     var keysAll = Object.keys(dataset[0]).slice(1);
@@ -410,8 +405,8 @@ let initializeGenreGraph = () => {
 
                     //Loop once for each key, and save out just the ones of thisType (e.g. BEVs)
                     var keysOfThisType = [];
-                    for (var i = 0; i < keysAll.length; i++) {
-                        if (dataset[0][keysAll[i]].mining_type == thisType) {
+                    for (let i = 0; i < keysAll.length; i++) {
+                        if (dataset[0][keysAll[i]].mining_type === thisType) {
                             keysOfThisType.push(keysAll[i]);
                         }
                     }
@@ -525,6 +520,9 @@ let initializeGenreGraph = () => {
                             //Which area was clicked?
                             var thisType = d.key;
 
+                            // Update description
+                            description.text(thisType);
+
                             //Fade out all other areas
                             d3.selectAll("g#Areas_ha path")
                                 .classed("unclickable", true)  //Prevent future clicks
@@ -573,7 +571,6 @@ let initializeGenreGraph = () => {
                                 .duration(1000)
                                 .attr("d", singleArea_ha_Area)
                                 .on("start", function () {
-
                                     //Transition axis to new scale concurrently
                                     d3.select("g.axis.y")
                                         .transition()
@@ -620,9 +617,18 @@ let initializeGenreGraph = () => {
                 .call(yAxis);
 
             svg.append("text")
-                .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-                .attr("transform", "translate(" + (w) + "," + (h / 2) + ")rotate(-90)")  // text is drawn off the screen top left, move down and out and rotate
+            // this makes it easy to centre the text as the transform is applied to the anchor
+                .attr("text-anchor", "middle")
+                // text is drawn off the screen top left, move down and out and rotate
+                .attr("transform", "translate(" + (w) + "," + (h / 2) + ")rotate(-90)")
                 .text("Hotness");
+
+            // Add title
+            description = svg.append("text")
+                .attr("x", (w / 4))
+                .attr("y", (h / 4))
+                .attr("text-anchor", "middle")
+                .style("font-size", "16px");
 
 
             //Create back button
@@ -651,8 +657,12 @@ let initializeGenreGraph = () => {
                 //Hide the back button, as it was just clicked
                 toggleBackButton();
 
-                if (viewState == 1) {
+                if (viewState === 1) {
                     //Go back to default view
+
+                    // Update text to general
+                    updateGenreText('General Text');
+                    description.text('');
 
                     //Update view state
                     viewState--;
@@ -673,14 +683,13 @@ let initializeGenreGraph = () => {
                     yScale.domain([
                         0,
                         d3.max(typeDataset, function (d) {
-                            var sum = 0;
+                            let sum = 0;
 
                             //Loops once for each row, to calculate
                             //the total (sum) of sales of all areas
-                            for (var i = 0; i < types.length; i++) {
+                            for (let i = 0; i < types.length; i++) {
                                 sum += d[types[i]];
                             }
-                            ;
 
                             return sum;
                         })
@@ -703,7 +712,7 @@ let initializeGenreGraph = () => {
                             d3.select(this).classed("unclickable", false);
                         });
 
-                } else if (viewState == 2) {
+                } else if (viewState === 2) {
                     //Go back to areas view
 
                     //Update view state
@@ -725,9 +734,9 @@ let initializeGenreGraph = () => {
                     //Transition the y axis and visible area back into place
                     d3.selectAll("g#Areas_ha path")
                         .transition()
-                        .on("start", function () {
-
+                        .on("start", function (d, i) {
                             //Transition y axis to new scale concurrently
+                            description.text(d.key.split(' ')[0]);
                             d3.select("g.axis.y")
                                 .transition()
                                 .duration(1000)
@@ -740,12 +749,11 @@ let initializeGenreGraph = () => {
                         .duration(1000)
                         .attr("opacity", 1)  //Fade in all areas
                         .on("end", function (d, i) {
-
                             //Restore clickability
                             d3.select(this).classed("unclickable", false);
 
                             //Reveal back button
-                            if (i == 0) {
+                            if (i === 0) {
                                 toggleBackButton();
                             }
 
@@ -758,8 +766,7 @@ let initializeGenreGraph = () => {
         });
 
 
-    var toggleBackButton = function () {
-
+    let toggleBackButton = function () {
         //Select the button
         var backButton = d3.select("#backButton");
 
@@ -768,14 +775,12 @@ let initializeGenreGraph = () => {
 
         //Decide whether to reveal or hide it
         if (hidden) {
-
             //Reveal it
-
             //Set up dynamic button text
             var buttonText = "&larr; Back to ";
             // var buttonTextInfo = "&larr; Current View ";
             //Text varies by mode and type
-            if (viewState == 1) {
+            if (viewState === 1) {
                 buttonText += "Genres";
             }
             // buttonTextInfo += "all types";
@@ -801,7 +806,6 @@ let initializeGenreGraph = () => {
                 .attr("opacity", 1);
 
         } else {
-
             //Hide it
             backButton.classed("unclickable", true)
                 .transition()
