@@ -1,4 +1,4 @@
-const DATA_PATH = 'assets/csv/test.csv';
+const DATA_PATH = 'assets/csv/tsne.csv';
 const CLUSTERS = 8;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,38 +17,53 @@ let initializeCluster = () => {
             dict[i] = data;
         }
 
-        function unpack(rows, key) {
+        let unpack = (rows, key) => {
             return rows.map(function (row) {
                 return row[key];
             });
-        }
+        };
 
-        function getRandomColor() {
+        let getRandomColor = () => {
             var letters = '0123456789ABCDEF';
             var color = '#';
             for (var i = 0; i < 6; i++) {
                 color += letters[Math.floor(Math.random() * 16)];
             }
             return color;
-        }
+        };
+
+        let getTooltipText = (points) => {
+            return points.map((point) => {
+                let artist_text = 'Artist : ' + point.artist_name;
+                let track_text = 'Title : ' + point.track_title;
+                let album_text = 'Album : ' + point.album_title;
+                let album_year_text = 'Year : ' + point.year;
+                let genre_text = 'Genre : ' + point.genre_parent;
+                return artist_text +'<br>' + track_text + '<br>' + album_text +
+                    '<br>' + album_year_text + '<br>' + genre_text;
+            });
+        };
 
 
-        let data = dict.map((cluster) => {
+        let data = dict.map((cluster, index) => {
+            let cluster_num = index + 1;
             return {
                 x: unpack(cluster, 'x'),
                 y: unpack(cluster, 'y'),
                 z: unpack(cluster, 'z'),
-                artist_name: unpack(cluster, 'artist_name'),
                 mode: 'markers',
                 marker: {
-                    size: 12,
+                    size: 1.5,
                     line: {
                         color: getRandomColor(),
-                        width: 0.5
+                        width: 0.3
                     },
                     opacity: 0.8
                 },
-                type: 'scatter3d'
+                type: 'scatter3d',
+                name: 'Cluster ' + cluster_num,
+                text: getTooltipText(cluster),
+                hoverinfo: "text+name",
             };
         });
 
