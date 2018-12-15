@@ -6,55 +6,55 @@ const TEXTINTERACTION = {
         ' Country and Blues. Time interval was considered for the last five years, due to genre ' +
         'variability over time. For every year, each of the genres is represented by their hotness,' +
         ' which is obtained by the mean of all songs hotness released on the specified year.',
-    'spoken': 'Genre Spoken has had a hotness peak in 2017 and a reduction in 2018 with ' +
+    'spoken': 'The genre Spoken has had a hotness peak in 2017 and a reduction in 2018 with ' +
         'artists Ella Flitzgerard, LCD Soundsystem, Godspeed you! Black Emperor, J.Cole, Khelani, ' +
         'Danny Gonzalez. A peak in 2016 is marked by J.Cole with its great hit Wet Dreamz. ' +
         'Another peak is seen in 2017, which is contributed by the other artists, being Kelhani ' +
         'the artist that contributes most in this year with the release of her album SweetSexySavage.',
-    'soulrnb': 'Genre Sould_RnB has had an increased since 2014, with increasing hotness ' +
+    'soul_rnb': 'The genre Soul RnB has had an increased since 2014, with increasing hotness ' +
         'for the next years. The artists with higher hotness are: Marcy Playground in 2015,El Michels ' +
         'affair and Sting in 2016, The Who, Chelsea Wolfe and Godspeed you! Black Emperor in 2017, ' +
         'Barry White, Scott Bradley, Anderson Paak and Mac Miller in 2018 with the release of ' +
         'his album Swimming.',
-    'rock': 'Genre Rock has had an increasing hotness since 2015, with artists such as Mephis Mey' +
+    'rock': 'Rock has had an increasing hotness since 2015, with artists such as Mephis Mey' +
         ' Fire Rock Kelela, Fall Out Boy, Linkin Park, Prodigy, The 1975, Moon, NiallHoran, ' +
         'The Growlers, Carrie Underwood. It shows an increasing behavior since 2015 with ' +
         'Linkin Park, Nial Horan and Walk the Moon being the main contributors in 2017.' +
         ' In 2018, the main contributors are The Prodigy and Kelela which also coincides ' +
         'with the release of her album Take Me Apart.',
-    'pop': 'Genre Pop has had an increasing hotness since 2015, and it is the one with ' +
+    'pop': 'Pop has had an increasing hotness since 2015, and it is the one with ' +
         'the largest increase of hotness for year 2018. The main artist contributing ' +
         'its popularity are: Eminem, Martin Garrix, David Guetta, Marshmello, ' +
         'Halsey, Monsta X, DJ Snake, OMI, Kiana Leda, Drake Bell. ' +
         'In 2017, we see that Harshey and Marshmello are the main contributors. For year 2018,' +
         ' we can see that Eminem and David Gueta are the hotest artists and it coincides with ' +
         'the recently released salbum Kamikaze which is one of the best selling albums of 2018.',
-    'international': 'Genre International has had an increasing hotness since 2014, with an important' +
+    'international': 'The genre International has had an increasing hotness since 2014, with an important' +
         ' peak in 2016. Top 10 artists with higher hotness are DJ Snake, Cardi B, Kehlani, ' +
         'Las Aves, Bomba Estereo, Simane, La Sonora Dinamita, Ella Fitzgerald, Godspeed ' +
         'You! Black Emperor. One of the main contributors in 2016 is Las Aves and in 2017 ' +
         'the group Bomba Estereo with one their greatest hits Soy Yo and To My Love.',
-    'instrumental': 'Genre Instrumental has had an increasing hotness since 2015, ' +
+    'instrumental': 'Instrumental genre has had an increasing hotness since 2015, ' +
         'with a peak in 2017, being the main contributors Linkin Park, The Prodigy, ' +
         'Radiohead, Tame Impala, Christina Aguilera, Petit Biscuit, 2Cellos, Kelela, ' +
         'The contortionist, Goodspeed You! Black Emperor',
     'experimental': 'Genre Experimental has had a high hotness in the years 2016 and 2018 ' +
         'with the top artists being Lila Om, The 1975, Fall Out Boy, Yellow Days, ' +
         'Radiohead, Christina Aguilera, Kacey Musgraves, Norah Jones, Tycho, Kelela.',
-    'easy listening': 'Genre Easy Listening has had an increasing hotness between years 2014 ' +
+    'easy_listening': 'The genre Easy Listening has had an increasing hotness between years 2014 ' +
         'and 2016, and it decreased a bit in the next years. The main artists of this ' +
         'genre are Niall Horan, Tiziano Ferro, Norah Jones, Evanescence, Marcy Playground, ' +
         'Lady Antebellum, Godspreed You! Black Emperor, Tycho, Ella Fitzgerald, Chelsea Wolfe. ' +
         'The peak of the genre was in 2016 with one of the biggest contributors being Norah ' +
         'Jones with the release of her most recent album Day Breaks.',
-    'country': 'Genre Country has had an increasing hotness during the last two years ' +
+    'country': 'The Country genre has had an increasing hotness during the last two years ' +
         '(2017 and 2018), with the peak registered in 2017. The main artists of this ' +
         'genre are: Little Big Town, Carrie Underwood, Sugarland, The Flaming Lips, Niall' +
         ' Horan, Blake Shelton, Los Tucanes de Tijuana, Lady Antebellum, Susanne Sundfor, ' +
         'Keith Urban. Main contributors in 2017 are Niall Horan and Blake Shelton. ' +
         'And the group showing an increasing hotness in 2017 and 2018 is Little Big ' +
         'Town which coincides with the release of their two albums Wanderlust and The Breaker.',
-    'blues': 'Genre Blues has had an increasing in 2015 and during the last two years. ' +
+    'blues': 'Blues has had an increasing in 2015 and during the last two years. ' +
         'The main artists contributing the genre hotness are: Yellow Days, John Legend, ' +
         'Ella Fitzgerald, Boz Scaggs, Armin van Buuren, Shwayze, Steve Wonder, Leon Bridges, ' +
         'Govt Mule, The Who. Yellow days is the group showing an increasing hotness in the last' +
@@ -100,7 +100,7 @@ const DATA = 'assets/csv/Book3.csv';
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 document.addEventListener("DOMContentLoaded", function () {
     genreDiv = document.getElementById('genres_hotness_text');
@@ -112,7 +112,7 @@ let updateGenreText = (key) => {
     let text = TEXTINTERACTION[key.toLowerCase()];
 
     // genreTitle.innerHTML = key.capitalize();
-    genreDiv.innerHTML = '<h3>' + key.capitalize() + '</h3>' + text;
+    genreDiv.innerHTML = '<h3>' + key.capitalize().replace('_', ' ') + '</h3>' + text;
 };
 
 let initializeGenreGraph = () => {
@@ -377,7 +377,7 @@ let initializeGenreGraph = () => {
 
                     // Update div text
                     updateGenreText(thisType);
-                    description.text(thisType);
+                    description.text(thisType.capitalize().replace('_', ' '));
 
                     //Update this for later reference
                     viewType = thisType;
@@ -591,7 +591,7 @@ let initializeGenreGraph = () => {
                             var thisType = d.key;
 
                             // Update description
-                            description.text(thisType);
+                            description.text(thisType.capitalize().replace('_', ' '));
 
                             //Fade out all other areas
                             d3.selectAll("g#Areas_ha path")
