@@ -55,7 +55,7 @@ let initializeCluster = () => {
                         size: 1.5,
                         line: {
                             color: getRandomColor(),
-                            width: 0.3
+                            width: 0.5
                         },
                         opacity: 0.8
                     },
@@ -74,9 +74,11 @@ let initializeCluster = () => {
                     borderwidth: 2,
                     font: {
                         family: 'sans-serif',
-                        size: 12,
+                        size: 15,
                         color: 'rgb(215,215,215)'
-                    }
+                    },
+                    x: 1,
+                    y: 0.5,
                 },
                 margin: {
                     l: 0,
@@ -88,6 +90,7 @@ let initializeCluster = () => {
                 autosize: true,
                 scene: {
                     xaxis: {
+                        range: [-10, 10],
                         showbackground: false,
                         zeroline: false,
                         ticks: false,
@@ -98,6 +101,7 @@ let initializeCluster = () => {
                         showexponent: false
                     },
                     yaxis: {
+                        range: [-10, 10],
                         showbackground: false,
                         zeroline: false,
                         ticks: false,
@@ -108,6 +112,7 @@ let initializeCluster = () => {
                         showexponent: false
                     },
                     zaxis: {
+                        range: [-10, 10],
                         showbackground: false,
                         zeroline: false,
                         ticks: false,
@@ -120,7 +125,12 @@ let initializeCluster = () => {
                 }
             };
             console.log(data);
-            Plotly.newPlot('music_cluster', data, layout);
+            Plotly.newPlot('music_cluster', data, layout, {
+                modeBarButtons: [['toImage'], ['zoom3d'], ['pan3d'], ['resetCameraDefault3d'], ['hoverClosest3d']],
+                displaylogo: false,
+                watermark: false,
+                responsive: true,
+            });
         }
     );
 };
