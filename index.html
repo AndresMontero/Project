@@ -190,16 +190,27 @@
             <button id="updateDistBtn" name="updateDistBtnClk">Go to tracks</button>
         </div>
 
+        <h3 id="title3"><b> Distribution of the Data </b></h3>
+
         <br/>
         <br/>
 
         <div class="banner">
-            <div class="inline-block">
+            <!-- <div class="inline-block">
                 <img src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
             </div>
             <div class="inline-block">
                 <img src="assets/images/graphs/distribution_of_tracks_per_year_2000-2018.png">
             </div>
+            -->
+            <div class="inline-block">
+                <button id="albumsDistBtn" name="updateButton" onclick="document.getElementById('myImage').src='assets/images/graphs/distribution_of_albums_per_year_2000-2018.png'">Albums</button>
+                <img id="myImage" src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
+                <button id="tracksDistBtn" name="updateButton" onclick="document.getElementById('myImage').src='assets/images/graphs/distribution_of_tracks_per_year_2000-2018.png'">Tracks</button>
+            </div>
+
+
+
         </div>
 
 
