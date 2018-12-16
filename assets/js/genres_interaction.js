@@ -110,8 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let updateGenreText = (key) => {
     let text = TEXTINTERACTION[key.toLowerCase()];
+    //
+    // ("#fadeContainer").append(img);
+    //
+    //     oldImg.stop(true).fadeOut(500, function () {
+    //         $(this).remove();
+    //     });
+    //     newImg.fadeIn(500);
 
-    // genreTitle.innerHTML = key.capitalize();
     genreDiv.innerHTML = '<h3>' + key.capitalize().replace('_', ' ') + '</h3>' + text;
 };
 

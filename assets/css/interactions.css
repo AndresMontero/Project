@@ -19,18 +19,20 @@ svg {
 }
 
 #backButton rect {
-    fill: rgb(175, 240, 91);
+    fill: red;
+    padding: 1rem 2rem;
+    margin: 0;
 }
 
 #backButton text {
     font-family: Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 14px;
-    fill: black;
+    font-size: 15px;
+    fill: white;
 }
 
 #backButton:hover rect {
-    fill: rgb(26, 199, 194);
+    fill: black;
 }
 
 #backButton:hover text {
@@ -41,19 +43,19 @@ svg {
     pointer-events: none;
 }
 
-.line {
+#season_features .line {
   fill: none;
   stroke: steelblue;
   stroke-width: 2px;
 }
 
-.grid line {
+#season_features  .grid line {
   stroke: lightgrey;
   stroke-opacity: 0.7;
   shape-rendering: crispEdges;
 }
 
-.grid path {
+#season_features  .grid path {
   stroke-width: 0;
 }
 

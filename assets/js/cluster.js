@@ -1,5 +1,8 @@
 const DATA_PATH = 'assets/csv/tsne.csv';
 const CLUSTERS = 8;
+const RANGE = [-8, 8];
+const COLORS = ['black', 'red', 'darkblue', 'lightgreen', 'coral',
+    'yellow', 'cyan', 'orange'];
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -54,7 +57,7 @@ let initializeCluster = () => {
                 marker: {
                     size: 1.5,
                     line: {
-                        color: getRandomColor(),
+                        color: COLORS[index],
                         width: 0.5
                     },
                     opacity: 0.9
@@ -64,11 +67,11 @@ let initializeCluster = () => {
                 text: getTooltipText(cluster),
                 hoverinfo: "text+name",
                 hoverlabel: {
-                    bgcolor: 'lightgrey',
+                    bgcolor: 'white',
                     bordercolor: 'darkgrey',
                     font: {
-                        color: 'black',
-                        family: 'Helvetica',
+                        color: COLORS[index],
+                        // family: 'Helvetica',
                         size: 16
                     }
                 }
@@ -82,9 +85,8 @@ let initializeCluster = () => {
                 xanchor: 12,
                 borderwidth: 2,
                 font: {
-                    family: 'sans-serif',
-                    size: 15,
-                    color: 'rgb(0,128,215)'
+                    size: '15px',
+                    color: 'black'
                 },
                 x: 1,
                 y: 0.5,
@@ -99,7 +101,7 @@ let initializeCluster = () => {
             autosize: true,
             scene: {
                 xaxis: {
-                    range: [-10, 10],
+                    range: RANGE,
                     showbackground: false,
                     zeroline: false,
                     ticks: false,
@@ -110,7 +112,7 @@ let initializeCluster = () => {
                     showexponent: false
                 },
                 yaxis: {
-                    range: [-10, 10],
+                    range: RANGE,
                     showbackground: false,
                     zeroline: false,
                     ticks: false,
@@ -121,7 +123,7 @@ let initializeCluster = () => {
                     showexponent: false
                 },
                 zaxis: {
-                    range: [-10, 10],
+                    range: RANGE,
                     showbackground: false,
                     zeroline: false,
                     ticks: false,

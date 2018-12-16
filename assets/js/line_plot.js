@@ -124,15 +124,29 @@ linePlot = () => {
         leftTitle = document.getElementById('left_title');
         rightTitle = document.getElementById('right_title');
 
-        document.getElementById('valenceBtn').addEventListener('click', () => {
+        document.getElementById('valenceBtn').addEventListener('click', function (e) {
+            document.querySelectorAll('#option button').forEach((button) => {
+                button.classList.remove('active');
+            });
+
+            this.classList.add('active');
             updateAll('valence');
         });
 
-        document.getElementById('danceabilityBtn').addEventListener('click', () => {
+        document.getElementById('danceabilityBtn').addEventListener('click', function (e) {
+            document.querySelectorAll('#option button').forEach((button) => {
+                button.classList.remove('active');
+            });
+            this.classList.add('active');
             updateAll('danceability');
         });
 
-        document.getElementById('energyBtn').addEventListener('click', () => {
+        document.getElementById('energyBtn').addEventListener('click', function (e)  {
+            document.querySelectorAll('#option button').forEach((button) => {
+                button.classList.remove('active');
+            });
+
+            this.classList.add('active');
             updateAll('energy');
         });
 
@@ -213,7 +227,7 @@ linePlot = () => {
 
         var ordinal = d3.scaleOrdinal()
             .domain(["Total", "Summer", "Winter", "Spring", "Autumn"])
-            .range(["black", "red", "darkblue", 'lightgreen', 'coral']);
+            .range(['black', 'red', 'darkblue', 'lightgreen', 'coral']);
 
         legend.append("g")
             .attr("class", "legendOrdinal")

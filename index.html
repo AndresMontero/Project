@@ -180,9 +180,9 @@
         <br/>
         <br/>
 
-        <div class="banner graph">
+        <div class="banner graph" id="distDiv">
             <div style="display: inline-block">
-                <button id="albumsDistBtn" name="updateButton">
+                <button id="albumsDistBtn" name="updateButton" class="active">
                     Go to Albums
                 </button>
             </div>
@@ -324,7 +324,7 @@
 
         <div id="line_interaction" style="margin-top: 30px">
             <div id="option" class="group">
-                <button id="danceabilityBtn" name="updateButton">Danceability</button>
+                <button id="danceabilityBtn" class="active" name="updateButton">Danceability</button>
                 <button id="valenceBtn" name="updateButton">Valence</button>
                 <button id="energyBtn" name="updateButton">Energy</button>
             </div>
@@ -335,7 +335,7 @@
 
             </div>
 
-            <div class="graph">
+            <div class="graph" id="season_features">
                 <div id="seasons_features_one" style="display: inline-block">
                     <h3 id="left_title">
                         Danceability seasons 2000-2010
