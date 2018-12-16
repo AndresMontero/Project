@@ -1,107 +1,72 @@
-# “Politics - can you listen?”
+# Music Evolution: 2000's forward
+
+Link to Data Story:  https://andresmontero.github.io/Project_ADA_2018/
+Main jupyter notebook: main.ipynb
 
 ## Abstract
+Music is a crucial element of everyday life and human culture. People spend several hours listening to it and lots of money acquiring it. “… Whenever people come together for any reason, music is there,”….weddings, funerals, birthdays, graduations, stadium sporting events, nightlife, prayer, a romantic dinner, mothers singing their infants to sleep and EPFL students studying with music as a background….” History tells that very early man developed primitive flutes from animal bones and used stones and wood as percussion, producing the first types of music. Voice would have been the first and most natural means of expression in our distant ancestors, used to bond socially or comfort a sleepless child. It is from these humble beginnings that the music we enjoy today evolved.
 
-The first idea of this project was to work on two different datasets: Million-Song and Twitter, 
-and with them try to find out the relation between the depression state of a user with 
-the kind of music he shares on social media. However, we found a big problem with this 
-approach: how to identify depression on a tweet?.
-After discussing with the TAs the idea to change to: which music is associated with 
-positive sentiments and sharing positive and uplifting messages on social media. 
-However, we encountered the following problems: 
+Why is music so important? Because it is a way to communicate with others through songs and melody and convey people's emotions. Music has always been present in every culture around the world, representing their esscence, feelings and beliefs. Music is never stagnant and continues to change and evolve in each time period, where people's preferences behave differently in terms of genres, artists and songs, and this behaviour is closely linked with music accesibility. We're now deep in the digital era, with the explosion of the internet, and music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to share, obtain and have instant access to huge collections of songs. This project aims to analyze the evolution of music since the 2000s in terms of songs/genres/artists popularity and preferences, evaluate the key features of the songs, such as energy, valence, danceability, and others. We aim to show and understand which were the most popular genres in the last years, the most popular songs, the most important artists and what were the trends of the key features of those hits.
 
-1. Music dataset, it was decided to change from Million-Song dataset to FMA: A Dataset 
-For Music Analysis because the later provide more organized information and 
-fits better for our analysis purposes.
-2. Twitter dataset contained on the cluster does not have labeled data for a possible 
-classification into positive/negative tweets, to tackle this issue we decided to use 
-labeled data from Kaggle. The new tweet dataset is called Sentiment140, this dataset 
-contains 1.6 million tweets.
-3. Relate both datasets, find tweets which are linked somehow to music and/or songs. 
-The main idea was to find the number of tweets which have a links to songs or have 
-the word spotify. The percentage of tweets related to music(spotify) is too low, 0.017% 
-fo the total dataset which is the main reason of why this idea is not feasible.
+For this purpose, we'll work with two datasets:
 
-Due to the infeasibility of the initial proposal, we redefined the project and decided 
-to focus uniquely on FMA dataset and relate its information with an important event 
-of the past years. The new project idea aims to find out the relation of music 
-production in terms of genres, energy, danceability and people’s preference with one 
-of the major political events of the past years which is 2016 US Election and Donald Trump 
-becoming president. We will compare what type of music (genre, energy, danceability, etc)
-people listened/produced on the years 2012-2016 ( Pre-Trump) and what people listen 
-on 2017-2018, in that sense we would like to also find the trend of what type of music
-people will listen in the following years by applying machine learning techniques for
-prediction analysis.
-For this new approach the datasets that we will be using are ‘FMA songs’ and we will complete/update this dataset with music information from Spotify API and LastFM  API for the last years.
+* FMA: A Dataset For Music Analysis
+* Our crawled dataset created using Spotify and LastFM API
 
 
 ## Research questions
 
-A list of research questions you would like to address during the project.
 The questions we would like to address are:
+* How did music/genre/artists preferences evolve in the last decade?
+* Do prefered songs/artists (e.g. top 10) for a given year have any similarities in terms of genre, song’s features or others? Or do they completely differ from each other?
+* How do song features such as valence/energy/danceability relate to each other? Do they depend on the genre of the songs?
+* How do song features such as valence/energy/danceability vary during the year? Do they have any correlation with the season of the year? How do such features vary over the years?
+* Are genre/songs popularity related to any specific event or events occurring in the world during the last decade?
+* What is the effect/impact of music streaming services on music preferences/popularity?
 
-* How reliable are the indicators of “Energy” and  “Valence” of the tracks?
-* How did the music evolve throughout in the last decade in terms of genres’ preferences?.
-* What are the different genres of music that are the closest related to the political events?
-* Does this ‘important’ political event impact music preferences of people? Does it impact the release of new music (differs in terms of genre)?
-* What kind (genre) of music will be listened in the following years?
 
 ## Dataset
 
-* #### FMA Songs.
+#### FMA Songs.
 
 1. Exploration and cleaning of data, to find if there are problems with the data 
 so that we can handle them.
 2. Deal with missing values and decide whether it is convenient to remove them or 
 treat them in a different way.
 
-* #### Spotify and LastFM API
+#### Spotify and LastFM API
 
 1. Obtain more data from the last years so that we can compare with the pre_trump dataset.
 2. Exploration and cleaning of data, to find if there are problems with the data so that 
 we can handle them.
 
 
-## A list of internal milestones up until project milestone 3
 
-1. Find insights from FMA dataset: relate variables and understand their behaviour before and after event intervals.
-2. Structure Spotify and LastFM data as FMA dataset.
-3. Prepare the results for the visualizations.
-4. Present the results on a github-page.
-5. Prepare the report of the project
+## Contribution of Group Members
+* __ Ariel Alba:__ data cleaning, preliminary data analysis, kmeans clustering, web site creation, Spotify data collection
+* __Andres Montero:__ dataset cleaning, data story, cleaning and merging, visualizations, js and html code, topic analysis
+* __Diego Iriarte:__ data story, visualizations, data exploration, topic analysis
 
-## Questions for TAa
 
-Add here some questions you have for us, in general, or project-specific.
-Does this project correspond to the “social good “topic?
 
-1. Is the project on the right track? Is it possible to achieve/complete before the 
-project deadline?
-2. Since we have many missing values, our dataset reduces considerably (e.g. 50%). 
-How big should the reduced dataset remain to still consider it as representative?
-3. In case we don’t find any effect/relation of this ‘big’ political event with
- music preferences/production, what should we present?
- 
 ## Project Structure
 
 The project has the following structure:
 
 * /
-    * main.ipynb
-        * Main notebook with all the statistics and analysis regarding FMA and tweets
-    * helpers.py 
-        * Helper methods: comparison methods
-    * README.md
-        * Readme of the project
-    * spotify.py
-        * Script to gather data from Spotify and LastFM API
-    * tweets.ipynb
-        * Notebook for tweets analysis, just code.
-    * tweets.py
-        * File to access to tweets dataset on DLAB cluster, for the first approach
-    * data/
-        * Folder with all datasets and pickle saved dataframes
-    
+* main.ipynb
+* Main notebook with all the statistics and analysis regarding FMA 
+* data cleaning.ipynb
+* Notebook with all the cleaning and data preprocessing
+* helpers.py 
+* Helper methods: comparison methods
+* README.md
+* Readme of the project
+* spotify.py
+* Script to gather data from Spotify and LastFM API
+* data/
+* Folder with all datasets and pickle saved dataframes
+
 ## Contributing
 
 To contribute, look at the project structures, it has files and roles of files well defined. 
@@ -114,5 +79,6 @@ to the same class as the file.
 * **Andres Montero**
 * **Ariel Alba**
 * **Diego Iriarte**
+
 
 
