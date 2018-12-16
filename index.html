@@ -18,12 +18,6 @@
     <script type="text/javascript" src="assets/js/cluster.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"-->
-    <!--integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"-->
-    <!--crossorigin="anonymous"></script>-->
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"-->
-    <!--integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"-->
-    <!--crossorigin="anonymous"></script>-->
     <link rel="shortcut icon" href="#"/>
 </head>
 
@@ -123,6 +117,7 @@
 
         <br/>
         <br/>
+
         <h3 id="title2"><b> Dataset</b></h3>
         For this purpose, we'll work with two datasets:
 
@@ -153,6 +148,8 @@
         which
         comprises from the year 2000 to 2018. The results and findings are summarized in the following lines.
 
+        <br/>
+        <br/>
 
         <h3 id="title3"><b> How many songs and albums? </b></h3>
 
@@ -209,6 +206,9 @@
         collection which
         does not collect the whole year but only until October.
 
+        <br/>
+        <br/>
+
         <h3 id="title5"><b> Have you listened to it? </b></h3>
 
         Song preferences and their popularity (also called hotness) over the years are difficult to predict and never
@@ -223,8 +223,6 @@
         popular. Let's show how the songs and albums popularity evolved in the analyzed time interval, the way to
         measure popularity is represented by the number of listens in the platforms Spotify/FMA.
 
-        <br/>
-        <br/>
         <br/>
         <br/>
 
@@ -257,17 +255,19 @@
             <div class="inline-block">
                 <img src="assets/images/graphs/top_10_artists_by_artist_hotness.png">
             </div>
-
         </div>
+
+        <br/>
+        <br/>
 
 
         These rankings coincide with the artists that have the higher number of streams in Spotify and also with
         their number
         of followers. But have you noticed that most of the artists listed are the most trending artists of the last
-        years? It is important to remember that the information displayed belongs to Spotify and FMA datasets and the results belong to the most listened artists in such platforms, so it is logical that more recent
+        years? It is important to remember that the information displayed belongs to Spotify and FMA datasets and the
+        results belong to the most listened artists in such platforms, so it is logical that more recent
         artists will tend to appear in the top listens as their music accesibility also increased.
         How many of your favorite artists have you found in the list?
-
 
         <br/>
         <br/>
@@ -286,6 +286,7 @@
 
         <br/>
         <br/>
+
         <div id="chartContainer" class="graph">
             <h3>Top Genres and Artist according to Hotness from 2013 to 2018</h3>
         </div>
@@ -305,7 +306,6 @@
 
         <br/>
         <br/>
-        <br/>
 
         <h3 id="title8"><b> Exploring song Features </b></h3>
         The analyzed dataset contains the song's metadata and audio features of each song. How about exploring some
@@ -316,7 +316,9 @@
         the songs that were released during the same season are grouped together and the mean of their valence,
         energy, and danceability is calculated. The three features are measured on a scale from 0.0 (being the least) to
         1.0 (being the most).
-        Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the buttons below.
+        Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the buttons
+        below.
+
         <br/>
         <br/>
 
@@ -327,11 +329,17 @@
                 <button id="energyBtn" name="updateButton">Energy</button>
             </div>
 
+            <br/>
+            <br/>
+
             <h5 id="general_title"><b> Danceability </b></h5>
 
             <div id="line_up_text">
 
             </div>
+
+            <br/>
+            <br/>
 
             <div class="graph" id="season_features">
                 <div id="seasons_features_one" style="display: inline-block">
@@ -351,6 +359,8 @@
                 </div>
             </div>
 
+            <br/>
+            <br/>
 
             <div id="line_down_text">
 
@@ -363,56 +373,88 @@
         <h3 id="title9"><b> How are song features related? </b></h3>
 
 
-        Have you found any relation between danceability/valence/energy of a song? By applying Machine Learning clustering techniques we'll analyze if such features are similar among songs of the same genre or artist. For this analysis we consider the three mentioned features plus an additional one called song_hotness for each of the tracks. For visualization purposes, we reduce the number of features to three by applying t-Distributed Stochastic Neighbor Embedding (t-SNE) technique, that is particularly well suited for the visualization of high-dimensional datasets. Now, we are ready to visualize the tracks in three dimensions and to cluster them based on their similarity or proximity on the three dimmensional space.
-        
-        <br/>
-        <br/>
-        To better visualize the clustering of the tracks, we sampled around 10,000 tracks and defined 8 clusters to group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8). The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity. Let's dive into the three dimmensional space! You can explore each of the points by moving the cursor over them and some information will be displayed (artist, title, album, year, genre). You can click on the cluster names listed on the right to unselect them and only display some information.
+        Have you found any relation between danceability/valence/energy of a song? By applying Machine Learning
+        clustering techniques we'll analyze if such features are similar among songs of the same genre or artist. For
+        this analysis we consider the three mentioned features plus an additional one called song_hotness for each of
+        the tracks. For visualization purposes, we reduce the number of features to three by applying t-Distributed
+        Stochastic Neighbor Embedding (t-SNE) technique, that is particularly well suited for the visualization of
+        high-dimensional datasets. Now, we are ready to visualize the tracks in three dimensions and to cluster them
+        based on their similarity or proximity on the three dimmensional space.
 
         <br/>
         <br/>
+        To better visualize the clustering of the tracks, we sampled around 10,000 tracks and defined 8 clusters to
+        group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of
+        this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8). The
+        algorithm works iteratively to assign each data point to one of K groups based on the features that are
+        provided. Data points are clustered based on feature similarity. Let's dive into the three dimmensional space!
+        You can explore each of the points by moving the cursor over them and some information will be displayed
+        (artist, title, album, year, genre). You can click on the cluster names listed on the right to unselect them and
+        only display some information.
+
+        <br/>
+        <br/>
+
         <h4><b>Tracks in the 3D space</b></h4>
+
         <div id="music_cluster">
         </div>
 
         <br/>
         <br/>
 
-        
-        Songs grouped in the same cluster usually share some similarities like genres or artist. While exploring cluster 1, which is the biggest one, we can see that most of the songs belong to Experimental, Rock, Electronic and Pop genres. If we dig deeper we can see some similarities in released date and artists for tracks wich are very close in distance. These similarities can also be found on the other clusters, which leads us to conclude that songs features such as energy, danceability and valence are inheritely related the genres, which also confirms our previous observations where we showed the features fluctuations in the last years and compared them with the genres popularities. Having genres Rock, Pop, Country with increasing popularity in the last years is reflected by the overall increasing danceability of the songs!
-        
+        Songs grouped in the same cluster usually share some similarities like genres or artist. While exploring cluster
+        1, which is the biggest one, we can see that most of the songs belong to Experimental, Rock, Electronic and Pop
+        genres. If we dig deeper we can see some similarities in released date and artists for tracks wich are very
+        close in distance. These similarities can also be found on the other clusters, which leads us to conclude that
+        songs features such as energy, danceability and valence are inheritely related the genres, which also confirms
+        our previous observations where we showed the features fluctuations in the last years and compared them with the
+        genres popularities. Having genres Rock, Pop, Country with increasing popularity in the last years is reflected
+        by the overall increasing danceability of the songs!
+
+        <br/>
+        <br/>
+
         <h3 id="title10"><b> Conclusions </b></h3>
-        
-        
+
+
         Our analysis has shown the evolution of music since 2000, the most
         popular genres, artists and songs for the past years, and how some key song features evolved over time.
         Some interesting results and observations:
         <ul>
-            <li> <b>Music Growth: </b>  Songs and albums production has increased over the years and is aligned with the popularity and explosion of music streaming services.</li>
-            
-            <li><b>Music Popularity: </b>
-            
-            Artist/song popularity vary depending on the metric considered and the platform which provides it. The more accesible the song, the higher its popularity. Are you still surprised why most of top artists/song are the latest trending ones of the past years?
+            <li><b>Music Growth: </b> Songs and albums production has increased over the years and is aligned with the
+                popularity and explosion of music streaming services.
+            </li>
 
-            Genres popularity is very dynamic and therefore difficult to compare over long time intervals. Some genres may have a steady popularity for several years, but most of them have their peaks and depths throughout the years. To overcome this variability, we focused on a shorter time interval and observed and increasing popularity of Rock, Pop, Country, International. Music Streaming services have also impacted on the growth of some "small" genres, by making them globally available with some clicks. </li>
-            
-            
-            <li> <b>Song features evolution:</b>
-                Song features depend on the genre and artist as seen on clustering algorithm.                 Danceability had a constant increase over the last years, caused by increasing popularity of Pop, Rock, International and Country. Energy had a decrease since 2014. Valence had an increase until year 2010 and then a decrease, to our surprise danceability and valence are not positively correlated. Weather and season of the year have an impact on the type of songs produced, higher energy songs are produced during summer, while higher danceable songs are produced in winter.
-                
+            <li><b>Music Popularity: </b>
+
+                Artist/song popularity vary depending on the metric considered and the platform which provides it. The
+                more accesible the song, the higher its popularity. Are you still surprised why most of top artists/song
+                are the latest trending ones of the past years?
+
+                Genres popularity is very dynamic and therefore difficult to compare over long time intervals. Some
+                genres may have a steady popularity for several years, but most of them have their peaks and depths
+                throughout the years. To overcome this variability, we focused on a shorter time interval and observed
+                and increasing popularity of Rock, Pop, Country, International. Music Streaming services have also
+                impacted on the growth of some "small" genres, by making them globally available with some clicks.
+            </li>
+
+
+            <li><b>Song features evolution:</b>
+                Song features depend on the genre and artist as seen on clustering algorithm. Danceability had a
+                constant increase over the last years, caused by increasing popularity of Pop, Rock, International and
+                Country. Energy had a decrease since 2014. Valence had an increase until year 2010 and then a decrease,
+                to our surprise danceability and valence are not positively correlated. Weather and season of the year
+                have an impact on the type of songs produced, higher energy songs are produced during summer, while
+                higher danceable songs are produced in winter.
+
             </li>
         </ul>
 
-
         <br/>
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
 
     </div>
 
