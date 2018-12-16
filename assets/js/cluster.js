@@ -55,7 +55,8 @@ let initializeCluster = () => {
                 z: unpack(cluster, 'z'),
                 mode: 'markers',
                 marker: {
-                    size: 3,
+                    size: 5,
+                    color: COLORS[index],
                     line: {
                         color: COLORS[index],
                         width: 0.5
