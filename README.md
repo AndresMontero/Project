@@ -35,13 +35,13 @@ The questions we would like to address are:
 
 #### Spotify and LastFM API
 
-1. Obtain more data from the last years so that we can compare with the pre_trump dataset.
+1. Obtain more data from the last years so that we can compare with the FMA dataset.
 2. Exploration and cleaning of data, to find if there are problems with the data so that we can handle them.
 
 
 
 ## Contribution of Group Members
-* __Ariel Alba:__ data cleaning, preliminary data analysis, K-means clustering, website creation, Spotify data collection
+* __Ariel Alba:__ data cleaning, preliminary data analysis, K-means clustering, website creation and visualizations, APIs data collection
 * __Andres Montero:__ dataset cleaning, data story, cleaning and merging, visualizations, js and HTML code, topic analysis
 * __Diego Iriarte:__ data story, visualizations, data exploration, topic analysis
 
