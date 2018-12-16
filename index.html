@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>ADA PROJECT</title>
     <meta charset="UTF-8">
@@ -18,448 +19,472 @@
     <script type="text/javascript" src="assets/js/cluster.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="shortcut icon" href="#"/>
+    <link rel="shortcut icon" href="#" />
 </head>
 
-<body class="w3-content" style="max-width:1300px"
-      data-spy="scroll" data-target="#menu" data-offset="0">
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-    <div class="w3-container w3-display-container w3-padding-16">
-        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-        <h3 class="w3-wide">
-            <b>
-                <img src="assets/images/epfl_logo.png" width="200px">
-            </b>
-        </h3>
-    </div>
-    <div id="menu" class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-        <a href="#title1" class="w3-bar-item w3-button">Introduction</a>
-        <a href="#title2" class="w3-bar-item w3-button">Dataset</a>
-        <a href="#title3" class="w3-bar-item w3-button">How many songs and albums?</a>
-        <!--<a href="#title4" class="w3-bar-item w3-button">Distribution of the Data</a>-->
-        <a href="#title5" class="w3-bar-item w3-button">Have you listened to it?</a>
-        <a href="#title6" class="w3-bar-item w3-button">Let's find your favorite artists!</a>
-        <a href="#title7" class="w3-bar-item w3-button">How about the trending genres?</a>
-        <a href="#title8" class="w3-bar-item w3-button">Exploring song Features</a>
-        <a href="#title9" class="w3-bar-item w3-button">How are song features related?</a>
-        <a href="#title10" class="w3-bar-item w3-button">Conclusions</a>
-    </div>
-</nav>
+<body class="w3-content" style="max-width:1300px" data-spy="scroll" data-target="#menu" data-offset="0">
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+        <div class="w3-container w3-display-container w3-padding-16">
+            <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+            <h3 class="w3-wide">
+                <b>
+                    <img src="assets/images/epfl_logo.png" width="200px">
+                </b>
+            </h3>
+        </div>
+        <div id="menu" class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+            <a href="#title1" class="w3-bar-item w3-button">Introduction</a>
+            <a href="#title2" class="w3-bar-item w3-button">Dataset</a>
+            <a href="#title3" class="w3-bar-item w3-button">How many songs and albums?</a>
+            <!--<a href="#title4" class="w3-bar-item w3-button">Distribution of the Data</a>-->
+            <a href="#title5" class="w3-bar-item w3-button">Have you listened to it?</a>
+            <a href="#title6" class="w3-bar-item w3-button">Let's find your favorite artists!</a>
+            <a href="#title7" class="w3-bar-item w3-button">How about the trending genres?</a>
+            <a href="#title8" class="w3-bar-item w3-button">Exploring song Features</a>
+            <a href="#title9" class="w3-bar-item w3-button">How are song features related?</a>
+            <a href="#title10" class="w3-bar-item w3-button">Conclusions</a>
+        </div>
+    </nav>
 
-<!-- Top menu on small screens -->
-<header id="header" class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-    <div class="w3-bar-item w3-padding-24 w3-wide">
-        <img src="assets/images/epfl_black.png" width="100">
-    </div>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i
-            class="fa fa-bars"></i></a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
-     id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
-
-    <!-- Push down content on small screens -->
-    <div class="w3-hide-large" style="margin-top:83px"></div>
-
-    <!-- Top header -->
-    <header class="w3-container w3-xlarge">
-        <h2 class="w3-left">
-            <b>
-                Music Evolution: 2000's forward
-            </b>
-        </h2>
-        <p class="w3-right">
-            <!--<i class="fa fa-shopping-cart w3-margin-right"></i>-->
-            <!--<i class="fa fa-search"></i>-->
-        </p>
+    <!-- Top menu on small screens -->
+    <header id="header" class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+        <div class="w3-bar-item w3-padding-24 w3-wide">
+            <img src="assets/images/epfl_black.png" width="100">
+        </div>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
     </header>
 
-    <div class="w3-display-container w3-container w3-justify">
-        <h3 id="title1"><b> Introduction </b></h3>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-        Music is a crucial element of everyday life and human culture. People spend several hours listening to it
-        and
-        lots of money acquiring it. “… Whenever people come together for any reason, music is there,”….weddings, funerals, birthdays, graduations, stadium sporting events, nightlife, prayer, a romantic dinner, mothers singing their infants to sleep and EPFL students
-        studying with music as a background….”
-        History tells that very early man developed primitive flutes from animal bones and used stones and wood as
-        percussion, producing the first types of music. Voice would have been the first and most natural means of
-        expression in our distant ancestors, used to bond socially or comfort a sleepless child. It is from these
-        humble
-        beginnings that the music we enjoy today evolved.
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
 
-        <br/>
-        <br/>
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
 
-        Why is music so important? Because it is a way to communicate with others through songs and melody and convey
-        people's emotions. Music has
-        always been present in every culture around the world, representing their esscence, feelings and beliefs.
-        Music is never stagnant and continues to change and evolve in each time period, where people's preferences behave differently in terms of genres, artists and songs, and this behaviour is closely linked with music
-        accesibility.
-        
-        
-        We’re now deep in the digital era, with the explosion of the internet, and music Services as Apple Music,
-        Spotify, Tidal and other apps and
-        platforms; it has become easier to share,
-        obtain and have instant access to huge collections of songs.
-        This project aims to analyze the evolution of music since the 2000s in terms of
-        songs/genres/artists popularity and preferences, evaluate the key features of the songs, such as energy,
-        valence, danceability, and others.
-        We aim to show and understand which were the most popular genres in the last years, the most popular songs,
-        the
-        most important artists and what were the trends of the key features of those hits.
+        <!-- Top header -->
+        <header class="w3-container w3-xlarge">
+            <h2 class="w3-left">
+                <b>
+                    Music Evolution: 2000's forward
+                </b>
+            </h2>
+            <p class="w3-right">
+                <!--<i class="fa fa-shopping-cart w3-margin-right"></i>-->
+                <!--<i class="fa fa-search"></i>-->
+            </p>
+        </header>
 
-        <br/>
-        <br/>
+        <div class="w3-display-container w3-container w3-justify">
+            <h3 id="title1"><b> Introduction </b></h3>
 
-        <h3 id="title2"><b> Dataset</b></h3>
-        For this purpose, we'll work with two datasets:
+            Music is a crucial element of everyday life and human culture. People spend several hours listening to it
+            and
+            lots of money acquiring it. “… Whenever people come together for any reason, music is there,”….weddings,
+            funerals, birthdays, graduations, stadium sporting events, nightlife, prayer, a romantic dinner, mothers
+            singing their infants to sleep and EPFL students
+            studying with music as a background….”
+            History tells that very early man developed primitive flutes from animal bones and used stones and wood as
+            percussion, producing the first types of music. Voice would have been the first and most natural means of
+            expression in our distant ancestors, used to bond socially or comfort a sleepless child. It is from these
+            humble
+            beginnings that the music we enjoy today evolved.
 
-        <br/>
-        <ul>
-            <li>
-                <b><a href="https://arxiv.org/pdf/1612.01840.pdf">FMA: A Dataset For Music Analysis</a></b>
-                Free Music Archive (FMA), is an open and easily accessible music dataset.
-                The dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
-                arranged in a hierarchical taxonomy of 161 genres. It provides full-length and high-quality audio,
-                pre-computed features, together with the track- and user-level metadata, tags, and free-form text
-                such
-                as
-                biographies. Most useful features from user-level metadata were extracted and used in the current
-                analysis.
-            </li>
+            <br />
+            <br />
 
-            <br/>
-            <li>
-                <b><a href="https://developer.spotify.com/documentation/web-api/">Spotify and LastFM API</a></b>
-                : It consists of our crawled dataset created using Spotify and LastFM API.
-                To complete the previous dataset and extend our analysis to the last years, information from years
-                2015-2018 was gathered from Spotify and LastFM API.
-            </li>
-        </ul>
-
-        Both datasets were merged into a one complete dataset containing information for the analyzed time interval
-        which
-        comprises from the year 2000 to 2018. The results and findings are summarized in the following lines.
-
-        <br/>
-        <br/>
-
-        <h3 id="title3"><b> How many songs and albums? </b></h3>
-
-        Music, like all other arts, evolve over the years and dynamically change according to people's interests
-        and
-        demands. Along
-        history, several genres emerged in different periods of time, in most of the cases influenced by the region
-        of
-        origin and particular events occurring at that time. The decade of the 2000s, characterized by the
-        increasing
-        interest in internet technologies and social media marked a very important milestone in technological evolution
-        and surely had a crucial impact on music evolution. After this period, such technological evolution
-        continued with the explosion of streaming and cloud
-        services, and the increasing popularity of portable and smart devices, which reflects on how people access and
-        consumes music and has definitely impacted on their preferences.
-        <br/>
-        <br/>
-        We aim to analyze
-        and understand such music evolution, from 2000 to 2018 in terms of quantity, people's preferences, and
-        songs
-        features. To visually understand the growth of music production/consumption over the years, let's see how
-        many tracks and albums were produced throughout the years.
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
-        <div class="banner graph" id="distDiv">
-            <div style="display: inline-block">
-                <button id="albumsDistBtn" name="updateButton" class="active">
-                    Go to Albums
-                </button>
-            </div>
-
-            <div id="fadeContainer" style="display: inline-block">
-                <img src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
-            </div>
-            <div style="display: inline-block">
-                <button id="tracksDistBtn" name="updateButton">
-                    Go to Tracks
-                </button>
-            </div>
-        </div>
-
-        <br/>
-        <br/>
-        The production of tracks and albums has increased exponentially over the years and as expected, the
-        production of albums is positively correlated with the production of tracks. This growth is clearly aligned with
-        the increasing popularity of music streaming services since 2009, where countless pieces of internet-connected
-        hardware offer instant access to tens of millions of music tracks.
-        In year 2014, we have a decrease of number of albums/tracks, but it is due to the limited amount of data of FMA
-        dataset and the limit of API Spotify requests that were mostly used to complete the information of the years
-        2015 to 2018. For the last year (2018), we can also see a decrement of music production, but it is due to data
-        collection which
-        does not collect the whole year but only until October.
-
-        <br/>
-        <br/>
-
-        <h3 id="title5"><b> Have you listened to it? </b></h3>
-
-        Song preferences and their popularity (also called hotness) over the years are difficult to predict and never
-        follow a perfect recipe
-        since even "similar" people have different music preferences.
-        Usually, popular songs are the catchy, compelling and commercial ones, meaning they are well crafted and
-        connect to a broad audience and it causes an action on the part of the listener. It may make them cry,
-        laugh,
-        dance, go purchase the song, or simply it causes them to react. Exposure to the song may
-        also cause them to become more wanted by people, hearing a song enough times makes them "grow on you".
-        However, and as stated initially, it is impossible to find specific patterns or rules that make songs
-        popular. Let's show how the songs and albums popularity evolved in the analyzed time interval, the way to
-        measure popularity is represented by the number of listens in the platforms Spotify/FMA.
-
-        <br/>
-        <br/>
-
-        <div id='listen_to_it' class="banner graph">
-            <div>
-                <iframe frameborder="0" scrolling="no"
-                        src="//plot.ly/~Diegogab/70.embed?link=false&modebar=false"></iframe>
-            </div>
-            <div>
-                <iframe frameborder="0" scrolling="no"
-                        src="//plot.ly/~Diegogab/74.embed?link=false&modebar=false"></iframe>
-            </div>
-        </div>
-
-        <br/>
-        <br/>
-
-        <h3 id="title6"><b> Let's find your favorite artists! </b></h3>
-
-        Artists popularity is closely linked to their song's popularity, in most cases, it can be measured by their
-        sales and the number of listens they have. Some artists are able to stay popular for a long time due to
-        their constant release of hits, but others have a temporal and short popularity marked by a unique or few
-        successes. Do you think your favorite groups/artist will show up in the list of the most popular of the last
-        years? Let's explore the rankings.
-
-        <br/>
-        <br/>
-
-        <div class="banner graph">
-            <div class="inline-block">
-                <img src="assets/images/graphs/top_10_artists_by_artist_hotness.png">
-            </div>
-        </div>
-
-        <br/>
-        <br/>
+            Why is music so important? Because it is a way to communicate with others through songs and melody and
+            convey
+            people's emotions. Music has
+            always been present in every culture around the world, representing their essence, feelings, and beliefs.
+            Music is never stagnant and continues to change and evolve in each time period, where people's preferences
+            behave differently in terms of genres, artists and songs, and this behavior is closely linked with music
+            accessibility.
 
 
-        These rankings coincide with the artists that have the higher number of streams in Spotify and also with
-        their number
-        of followers. But have you noticed that most of the artists listed are the most trending artists of the last
-        years? It is important to remember that the information displayed belongs to Spotify and FMA datasets and the
-        results belong to the most listened artists in such platforms, so it is logical that more recent
-        artists will tend to appear in the top listens as their music accesibility also increased.
-        How many of your favorite artists have you found in the list?
+            We’re now deep in the digital era, with the explosion of the internet, and music Services as Apple Music,
+            Spotify, Tidal and other apps and
+            platforms; it has become easier to share,
+            obtain and have instant access to huge collections of songs.
+            This project aims to analyze the evolution of music since the 2000s in terms of
+            songs/genres/artists popularity and preferences, evaluate the key features of the songs, such as energy,
+            valence, danceability, and others.
+            We aim to show and understand which were the most popular genres in the last years, the most popular songs,
+            the
+            most important artists and what were the trends of the key features of those hits.
 
-        <br/>
-        <br/>
+            <br />
+            <br />
 
-        <h3 id="title7"><b> How about the trending genres? </b></h3>
+            <h3 id="title2"><b> Dataset</b></h3>
+            For this purpose, we'll work with two datasets:
 
-        Music genres are conventional categories that identify songs/artists as belonging to a shared tradition or
-        set of conventions. Music can be divided into different genres and these classifications are often
-        subjective and controversial, and some genres may overlap. Over the years many new genres have appeared by
-        the transformation or influence of other genres. This dynamic behavior, which causes genres popularity to
-        change over time, is also generated by fluctuating people's demands and interests. Now, we present an
-        interactive visualization which depicts the genre's evolution in the last five years, considering only the
-        top
-        10 most popular genres. Their popularity (or hotness) is measured by the mean of all artists hotness who
-        released songs that year and that belong to that specific genre. Let's explore the results!
+            <br />
+            <ul>
+                <li>
+                    <b><a href="https://arxiv.org/pdf/1612.01840.pdf">FMA: A Dataset For Music Analysis</a></b>
+                    Free Music Archive (FMA), is an open and easily accessible music dataset.
+                    The dataset contains the information of 106,574 tracks from 16,341 artists and 14,854 albums,
+                    arranged in a hierarchical taxonomy of 161 genres. It provides full-length and high-quality audio,
+                    pre-computed features, together with the track- and user-level metadata, tags, and free-form text
+                    such
+                    as
+                    biographies. Most useful features from user-level metadata were extracted and used in the current
+                    analysis.
+                </li>
 
-        <br/>
-        <br/>
+                <br />
+                <li>
+                    <b><a href="https://developer.spotify.com/documentation/web-api/">Spotify and LastFM API</a></b>
+                    : It consists of our crawled dataset created using Spotify and LastFM API.
+                    To complete the previous dataset and extend our analysis to the last years, information from years
+                    2015-2018 was gathered from Spotify and LastFM API.
+                </li>
+            </ul>
 
-        <div id="chartContainer" class="graph">
-            <h3>Top Genres and Artist according to Hotness from 2013 to 2018</h3>
-        </div>
+            Both datasets were merged into a one complete dataset containing information for the analyzed time interval
+            which
+            comprises from the year 2000 to 2018. The results and findings are summarized in the following lines.
 
-        <br/>
-        <br/>
+            <br />
+            <br />
 
-        <div id="genres_hotness_text">
-            <h4> Genres </h4>
-            You can explore the genre's popularity, by moving the cursor over the colored areas.
-            They represent the top 10 genres (based on song hotness) in the time interval 2013 to 2018.
-            The genres are: Rock, Pop, International, Instrumental, Experimental, Easy Listening,
-            Country and Blues. The time interval was considered for the last five years, due to genre variability
-            over time. For every year, each of the genres is represented by their hotness,
-            which is obtained by the mean of all songs hotness released on the specified year.
-        </div>
+            <h3 id="title3"><b> How many songs and albums? </b></h3>
 
-        <br/>
-        <br/>
+            Music, like all other arts, evolve over the years and dynamically change according to people's interests
+            and
+            demands. Along
+            history, several genres emerged in different periods of time, in most of the cases influenced by the region
+            of
+            origin and particular events occurring at that time. The decade of the 2000s, characterized by the
+            increasing
+            interest in internet technologies and social media marked a very important milestone in technological
+            evolution
+            and surely had a crucial impact on music evolution. After this period, such technological evolution
+            continued with the explosion of streaming and cloud
+            services, and the increasing popularity of portable and smart devices, which reflects on how people access
+            and
+            consumes music and has definitely impacted on their preferences.
+            <br />
+            <br />
+            We aim to analyze
+            and understand such music evolution, from 2000 to 2018 in terms of quantity, people's preferences, and
+            songs
+            features. To visually understand the growth of music production/consumption over the years, let's see how
+            many tracks and albums were produced throughout the years.
+            <br />
+            <br />
+            <br />
+            <br />
 
-        <h3 id="title8"><b> Exploring song Features </b></h3>
-        The analyzed dataset contains the song's metadata and audio features of each song. How about exploring some
-        of
-        these features and their evolution over the years? Are they somehow related to genres/artist evolution?
-        These features can also help us measure the variations of music during one year, and to achieve higher
-        granularity we split the analysis by the seasons of the year (e.g summer, winter, autumn, and spring). All
-        the songs that were released during the same season are grouped together and the mean of their valence,
-        energy, and danceability is calculated. The three features are measured on a scale from 0.0 (being the least) to
-        1.0 (being the most).
-        Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the buttons
-        below.
-
-        <br/>
-        <br/>
-
-        <div id="line_interaction" style="margin-top: 30px">
-            <div id="option" class="group">
-                <button id="danceabilityBtn" class="active" name="updateButton">Danceability</button>
-                <button id="valenceBtn" name="updateButton">Valence</button>
-                <button id="energyBtn" name="updateButton">Energy</button>
-            </div>
-
-            <br/>
-            <br/>
-
-            <h5 id="general_title"><b> Danceability </b></h5>
-
-            <div id="line_up_text">
-
-            </div>
-
-            <br/>
-            <br/>
-
-            <div class="graph" id="season_features">
-                <div id="seasons_features_one" style="display: inline-block">
-                    <h3 id="left_title">
-                        Danceability seasons 2000-2010
-                    </h3>
+            <div class="banner graph" id="distDiv">
+                <div style="display: inline-block">
+                    <button id="albumsDistBtn" name="updateButton" class="active">
+                        Go to Albums
+                    </button>
                 </div>
 
-                <div id="seasons_features_two" style="display: inline-block">
-                    <h3 id="right_title">
-                        Danceability seasons 2010-2018
-                    </h3>
+                <div id="fadeContainer" style="display: inline-block">
+                    <img src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
                 </div>
-
-                <div id="legend" style="display: inline-block; vertical-align: bottom">
-
+                <div style="display: inline-block">
+                    <button id="tracksDistBtn" name="updateButton">
+                        Go to Tracks
+                    </button>
                 </div>
             </div>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
+            The production of tracks and albums has increased exponentially over the years and as expected, the
+            production of albums is positively correlated with the production of tracks. This growth is clearly aligned
+            with
+            the increasing popularity of music streaming services since 2009, where countless pieces of
+            internet-connected
+            hardware offer instant access to tens of millions of music tracks.
+            In the year 2014, we have a decrease in the number of albums/tracks, but it is due to the limited amount of
+            data of FMA
+            dataset and the limit of API Spotify requests that were mostly used to complete the information of the
+            years
+            2015 to 2018. For the last year (2018), we can also see a decrement of music production, but it is due to
+            data
+            collection which
+            does not collect the whole year but only until October.
 
-            <div id="line_down_text">
+            <br />
+            <br />
 
+            <h3 id="title5"><b> Have you listened to it? </b></h3>
+
+            Song preferences and their popularity (also called hotness) over the years are difficult to predict and
+            never
+            follow a perfect recipe
+            since even "similar" people have different music preferences.
+            Usually, popular songs are the catchy, compelling and commercial ones, meaning they are well crafted and
+            connect to a broad audience and it causes an action on the part of the listener. It may make them cry,
+            laugh,
+            dance, go purchase the song, or simply it causes them to react. Exposure to the song may also cause them to
+            become more wanted by people, hearing a song enough times makes them "grow on you".
+            However, and as stated initially, it is impossible to find specific patterns or rules that make songs
+            popular. Let's show how the songs and albums popularity evolved in the analyzed time interval, the way to
+            measure popularity is represented by the number of listens in the platforms Spotify/FMA.
+
+            <br />
+            <br />
+
+            <div id='listen_to_it' class="banner graph">
+                <div>
+                    <iframe frameborder="0" scrolling="no" src="//plot.ly/~Diegogab/70.embed?link=false&modebar=false"></iframe>
+                </div>
+                <div>
+                    <iframe frameborder="0" scrolling="no" src="//plot.ly/~Diegogab/74.embed?link=false&modebar=false"></iframe>
+                </div>
             </div>
+
+            <br />
+            <br />
+
+            <h3 id="title6"><b> Let's find your favorite artists! </b></h3>
+
+            Artists popularity is closely linked to their song's popularity, in most cases, it can be measured by their
+            sales and the number of listens they have. Some artists are able to stay popular for a long time due to
+            their constant release of hits, but others have a temporal and short popularity marked by a unique or few
+            successes. Do you think your favorite groups/artist will show up in the list of the most popular of the
+            last years? Let's explore the rankings.
+
+            <br />
+            <br />
+
+            <div class="banner graph">
+                <div class="inline-block">
+                    <img src="assets/images/graphs/top_10_artists_by_artist_hotness.png">
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+
+            These rankings coincide with the artists that have the higher number of streams in Spotify and also with
+            their number
+            of followers. But have you noticed that most of the artists listed are the most trending artists of the
+            last years? It is important to remember that the information displayed belongs to Spotify and FMA datasets
+            and the results belong to the most listened artists in such platforms, so it is logical that more recent
+            artists will tend to appear in the top listens as their music accessibility also increased.
+            How many of your favorite artists have you found in the list?
+
+            <br />
+            <br />
+
+            <h3 id="title7"><b> How about the trending genres? </b></h3>
+
+            Music genres are conventional categories that identify songs/artists as belonging to a shared tradition or
+            set of conventions. Music can be divided into different genres and these classifications are often
+            subjective and controversial, and some genres may overlap. Over the years many new genres have appeared by
+            the transformation or influence of other genres. This dynamic behavior, which causes genres popularity to
+            change over time, is also generated by fluctuating people's demands and interests. Now, we present an
+            interactive visualization which depicts the genre's evolution in the last five years, considering only the
+            top
+            10 most popular genres. Their popularity (or hotness) is measured by the mean of all artists hotness who
+            released songs that year and that belong to that specific genre. Let's explore the results!
+
+            <br />
+            <br />
+
+            <div id="chartContainer" class="graph">
+                <h3>Top Genres and Artist according to Hotness from 2013 to 2018</h3>
+            </div>
+
+            <br />
+            <br />
+
+            <div id="genres_hotness_text">
+                <h4> Genres </h4>
+                You can explore the genre's popularity, by moving the cursor over the colored areas.
+                They represent the top 10 genres (based on song hotness) in the time interval 2013 to 2018.
+                The genres are: Rock, Pop, International, Instrumental, Experimental, Easy Listening,
+                Country and Blues. The time interval was considered for the last five years, due to genre variability
+                over time. For every year, each of the genres is represented by their hotness,
+                which is obtained by the mean of all songs hotness released on the specified year.
+            </div>
+
+            <br />
+            <br />
+
+            <h3 id="title8"><b> Exploring song Features </b></h3>
+            The analyzed dataset contains the song's metadata and audio features of each song. How about exploring some
+            of
+            these features and their evolution over the years? Are they somehow related to genres/artist evolution?
+            These features can also help us measure the variations of music during one year, and to achieve higher
+            granularity we split the analysis by the seasons of the year (e.g summer, winter, autumn, and spring). All
+            the songs that were released during the same season are grouped together and the mean of their valence,
+            energy, and danceability is calculated. The three features are measured on a scale from 0.0 (being the
+            least) to
+            1.0 (being the most).
+            Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the
+            buttons
+            below.
+
+
+            <br />
+            <br />
+
+            <div id="line_interaction" style="margin-top: 30px">
+                <div id="option" class="group">
+                    <button id="danceabilityBtn" class="active" name="updateButton">Danceability</button>
+                    <button id="valenceBtn" name="updateButton">Valence</button>
+                    <button id="energyBtn" name="updateButton">Energy</button>
+                </div>
+
+                <br />
+                <br />
+
+                <h5 id="general_title"><b> Danceability </b></h5>
+
+                <div id="line_up_text">
+
+                </div>
+
+                <br />
+                <br />
+
+                <div class="graph" id="season_features">
+                    <div id="seasons_features_one" style="display: inline-block">
+                        <h3 id="left_title">
+                            Danceability seasons 2000-2010
+                        </h3>
+                    </div>
+
+                    <div id="seasons_features_two" style="display: inline-block">
+                        <h3 id="right_title">
+                            Danceability seasons 2010-2018
+                        </h3>
+                    </div>
+
+                    <div id="legend" style="display: inline-block; vertical-align: bottom">
+
+                    </div>
+                </div>
+
+                <br />
+                <br />
+
+                <div id="line_down_text">
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <h3 id="title9"><b> How are song features related? </b></h3>
+
+
+            Have you found any relation between danceability/valence/energy of a song? By applying Machine Learning
+            clustering techniques we'll analyze if such features are similar among songs of the same genre or artist.
+            For this analysis, we consider the three mentioned features plus an additional one called song_hotness for
+            each of the tracks. For visualization purposes, we reduce the number of features to three by applying
+            t-Distributed
+            Stochastic Neighbor Embedding (t-SNE) technique, that is particularly well suited for the visualization of
+            high-dimensional datasets. Now, we are ready to visualize the tracks in three dimensions and to cluster
+            them based on their similarity or proximity on the three-dimensional space.
+
+            <br />
+            <br />
+            To better visualize the clustering of the tracks, we sampled around 10,000 tracks and defined 8 clusters to
+            group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The
+            goal of this algorithm is to find groups in the data, with the number of groups represented by the variable
+            K (K=8). The algorithm works iteratively to assign each data point to one of K groups based on the features
+            that are provided. Data points are clustered based on feature similarity. Let's dive into the
+            three-dimensional space!
+            You can explore each of the points by moving the cursor over them and some information will be displayed
+            (artist, title, album, year, genre). You can click on the cluster names listed on the right to unselect
+            them and only display the specified cluster's points.
+
+            <br />
+            <br />
+
+            <h4><b>Tracks in the 3D space</b></h4>
+
+            <div id="music_cluster">
+            </div>
+
+            <br />
+            <br />
+
+            Songs grouped in the same cluster are likely to share some similarities like genres or artist. While
+            exploring cluster
+            1, which is the biggest one, we can see that most of the songs belong to Experimental, Rock, Electronic and
+            Pop genres. If we dig deeper we can see some similarities in released date and artists for tracks which are
+            very close in distance. These similarities can also be found on the other clusters, which leads us to
+            conclude that songs features such as energy, danceability, and valence are inherently related with the
+            genres, which also confirms
+            our previous observations where we showed the features fluctuations in the last years and compared them
+            with the
+            genres popularities. Having genres Rock, Pop, Country with increasing popularity in the last years is
+            reflected
+            by the overall increasing danceability of the songs!
+
+            <br />
+            <br />
+
+            <h3 id="title10"><b> Conclusions </b></h3>
+
+            Our analysis has shown the evolution of music since 2000, the most
+            popular genres, artists and songs for the past years, and how some key song features evolved over time.
+            Some interesting results and observations:
+            <ul>
+                <li><b>Music Growth: </b> Songs and albums production has increased over the years and is aligned with
+                    the
+                    popularity and explosion of music streaming services and portable devices which increase music
+                    accesibility.
+                </li>
+
+                <li><b>Music Popularity: </b>
+
+                    Artist/song popularity vary depending on the metric considered and the platform which provides it.
+                    The
+                    more accessible the song, the higher it's popularity. Are you still surprised why most of top
+                    artists/song
+                    are the latest trending ones of the past years?
+
+                    Genres popularity is very dynamic and therefore difficult to compare over long time intervals. Some
+                    genres may have a steady popularity for several years, but most of them have their peaks and depths
+                    throughout the years. To overcome this variability, we focused on a shorter time interval and
+                    observed an increasing popularity of Rock, Pop, Country, International. Music Streaming services
+                    have also
+                    impacted on the growth of some "small" genres, by making them globally available and easy to
+                    access.
+                </li>
+
+
+                <li><b>Song features evolution:</b>
+                    Song features depend on the genre and artist as seen on clustering algorithm. Danceability had a
+                    constant increase over the last years, caused by the increasing popularity of Pop, Rock,
+                    International and
+                    Country. Energy and valence had an increase until the year 2010 and then a decrease,
+                    to our surprise danceability and valence are not positively correlated. Weather and season of the
+                    year have an impact on the type of songs produced, higher energy songs are produced during summer,
+                    while higher danceable songs are produced in winter.
+
+                </li>
+            </ul>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
         </div>
 
-        <br/>
-        <br/>
-
-        <h3 id="title9"><b> How are song features related? </b></h3>
-
-
-        Have you found any relation between danceability/valence/energy of a song? By applying Machine Learning
-        clustering techniques we'll analyze if such features are similar among songs of the same genre or artist. For
-        this analysis we consider the three mentioned features plus an additional one called song_hotness for each of
-        the tracks. For visualization purposes, we reduce the number of features to three by applying t-Distributed
-        Stochastic Neighbor Embedding (t-SNE) technique, that is particularly well suited for the visualization of
-        high-dimensional datasets. Now, we are ready to visualize the tracks in three dimensions and to cluster them
-        based on their similarity or proximity on the three dimmensional space.
-
-        <br/>
-        <br/>
-        To better visualize the clustering of the tracks, we sampled around 10,000 tracks and defined 8 clusters to
-        group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of
-        this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8). The
-        algorithm works iteratively to assign each data point to one of K groups based on the features that are
-        provided. Data points are clustered based on feature similarity. Let's dive into the three dimmensional space!
-        You can explore each of the points by moving the cursor over them and some information will be displayed
-        (artist, title, album, year, genre). You can click on the cluster names listed on the right to unselect them and
-        only display the specified cluster's points.
-
-        <br/>
-        <br/>
-
-        <h4><b>Tracks in the 3D space</b></h4>
-
-        <div id="music_cluster">
+        <div class="w3-black w3-center w3-padding-24">Powered by Chuchusmote Team 2018 <br>Ariel Alba - Diego Iriarte -
+            Andres Montero</a>
         </div>
 
-        <br/>
-        <br/>
-
-        Songs grouped in the same cluster are likely to share some similarities like genres or artist. While exploring cluster
-        1, which is the biggest one, we can see that most of the songs belong to Experimental, Rock, Electronic and Pop
-        genres. If we dig deeper we can see some similarities in released date and artists for tracks wich are very
-        close in distance. These similarities can also be found on the other clusters, which leads us to conclude that
-        songs features such as energy, danceability and valence are inheritely related with the genres, which also confirms
-        our previous observations where we showed the features fluctuations in the last years and compared them with the
-        genres popularities. Having genres Rock, Pop, Country with increasing popularity in the last years is reflected
-        by the overall increasing danceability of the songs!
-
-        <br/>
-        <br/>
-
-        <h3 id="title10"><b> Conclusions </b></h3>
-
-        Our analysis has shown the evolution of music since 2000, the most
-        popular genres, artists and songs for the past years, and how some key song features evolved over time.
-        Some interesting results and observations:
-        <ul>
-            <li><b>Music Growth: </b> Songs and albums production has increased over the years and is aligned with the
-                popularity and explosion of music streaming services and portable devices which increase music accesibility.
-            </li>
-
-            <li><b>Music Popularity: </b>
-
-                Artist/song popularity vary depending on the metric considered and the platform which provides it. The
-                more accesible the song, the higher its popularity. Are you still surprised why most of top artists/song
-                are the latest trending ones of the past years?
-                
-                Genres popularity is very dynamic and therefore difficult to compare over long time intervals. Some
-                genres may have a steady popularity for several years, but most of them have their peaks and depths
-                throughout the years. To overcome this variability, we focused on a shorter time interval and observed
-                an increasing popularity of Rock, Pop, Country, International. Music Streaming services have also
-                impacted on the growth of some "small" genres, by making them globally available and easy to access.
-            </li>
-
-
-            <li><b>Song features evolution:</b>
-                Song features depend on the genre and artist as seen on clustering algorithm. Danceability had a
-                constant increase over the last years, caused by increasing popularity of Pop, Rock, International and
-                Country. Energy and valence had an increase until year 2010 and then a decrease,
-                to our surprise danceability and valence are not positively correlated. Weather and season of the year
-                have an impact on the type of songs produced, higher energy songs are produced during summer, while
-                higher danceable songs are produced in winter.
-
-            </li>
-        </ul>
-
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
+        <!-- End page content -->
     </div>
-
-    <div class="w3-black w3-center w3-padding-24">Powered by Chuchusmote Team 2018</a>
-    </div>
-
-    <!-- End page content -->
-</div>
 
 </body>
 
