@@ -2,7 +2,7 @@ const DATA_PATH = 'assets/csv/tsne.csv';
 const CLUSTERS = 8;
 const RANGE = [-8, 8];
 const COLORS = ['black', 'red', 'darkblue', 'lightgreen', 'coral',
-    'yellow', 'cyan', 'orange'];
+    'brown', 'gray', 'orange'];
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,8 +41,8 @@ let initializeCluster = () => {
                 let album_text = 'Album : ' + point.album_title;
                 let album_year_text = 'Year : ' + point.year;
                 let genre_text = 'Genre : ' + point.genre_parent;
-                return artist_text + '<br>' + track_text + '<br>' + album_text +
-                    '<br>' + album_year_text + '<br>' + genre_text;
+                return  '<b>' + artist_text + '<br>' + track_text + '<br>' + album_text +
+                    '<br>' + album_year_text + '<br>' + genre_text + '</b>';
             });
         };
 
@@ -55,7 +55,7 @@ let initializeCluster = () => {
                 z: unpack(cluster, 'z'),
                 mode: 'markers',
                 marker: {
-                    size: 1.5,
+                    size: 2,
                     line: {
                         color: COLORS[index],
                         width: 0.5
@@ -67,12 +67,11 @@ let initializeCluster = () => {
                 text: getTooltipText(cluster),
                 hoverinfo: "text+name",
                 hoverlabel: {
-                    bgcolor: 'white',
+                    bgcolor: COLORS[index],
                     bordercolor: 'darkgrey',
                     font: {
-                        color: COLORS[index],
-                        // family: 'Helvetica',
-                        size: 16
+                        color: 'white',
+                        size: '15px'
                     }
                 }
             };
