@@ -68,11 +68,11 @@
 
     <!-- Top header -->
     <header class="w3-container w3-xlarge">
-        <p class="w3-left">
+        <h2 class="w3-left">
             <b>
                 Music Evolution: 2000's forward
             </b>
-        </p>
+        </h2>
         <p class="w3-right">
             <!--<i class="fa fa-shopping-cart w3-margin-right"></i>-->
             <!--<i class="fa fa-search"></i>-->
@@ -465,39 +465,6 @@
     <!-- End page content -->
 </div>
 
-<script>
-    $("#menu a[href^='#']").on('click', function (e) {
-
-        // This sets the hash
-        var target;
-        target = this.hash;
-
-        // Prevent default anchor click behavior
-        e.preventDefault();
-
-        // The grabs the height of my header
-        var navOffset;
-        navOffset = $('#header').height();
-
-        // Animate The Scroll
-        $('html, body').animate({
-            scrollTop: $(this.hash).offset().top - navOffset
-        }, 600, function () {
-            // Adds hash to end of URL
-            return window.history.pushState(null, null, target);
-        });
-    });
-
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
-</script>
 </body>
 
 </html>
