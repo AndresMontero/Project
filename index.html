@@ -264,8 +264,7 @@
         These rankings coincide with the artists that have the higher number of streams in Spotify and also with
         their number
         of followers. But have you noticed that most of the artists listed are the most trending artists of the last
-        years? It is important to remember that the information displayed belongs to Spotify and FMA datasets and the
-        displayer results belong to the most listened artists in such platforms, so it is logical that more recent
+        years? It is important to remember that the information displayed belongs to Spotify and FMA datasets and the results belong to the most listened artists in such platforms, so it is logical that more recent
         artists will tend to appear in the top listens as their music accesibility also increased.
         How many of your favorite artists have you found in the list?
 
@@ -317,8 +316,7 @@
         the songs that were released during the same season are grouped together and the mean of their valence,
         energy, and danceability is calculated. The three features are measured on a scale from 0.0 (being the least) to
         1.0 (being the most).
-        Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the buttons
-        displayed below.
+        Let's explore the results. You can choose the feature you'd like to visualize by clicking on one of the buttons below.
         <br/>
         <br/>
 
@@ -369,59 +367,42 @@
         
         <br/>
         <br/>
-        To better visualize the clustering of the tracks, we sampled 12,000 tracks and defined 8 clusters to group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8
-        0. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity.
+        To better visualize the clustering of the tracks, we sampled around 10,000 tracks and defined 8 clusters to group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8). The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity. Let's dive into the three dimmensional space! You can explore each of the points by moving the cursor over them and some information will be displayed (artist, title, album, year, genre). You can click on the cluster names listed on the right to unselect them and only display some information.
 
         <br/>
         <br/>
-
+        <h4><b>Tracks in the 3D space</b></h4>
         <div id="music_cluster">
         </div>
 
         <br/>
         <br/>
 
-
+        
+        Songs grouped in the same cluster usually share some similarities like genres or artist. While exploring cluster 1, which is the biggest one, we can see that most of the songs belong to Experimental, Rock, Electronic and Pop genres. If we dig deeper we can see some similarities in released date and artists for tracks wich are very close in distance. These similarities can also be found on the other clusters, which leads us to conclude that songs features such as energy, danceability and valence are inheritely related the genres, which also confirms our previous observations where we showed the features fluctuations in the last years and compared them with the genres popularities. Having genres Rock, Pop, Country with increasing popularity in the last years is reflected by the overall increasing danceability of the songs!
+        
         <h3 id="title10"><b> Conclusions </b></h3>
-        The project objective was to analyze the evolution of music since 2000, show the most
-        popular genres, artists and songs, and see how the keyfeatures changed overtime.
-        The resulsts obtained are:
+        
+        
+        Our analysis has shown the evolution of music since 2000, the most
+        popular genres, artists and songs for the past years, and how some key song features evolved over time.
+        Some interesting results and observations:
         <ul>
-            <li>Most Popular Genre</li>
-            Overall the most popular genre on since 2000 is international which may imply that the music plataforms
-            such as spotify played an important role breaking the
-            frontiers of sharing music.
-            This is also shown in the increase of the danceability over the years, and the genre with the highest
-            average value is international.
-            <li>Most Popular Artists</li>
-            The top artists are also related to the genre international, it can be observed in the graph above of
-            the top 10 artists that we have international influnce, like Khalid, Cardi B, Maluma, etc.
-            <li>Key features evolution</li>
-            The key feaures evolution is explained in the previous graphs, summarizing:
-            1) Danceability: had a constant increase over the last years, because of the main influence of
-            international music <br>
-            and the winter is the season with the most danceable songs.
-            2) Energy: Has a decrease since 2014, which is according to the increase of the genres with lower
-            energy features. The season where
-            the energy is the highest is summer. <br>
-            3) Valence: Valence had an increase until year 2010 and then a decrease, and the season whit the
-            highest valence is winter, as shown before, related with the danceability feature. <br>
+            <li> <b>Music Growth: </b>  Songs and albums production has increased over the years and is aligned with the popularity and explosion of music streaming services.</li>
+            
+            <li><b>Music Popularity: </b>
+            
+            Artist/song popularity vary depending on the metric considered and the platform which provides it. The more accesible the song, the higher its popularity. Are you still surprised why most of top artists/song are the latest trending ones of the past years?
+
+            Genres popularity is very dynamic and therefore difficult to compare over long time intervals. Some genres may have a steady popularity for several years, but most of them have their peaks and depths throughout the years. To overcome this variability, we focused on a shorter time interval and observed and increasing popularity of Rock, Pop, Country, International. Music Streaming services have also impacted on the growth of some "small" genres, by making them globally available with some clicks. </li>
+            
+            
+            <li> <b>Song features evolution:</b>
+                Song features depend on the genre and artist as seen on clustering algorithm.                 Danceability had a constant increase over the last years, caused by increasing popularity of Pop, Rock, International and Country. Energy had a decrease since 2014. Valence had an increase until year 2010 and then a decrease, to our surprise danceability and valence are not positively correlated. Weather and season of the year have an impact on the type of songs produced, higher energy songs are produced during summer, while higher danceable songs are produced in winter.
+                
+            </li>
         </ul>
-        COMO TENEMOS LOS GENRE POPULARITY POR ANHOS (18 ANHOS), PODEMOS RELACIONAR CON ALGUNOS EVENTOS EN INTERNET,
-        O SI
-        APARECIO UNA PLATAFORMA (e.g RED SOCIAL), O EL BOOM DEL INTERNET, DE FACEBOOK, SUPONGO QUE PODEMOS
-        ENCONTRAR
-        ALGO.
-        What is the effect/impact of music streaming services on music preferences/popularity?
-        DE LAS ANTERIORES PREGUNTAS YA TENDRIAMOS COMO VARIAN LOS GENEROS/ARTISTAS DURANTE LOS 18 ANHOS (ANHO POR
-        ANHO).
-        EL BOOM DE LOS STREAMING SERVICES CREO QUE FUE 2014. LO QUE DEBERIA PASAR ES QUE SE INTERNACIONALIZE MAS EL
-        CONSUMO DE MUSICA (e.g. SE ESCUCHE MAS MUSICA LATINA O EN ESPANHOL), PODEMOS INTENTAR ENCONTRAR EL ANHO
-        DONDE
-        HAY ESE CRECIMIENTO.
-        BOOM DE YOUTUBE TALVEZ TUVO UN EFECTO EN LA PRODUCCION DE MUSICA Y LA FORMA DE LLEGAR AL PUBLICO..PODEMOS
-        VER
-        ESOS ANHOS Y TRATAR DE ENCONTRAR ALGO
+
 
         <br/>
         <br/>
