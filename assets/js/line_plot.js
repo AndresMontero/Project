@@ -34,15 +34,15 @@ linePlot = () => {
         },
         energy: {
             up: 'Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast,\n' +
-                '        loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale.\n' +
-                '        Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset\n' +
-                '        rate, and general entropy.',
+                'loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale.\n' +
+                'Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset\n' +
+                'rate, and general entropy.',
             down: 'Since 2014, song <b>energy has decreased</b> which coincides with the increasing preference for more less\n' +
-                '        "intense" genres\n' +
-                '        such as pop, instrumental and country during those years. In most of the years, it seems that songs\n' +
-                '        released\n' +
-                '        during summer have higher energy than songs released during colder seasons, very logical as people will\n' +
-                '        also have higher energy to sing, party and rock more <b>"energetical"</b> songs during hot <b>summers</b>.\n'
+                '"intense" genres\n' +
+                'such as pop, instrumental and country during those years. In most of the years, it seems that songs\n' +
+                'released\n' +
+                'during summer have higher energy than songs released during colder seasons, very logical as people will\n' +
+                'also have higher energy to sing, party and rock more <b>"energetical"</b> songs during hot <b>summers</b>.\n'
         }
     };
 
@@ -72,7 +72,7 @@ linePlot = () => {
     // Define the line
     let totalline = d3.line()
         .x(function (d) {
-            return x(d.date);
+            return x(d.year);
         })
         .y(function (d) {
             return y(d.total);
@@ -81,7 +81,7 @@ linePlot = () => {
     // Define the line
     let summerline = d3.line()
         .x(function (d) {
-            return x(d.date);
+            return x(d.year);
         })
         .y(function (d) {
             return y(d.summer);
@@ -90,7 +90,7 @@ linePlot = () => {
     // Define the line
     let winterline = d3.line()
         .x(function (d) {
-            return x(d.date);
+            return x(d.year);
         })
         .y(function (d) {
             return y(d.winter);
@@ -99,7 +99,7 @@ linePlot = () => {
     // Define the line
     let springline = d3.line()
         .x(function (d) {
-            return x(d.date);
+            return x(d.year);
         })
         .y(function (d) {
             return y(d.spring);
@@ -108,7 +108,7 @@ linePlot = () => {
     // Define the line
     let autumnline = d3.line()
         .x(function (d) {
-            return x(d.date);
+            return x(d.year);
         })
         .y(function (d) {
             return y(d.autumn);
@@ -141,8 +141,8 @@ linePlot = () => {
             changeTexts('energy');
         });
 
-        initializeFeaturesGraph("#seasons_features_one", 'danceability');
-        initializeFeaturesGraph("#seasons_features_two", 'danceability');
+        initializeFeaturesGraph("#seasons_features_one", 'danceability1');
+        initializeFeaturesGraph("#seasons_features_two", 'danceability2');
         initializeLegend('#legend');
         changeTexts('danceability');
     });
@@ -152,9 +152,9 @@ linePlot = () => {
 
         upText.innerHTML = texts['up'];
         downText.innerHTML = texts['down'];
-        generalTitle.innerHTML = '<b>' +  option.capitalize() +'</b>';
+        generalTitle.innerHTML = '<b>' + option.capitalize() + '</b>';
         leftTitle.innerHTML = option.capitalize() + ' seasons 2000 - 2010';
-        leftTitle.innerHTML = option.capitalize() + ' seasons 2010 - 2018';
+        rightTitle.innerHTML = option.capitalize() + ' seasons 2010 - 2018';
     };
 
     let initializeLegend = (selector) => {
@@ -196,13 +196,13 @@ linePlot = () => {
         // Get the data
         d3.csv(CSVPATH + file + '.csv', function (error, data) {
             data.forEach(function (d) {
-                d.date = parseDate(d.date);
+                d.year = parseDate(d.year);
                 d.total = +d.total;
             });
 
             // Scale the range of the data
             x.domain(d3.extent(data, function (d) {
-                return d.date;
+                return d.year;
             }));
             y.domain([d3.min(data, (d) => {
                 return Math.min(d.total, d.summer, d.winter, d.spring, d.autumn);
@@ -277,13 +277,13 @@ linePlot = () => {
         // Get the data again
         d3.csv(CSVPATH + file + ".csv", function (error, data) {
             data.forEach(function (d) {
-                d.date = parseDate(d.date);
+                d.year = parseDate(d.year);
                 d.total = +d.total;
             });
 
             // Scale the range of the data again
             x.domain(d3.extent(data, function (d) {
-                return d.date;
+                return d.year;
             }));
             y.domain([d3.min(data, (d) => {
                 return Math.min(d.total, d.summer, d.winter, d.spring, d.autumn);

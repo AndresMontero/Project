@@ -1,16 +1,17 @@
 # Helpers module
+import pandas as pd
 import numpy as np
 import uuid
 import matplotlib.pyplot as plt
 
 from IPython.display import display
 
-
 IMG_PATH = '../assets/images/'
 GRAPH_PATH = '{}graphs/'.format(IMG_PATH)
 LABEL_SIZE = 18
 TITLE_SIZE = 25
 FIG_SIZE = (10, 6)
+CSV_DIR = 'assets/csv/'
 
 
 def neg_to_zero(quantity):
@@ -21,7 +22,7 @@ def neg_to_zero(quantity):
     Returns:
         new_quantity: Cleaned quantity.
     """
-    
+
     if quantity <= 0:
         new_quantity = 0
     else:
@@ -143,3 +144,25 @@ def std_plot(plot_func, figsize=FIG_SIZE, title=None, xlabel=None, ylabel=None):
 
     fig.savefig('{graph}{file}'.format(graph=GRAPH_PATH,
                                        file=filename), bbox_inches='tight')
+
+
+def export_line_viz(list, file):
+    export = pd.concat([list[0].rename(columns={'energy': 'total',
+                                                'danceability': 'total',
+                                                'valence': 'total'}),
+                        list[1].rename(columns={'energy': 'summer',
+                                                'danceability': 'summer',
+                                                'valence': 'summer'}),
+                        list[2].rename(columns={'energy': 'winter',
+                                                'danceability': 'winter',
+                                                'valence': 'winter'}),
+                        list[3].rename(columns={'energy': 'spring',
+                                                'danceability': 'spring',
+                                                'valence': 'spring'}),
+                        list[4].rename(columns={'energy': 'autumn',
+                                                'danceability': 'autumn',
+                                                'valence': 'autumn'})],
+                       axis=1)
+    export = export.reset_index().rename(columns={'categorical_year': 'year'})
+    export.to_csv('../{csv}{file}'.format(csv=CSV_DIR, file=file + '.csv'),
+                  index=False)
