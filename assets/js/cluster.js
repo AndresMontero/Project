@@ -1,7 +1,7 @@
 const DATA_PATH = 'assets/csv/tsne.csv';
 const CLUSTERS = 8;
-const RANGE = [-8, 8];
-const COLORS = ['black', 'red', 'darkblue', 'lightgreen', 'coral',
+const RANGE = [-6, 6];
+const COLORS = ['black', 'red', 'darkblue', 'green', 'coral',
     'brown', 'gray', 'orange'];
 
 
@@ -55,7 +55,7 @@ let initializeCluster = () => {
                 z: unpack(cluster, 'z'),
                 mode: 'markers',
                 marker: {
-                    size: 2,
+                    size: 3,
                     line: {
                         color: COLORS[index],
                         width: 0.5
