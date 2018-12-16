@@ -1,7 +1,8 @@
 # Music Evolution: 2000's forward
 
 Link to Data Story:  https://andresmontero.github.io/Project_ADA_2018/
-Main jupyter notebook: main.ipynb
+
+Main jupyter notebook: [main.ipynb]( https://github.com/AndresMontero/Project_ADA_2018/blob/master/src/main.ipynb)
 
 ## Abstract
 Music is a crucial element of everyday life and human culture. People spend several hours listening to it and lots of money acquiring it. “… Whenever people come together for any reason, music is there,”….weddings, funerals, birthdays, graduations, stadium sporting events, nightlife, prayer, a romantic dinner, mothers singing their infants to sleep and EPFL students studying with music as a background….” History tells that very early man developed primitive flutes from animal bones and used stones and wood as percussion, producing the first types of music. Voice would have been the first and most natural means of expression in our distant ancestors, used to bond socially or comfort a sleepless child. It is from these humble beginnings that the music we enjoy today evolved.
@@ -43,7 +44,7 @@ we can handle them.
 
 
 ## Contribution of Group Members
-* __ Ariel Alba:__ data cleaning, preliminary data analysis, kmeans clustering, web site creation, Spotify data collection
+* __Ariel Alba:__ data cleaning, preliminary data analysis, kmeans clustering, web site creation, Spotify data collection
 * __Andres Montero:__ dataset cleaning, data story, cleaning and merging, visualizations, js and html code, topic analysis
 * __Diego Iriarte:__ data story, visualizations, data exploration, topic analysis
 
@@ -54,17 +55,17 @@ we can handle them.
 The project has the following structure:
 
 * /
-* main.ipynb
+* [main.ipynb]( https://github.com/AndresMontero/Project_ADA_2018/blob/master/src/main.ipynb) 
 * Main notebook with all the statistics and analysis regarding FMA 
-* data cleaning.ipynb
+* [data cleaning.ipynb](https://github.com/AndresMontero/Project_ADA_2018/blob/master/src/data_cleaning.ipynb)
 * Notebook with all the cleaning and data preprocessing
-* helpers.py 
+* [helpers.py](https://github.com/AndresMontero/Project_ADA_2018/blob/master/src/helpers.py)
 * Helper methods: comparison methods
 * README.md
 * Readme of the project
 * spotify.py
 * Script to gather data from Spotify and LastFM API
-* data/
+* [data/](https://drive.google.com/drive/folders/167qwb1R_FTpEyS3RYS3yyxfetq7ByCY8)
 * Folder with all datasets and pickle saved dataframes
 
 ## Contributing
