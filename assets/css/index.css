@@ -2196,3 +2196,18 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 .group * {
     margin-right: 2%;
 }
+
+button, input[type='button'] {
+    cursor: pointer;
+}
+
+#fadeContainer {
+    position: relative;
+    height: 400px;
+    width: 600px;
+}
+#fadeContainer img {
+    position: absolute;
+    display: block;
+    width: 100%;
+}

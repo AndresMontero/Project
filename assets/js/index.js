@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('albumsDistBtn').addEventListener('click', () => {
         var oldImg = $("#fadeContainer img");
 
-        let img = new Image();
+        var img = new Image();
         img.src = ALBUMSDISTSRC;
-        let newImg = $(img).hide();
+        var newImg = $(img).hide();
         $("#fadeContainer").append(img);
 
         oldImg.stop(true).fadeOut(500, function () {
@@ -19,7 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('tracksDistBtn').addEventListener('click', () => {
-        document.getElementById('myImage').src = TRACKDISTSRC;
+        var oldImg = $("#fadeContainer img");
+
+        var img = new Image();
+        img.src = TRACKDISTSRC;
+        var newImg = $(img).hide();
+        $("#fadeContainer").append(img);
+
+        oldImg.stop(true).fadeOut(500, function () {
+            $(this).remove();
+        });
+        newImg.fadeIn(500);
+        return false;
+        // document.getElementById('myImage').src = TRACKDISTSRC;
     });
 });
 

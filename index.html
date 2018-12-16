@@ -17,15 +17,13 @@
     <script type="text/javascript" src="assets/js/line_plot.js"></script>
     <script type="text/javascript" src="assets/js/cluster.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"-->
+    <!--integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"-->
+    <!--crossorigin="anonymous"></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"-->
+    <!--integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"-->
+    <!--crossorigin="anonymous"></script>-->
     <link rel="shortcut icon" href="#"/>
 </head>
 
@@ -52,28 +50,11 @@
         <a href="#title8" class="w3-bar-item w3-button">Exploring song Features</a>
         <a href="#title9" class="w3-bar-item w3-button">How are song features related?</a>
         <a href="#title10" class="w3-bar-item w3-button">Conclusions</a>
-        <!--<a href="#" class="w3-bar-item w3-button">Dresses</a>-->
-        <!--<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">-->
-        <!--Jeans <i class="fa fa-caret-down"></i>-->
-        <!--</a>-->
-        <!--<div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">-->
-        <!--<a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Relaxed</a>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Bootcut</a>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Straight</a>-->
-        <!--</div>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Jackets</a>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Gymwear</a>-->
-        <!--<a href="#" class="w3-bar-item w3-button">Blazers</a>-->
     </div>
-    <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>-->
-    <!--<a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding"-->
-    <!--onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>-->
-    <!--<a href="#footer" class="w3-bar-item w3-button w3-padding">Subscribe</a>-->
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+<header id="header" class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
     <div class="w3-bar-item w3-padding-24 w3-wide">
         <img src="assets/images/epfl_black.png" width="100">
     </div>
@@ -200,15 +181,20 @@
         <br/>
 
         <div class="banner graph">
-            <button id="albumsDistBtn" name="updateButton">
-                Go to Albums
-            </button>
-            <div id="fadeContainer" style="display: inline-block">
-                <img id="myImage" src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
+            <div style="display: inline-block">
+                <button id="albumsDistBtn" name="updateButton">
+                    Go to Albums
+                </button>
             </div>
-            <button id="tracksDistBtn" name="updateButton">
-                Go to Tracks
-            </button>
+
+            <div id="fadeContainer" style="display: inline-block">
+                <img src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
+            </div>
+            <div style="display: inline-block">
+                <button id="tracksDistBtn" name="updateButton">
+                    Go to Tracks
+                </button>
+            </div>
         </div>
 
         <br/>
@@ -454,27 +440,27 @@
 </div>
 
 <script>
-    // Accordion
-    // function myAccFunc() {
-    //     let x = document.getElementById("demoAcc");
-    //     if (x.className.indexOf("w3-show") == -1) {
-    //         x.className += " w3-show";
-    //     } else {
-    //         x.className = x.className.replace(" w3-show", "");
-    //     }
-    // }
+    $("#menu a[href^='#']").on('click', function (e) {
 
-    // Click on the "Jeans" link on page load to open the accordion for demo purposes
-    // document.getElementById("myBtn").click();
+        // This sets the hash
+        var target;
+        target = this.hash;
 
-    // Script to open and close sidebar
-    // window.onresize = () => {
-    //     let w = window.innerWidth;
-    //
-    //     // if (w >= 992) {
-    //     //     $('body').scrollspy({ offset: '10' })
-    //     // }
-    // };
+        // Prevent default anchor click behavior
+        e.preventDefault();
+
+        // The grabs the height of my header
+        var navOffset;
+        navOffset = $('#header').height();
+
+        // Animate The Scroll
+        $('html, body').animate({
+            scrollTop: $(this.hash).offset().top - navOffset
+        }, 600, function () {
+            // Adds hash to end of URL
+            return window.history.pushState(null, null, target);
+        });
+    });
 
     function w3_open() {
         document.getElementById("mySidebar").style.display = "block";
