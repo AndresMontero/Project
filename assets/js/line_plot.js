@@ -5,8 +5,7 @@ linePlot = () => {
     const TEXT = {
         danceability: {
             up: 'Danceability describes how suitable a track is for dancing based on a combination of musical elements\n' +
-                'including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is the least\n' +
-                'danceable and 1.0 is most danceable. This value determines the ease with which a person could dance to a\n' +
+                'including tempo, rhythm stability, beat strength, and overall regularity. This value determines the ease with which a person could dance to a\n' +
                 'song over\n' +
                 'the course of the whole song.',
             down: 'The overall behavior (line in black) of <b>danceability shows an increasing trend over the last years.</b>\n' +
@@ -27,23 +26,23 @@ linePlot = () => {
             down: ' Valence has had an <b>increasing behavior until 2010</b> and to our surprise <b>the following years it has\n' +
                 'decreased</b>, which has more or less the contrary behavior than danceability and similar to energy.\n' +
                 'Valence and\n' +
-                'danceability are moderately correlated. About the season variation, in most cases and especially in the\n' +
+                'danceability are moderately correlated, as danceability increases, valence decreases. About the season variation, in most cases and especially in the\n' +
                 'last 8 years valence is higher during winter seasons compared to the summer season, which leads us to\n' +
                 'conclude\n' +
                 'that music preferences/production vary according to weather variations. This makes a lot of sense, artists\n' +
-                'may produce <b>“happier” music</b>(higher valence) during <b>winter</b> seasons.'
+                'may produce <b>“happier” music</b>(higher valence) during <b>winter</b> seasons, to cheer up the audience.'
         },
         energy: {
             up: 'Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast,\n' +
                 'loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale.\n' +
                 'Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset\n' +
                 'rate, and general entropy.',
-            down: 'Since 2014, song <b>energy has decreased</b> which coincides with the increasing preference for more less\n' +
+            down: 'Since 2014, song <b>energy has decreased</b> which coincides with the increasing preference for less\n' +
                 '"intense" genres\n' +
                 'such as pop, instrumental and country during those years. In most of the years, it seems that songs\n' +
                 'released\n' +
                 'during summer have higher energy than songs released during colder seasons, very logical as people will\n' +
-                'also have higher energy to sing, party and rock more <b>"energetical"</b> songs during hot <b>summers</b>.\n'
+                'also have more energy to sing, party and rock more <b>"energetical"</b> songs during hot <b>summers</b>.\n'
         }
     };
 
