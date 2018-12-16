@@ -55,11 +55,11 @@ let initializeCluster = () => {
                 z: unpack(cluster, 'z'),
                 mode: 'markers',
                 marker: {
-                    size: 5,
+                    size: 2,
                     color: COLORS[index],
                     line: {
                         color: COLORS[index],
-                        width: 0.5
+                        width: 0.1
                     },
                     opacity: 0.9
                 },
@@ -68,10 +68,13 @@ let initializeCluster = () => {
                 text: getTooltipText(cluster),
                 hoverinfo: "text+name",
                 hoverlabel: {
-                    bgcolor: COLORS[index],
-                    bordercolor: 'darkgrey',
+                    // bgcolor: COLORS[index],
+                    bgcolor: 'white',
+                    bordercolor: 'black',
+                    // bordercolor: COLORS[index],
                     font: {
-                        color: 'white',
+                        color: COLORS[index],
+                        // color: 'white',
                         size: '15px'
                     }
                 }
