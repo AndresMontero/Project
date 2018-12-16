@@ -231,11 +231,11 @@
         <div id='listen_to_it' class="banner graph">
             <div>
                 <iframe frameborder="0" scrolling="no"
-                        src="//plot.ly/~Diegogab/70.embed"></iframe>
+                        src="//plot.ly/~Diegogab/70.embed?link=false&modebar=false"></iframe>
             </div>
             <div>
                 <iframe frameborder="0" scrolling="no"
-                        src="//plot.ly/~Diegogab/74.embed"></iframe>
+                        src="//plot.ly/~Diegogab/74.embed?link=false&modebar=false"></iframe>
             </div>
         </div>
 
@@ -365,10 +365,12 @@
         <h3 id="title9"><b> How are song features related? </b></h3>
 
 
-        To analyze how song features are related between each other we will plot a 3D kluster analysis,
-        where we have 8 clusters that groups the songs according to the key features of :"Valence", "Danceability"
-        "Energy" and also "Hotness".
-
+        Have you found any relation between danceability/valence/energy of a song? By applying Machine Learning clustering techniques we'll analyze if such features are similar among songs of the same genre or artist. For this analysis we consider the three mentioned features plus an additional one called song_hotness for each of the tracks. For visualization purposes, we reduce the number of features to three by applying t-Distributed Stochastic Neighbor Embedding (t-SNE) technique, that is particularly well suited for the visualization of high-dimensional datasets. Now, we are ready to visualize the tracks in three dimensions and to cluster them based on their similarity or proximity on the three dimmensional space.
+        
+        <br/>
+        <br/>
+        To better visualize the clustering of the tracks, we sampled 12,000 tracks and defined 8 clusters to group them. Then we applied K-means clustering algorithm, which is a type of unsupervised learning. The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K (K=8
+        0. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity.
 
         <br/>
         <br/>
@@ -381,7 +383,7 @@
 
 
         <h3 id="title10"><b> Conclusions </b></h3>
-        The projet objective was to analyze the evolution of music since 2000, show the most
+        The project objective was to analyze the evolution of music since 2000, show the most
         popular genres, artists and songs, and see how the keyfeatures changed overtime.
         The resulsts obtained are:
         <ul>
