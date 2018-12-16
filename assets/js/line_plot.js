@@ -3,38 +3,46 @@ const CSVPATH = 'assets/csv/';
 linePlot = () => {
     const TEXT = {
         danceability: {
-            up: 'Danceability describes how suitable a track is for dancing based on a combination ' +
-                'of musical elements including tempo, rhythm stability, beat strength, and overall regularity.' +
-                ' A value of 0.0 is least danceable and 1.0 is most danceable. This value determines the ease ' +
-                'with which a person could dance to a song over the course of the whole song. ',
-            down: 'The overall behaviour (line in black) of danceability shows an increasing trend over' +
-                ' the last years. We can see a positive slope, representing this increment of songs danceability' +
-                ' which coincides with the increasing preference for genres such as pop, rock, international' +
-                ' and country (described previously). \n' +
-                'As depicted on the plots, weather has an influence on music production. ' +
-                'Colder seasons (winter over summer) seem to be a better time to release more danceable' +
-                ' songs. Dancing is a good way to keep your body warm! '
+            up: 'Danceability describes how suitable a track is for dancing based on a combination of musical elements\n' +
+                'including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is the least\n' +
+                'danceable and 1.0 is most danceable. This value determines the ease with which a person could dance to a\n' +
+                'song over\n' +
+                'the course of the whole song.',
+            down: 'The overall behavior (line in black) of <b>danceability shows an increasing trend over the last years.</b>\n' +
+                'We can\n' +
+                'see a positive slope, representing this increment of songs danceability which coincides with the increasing\n' +
+                'preference for genres such as pop, rock, international and country (described previously).\n' +
+                '\n' +
+                '<br/>\n' +
+                'As depicted on the plots, the weather has an influence on music production. <b>Colder seasons</b> (winter\n' +
+                'over\n' +
+                'summer)\n' +
+                'seem to be a better time to release <b>more danceable songs</b>. Dancing is a good way to keep your body\n' +
+                'warm!',
         },
         valence: {
-            up: 'Valence describes the musical positiveness conveyed by a song. High valence sound more ' +
-                'positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative ' +
-                '(e.g. sad, depressed, angry). ',
-            down: 'Valence has had a increasing behaviour until 2010 and to our surprise the following years it has decreased,\n' +
-                'which has more or less the contrary behaviour than danceability and similar to energy. Valence and danceability\n' +
-                'are moderately correlated. About the season variation, in most cases and specially in the last 8 years valence\n' +
-                'is higher during winter seasons compared to summer season, which leads us to conclude that music\n' +
-                'preferences/production vary according to weather variations. This makes a lot of sense, artists may produce\n' +
-                '“happier” music (higher valence) during winter seasons.'
+            up: 'Valence describes the musical positiveness conveyed by a song. High valence sound more positive (e.g.\n' +
+                'happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).',
+            down: ' Valence has had an <b>increasing behavior until 2010</b> and to our surprise <b>the following years it has\n' +
+                'decreased</b>, which has more or less the contrary behavior than danceability and similar to energy.\n' +
+                'Valence and\n' +
+                'danceability are moderately correlated. About the season variation, in most cases and especially in the\n' +
+                'last 8 years valence is higher during winter seasons compared to the summer season, which leads us to\n' +
+                'conclude\n' +
+                'that music preferences/production vary according to weather variations. This makes a lot of sense, artists\n' +
+                'may produce <b>“happier” music</b>(higher valence) during <b>winter</b> seasons.'
         },
         energy: {
-            up: 'Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud,\n' +
-                'and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual\n' +
-                'features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and\n' +
-                'general entropy.',
-            down: 'Since 2014, song energy has decreased which coincides with the increasing preference for more calmed genres such\n' +
-                'as pop, instrumental and country during those years. In most of years, it seems that songs released during\n' +
-                'summer have higher energy than songs released during colder seasons, very logical as people will also have\n' +
-                'higher energy to sing, party and rock more "energetical" songs during hot summers.'
+            up: 'Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast,\n' +
+                '        loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale.\n' +
+                '        Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset\n' +
+                '        rate, and general entropy.',
+            down: 'Since 2014, song <b>energy has decreased</b> which coincides with the increasing preference for more less\n' +
+                '        "intense" genres\n' +
+                '        such as pop, instrumental and country during those years. In most of the years, it seems that songs\n' +
+                '        released\n' +
+                '        during summer have higher energy than songs released during colder seasons, very logical as people will\n' +
+                '        also have higher energy to sing, party and rock more <b>"energetical"</b> songs during hot <b>summers</b>.\n'
         }
     };
 
@@ -106,30 +114,35 @@ linePlot = () => {
             return y(d.autumn);
         });
 
-    let upText, downText;
+    let upText, downText, generalTitle, leftTitle, rightTitle;
 
     document.addEventListener("DOMContentLoaded", function () {
         upText = document.getElementById('line_up_text');
         downText = document.getElementById('line_down_text');
+        generalTitle = document.getElementById('general_title');
+        leftTitle = document.getElementById('left_title');
+        rightTitle = document.getElementById('right_title');
 
         document.getElementById('valenceBtn').addEventListener('click', () => {
-            updateData('valence', "#seasons_features_one");
-            updateData('valence', "#seasons_features_two");
+            updateData('valence1', "#seasons_features_one");
+            updateData('valence2', "#seasons_features_two");
             changeTexts('valence');
         });
 
         document.getElementById('danceabilityBtn').addEventListener('click', () => {
-            updateData('danceability', "#seasons_features_one");
+            updateData('danceability1', "#seasons_features_one");
+            updateData('danceability2', "#seasons_features_two");
             changeTexts('danceability');
         });
 
         document.getElementById('energyBtn').addEventListener('click', () => {
-            updateData('energy', "#seasons_features_one");
+            updateData('energy1', "#seasons_features_one");
+            updateData('energy2', "#seasons_features_two");
             changeTexts('energy');
         });
 
-        initializeFeaturesGraph("#seasons_features_one", true);
-        initializeFeaturesGraph("#seasons_features_two");
+        initializeFeaturesGraph("#seasons_features_one", 'danceability');
+        initializeFeaturesGraph("#seasons_features_two", 'danceability');
         initializeLegend('#legend');
         changeTexts('danceability');
     });
@@ -139,6 +152,9 @@ linePlot = () => {
 
         upText.innerHTML = texts['up'];
         downText.innerHTML = texts['down'];
+        generalTitle.innerHTML = '<b>' +  option.capitalize() +'</b>';
+        leftTitle.innerHTML = option.capitalize() + ' seasons 2000 - 2010';
+        leftTitle.innerHTML = option.capitalize() + ' seasons 2010 - 2018';
     };
 
     let initializeLegend = (selector) => {
@@ -168,7 +184,7 @@ linePlot = () => {
             .call(legendOrdinal);
     };
 
-    let initializeFeaturesGraph = (selector) => {
+    let initializeFeaturesGraph = (selector, file) => {
         // Adds the svg canvas
         var svg = d3.select(selector)
             .append("svg")
@@ -178,7 +194,7 @@ linePlot = () => {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Get the data
-        d3.csv(CSVPATH + 'danceability.csv', function (error, data) {
+        d3.csv(CSVPATH + file + '.csv', function (error, data) {
             data.forEach(function (d) {
                 d.date = parseDate(d.date);
                 d.total = +d.total;
