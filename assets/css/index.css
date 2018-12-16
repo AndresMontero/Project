@@ -2178,3 +2178,21 @@ a {
 body, h1, h2, h3, h4, h5, h6, .w3-wide {
     font-family: "Montserrat", sans-serif;
 }
+
+#listen_to_it div {
+    display: inline-block;
+    width: 49%;
+}
+
+#listen_to_it iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.graph {
+    text-align: center;
+}
+
+.group * {
+    margin-right: 2%;
+}

@@ -3,17 +3,19 @@ const TRACKDISTSRC = 'assets/images/graphs/distribution_of_tracks_per_year_2000-
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('albumsDistBtn').addEventListener('click', () => {
-        // let img = new Image();
-        // img.src = ALBUMSDISTSRC;
-        // let newImg = $(img).hide();
-        // $("#fadeContainer").append(img);
-        //
-        // oldImg.stop(true).fadeOut(500, function () {
-        //     $(this).remove();
-        // });
-        // newImg.fadeIn(500);
-        // return false;
-        document.getElementById('myImage').src = ALBUMSDISTSRC;
+        var oldImg = $("#fadeContainer img");
+
+        let img = new Image();
+        img.src = ALBUMSDISTSRC;
+        let newImg = $(img).hide();
+        $("#fadeContainer").append(img);
+
+        oldImg.stop(true).fadeOut(500, function () {
+            $(this).remove();
+        });
+        newImg.fadeIn(500);
+        return false;
+        //document.getElementById('myImage').src = ALBUMSDISTSRC;
     });
 
     document.getElementById('tracksDistBtn').addEventListener('click', () => {

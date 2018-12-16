@@ -116,6 +116,7 @@ linePlot = () => {
         });
 
     let upText, downText, generalTitle, leftTitle, rightTitle;
+    let fullData, yDomain;
 
     document.addEventListener("DOMContentLoaded", function () {
         upText = document.getElementById('line_up_text');
@@ -125,28 +126,75 @@ linePlot = () => {
         rightTitle = document.getElementById('right_title');
 
         document.getElementById('valenceBtn').addEventListener('click', () => {
-            updateData('valence1', "#seasons_features_one");
-            updateData('valence2', "#seasons_features_two");
-            changeTexts('valence');
+            updateAll('valence');
         });
 
         document.getElementById('danceabilityBtn').addEventListener('click', () => {
-            updateData('danceability1', "#seasons_features_one");
-            updateData('danceability2', "#seasons_features_two");
-            changeTexts('danceability');
+            updateAll('danceability');
         });
 
         document.getElementById('energyBtn').addEventListener('click', () => {
-            updateData('energy1', "#seasons_features_one");
-            updateData('energy2', "#seasons_features_two");
-            changeTexts('energy');
+            updateAll('energy');
         });
 
-        initializeFeaturesGraph("#seasons_features_one", 'danceability1', 'danceability');
-        initializeFeaturesGraph("#seasons_features_two", 'danceability2', 'danceability');
+        getYScale('danceability1', 'danceability2', () => {
+            initializeFeaturesGraph("#seasons_features_one", 'danceability1',
+                'danceability', yDomain);
+            initializeFeaturesGraph("#seasons_features_two", 'danceability2',
+                'danceability', yDomain);
+        });
+
         initializeLegend('#legend');
         changeTexts('danceability');
     });
+
+    let getYScale = (file1, file2, callback) => {
+        let a = [];
+        let b = [];
+
+        d3.csv(CSVPATH + file1 + '.csv', function (error, data1) {
+            data1.forEach(function (d) {
+                d.year = parseDate(d.year);
+                d.total = +d.total;
+                d.summer = +d.summer;
+                d.winter = +d.winter;
+                d.spring = +d.spring;
+                d.autumn = +d.autumn;
+            });
+
+            d3.csv(CSVPATH + file2 + '.csv', function (error, data2) {
+                data2.forEach(function (d) {
+                    d.year = parseDate(d.year);
+                    d.total = +d.total;
+                    d.summer = +d.summer;
+                    d.winter = +d.winter;
+                    d.spring = +d.spring;
+                    d.autumn = +d.autumn;
+                });
+
+                fullData = data1.concat(data2);
+
+                yDomain = [d3.min(fullData, (d) => {
+                    return Math.min(d.total, d.summer, d.winter, d.spring, d.autumn);
+                }), d3.max(fullData, (d) => {
+                    return Math.max(d.total, d.summer, d.winter, d.spring, d.autumn);
+                })];
+
+                callback();
+            });
+        });
+    };
+
+    let updateAll = (option) => {
+        const SELECTORS = ['#seasons_features_one', '#seasons_features_two'];
+
+        getYScale(option + '1', option + '2', () => {
+            updateData(option + '1', SELECTORS[0], option, yDomain);
+            updateData(option + '2', SELECTORS[1], option, yDomain);
+        });
+
+        changeTexts(option);
+    };
 
     let changeTexts = (option) => {
         let texts = TEXT[option];
@@ -185,9 +233,15 @@ linePlot = () => {
             .call(legendOrdinal);
     };
 
-    let initializeFeaturesGraph = (selector, file, option) => {
+    let toolText = (attr, d, option) => {
+        return 'Year : ' + formatTime(d.year) + '<br/>' + option.capitalize() + ': ' + d[attr].toFixed(3)
+    };
+
+    let div;
+
+    let initializeFeaturesGraph = (selector, file, option, yDomain) => {
         // Adds the svg canvas
-        var svg = d3.select(selector)
+        let svg = d3.select(selector)
             .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -195,7 +249,7 @@ linePlot = () => {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // Define the div for the tooltip
-        var div = d3.select("body").append("div")
+        div = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
 
@@ -214,11 +268,7 @@ linePlot = () => {
             x.domain(d3.extent(data, function (d) {
                 return d.year;
             }));
-            y.domain([d3.min(data, (d) => {
-                return Math.min(d.total, d.summer, d.winter, d.spring, d.autumn);
-            }), d3.max(data, (d) => {
-                return Math.max(d.total, d.summer, d.winter, d.spring, d.autumn);
-            })]);
+            y.domain(yDomain);
 
             let toolText = (attr, d) => {
                 return 'Year : ' + formatTime(d.year) + '<br/>' + option.capitalize() + ': ' + d[attr].toFixed(3)
@@ -289,7 +339,7 @@ linePlot = () => {
                             .duration(200)
                             .style("opacity", .9)
                             .attr('class', 'tooltip ' + season);
-                        div.html(toolText(season, d))
+                        div.html(toolText(season, d, option))
                             .style("left", (d3.event.pageX) + "px")
                             .style("top", (d3.event.pageY - 28) + "px");
                     })
@@ -315,7 +365,7 @@ linePlot = () => {
     };
 
     // ** Update data section (Called from the onclick)
-    function updateData(file, selector) {
+    function updateData(file, selector, option, yDomain) {
         // Get the data again
         d3.csv(CSVPATH + file + ".csv", function (error, data) {
             data.forEach(function (d) {
@@ -331,11 +381,7 @@ linePlot = () => {
             x.domain(d3.extent(data, function (d) {
                 return d.year;
             }));
-            y.domain([d3.min(data, (d) => {
-                return Math.min(d.total, d.summer, d.winter, d.spring, d.autumn);
-            }), d3.max(data, (d) => {
-                return Math.max(d.total, d.summer, d.winter, d.spring, d.autumn);
-            })]);
+            y.domain(yDomain);
 
             // Select the section we want to apply our changes to
             let svg = d3.select(selector);
@@ -365,7 +411,21 @@ linePlot = () => {
 
             for (let season of SEASONS) {
                 let circles = svg.selectAll('circle.' + season)
-                    .data(data);
+                    .data(data)
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", .9)
+                            .attr('class', 'tooltip ' + season);
+                        div.html(toolText(season, d, option))
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(500)
+                            .style("opacity", 0)
+                    });
                 circles.transition()
                     .duration(750)
                     .attr("cx", function (d, i) {
