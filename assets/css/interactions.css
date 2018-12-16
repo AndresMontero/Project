@@ -56,3 +56,60 @@ svg {
 .grid path {
   stroke-width: 0;
 }
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    padding: 5px;
+    font: 12px sans-serif;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: 17px !important;
+}
+
+circle.total {
+    fill: black;
+}
+
+div.tooltip.total {
+    background: black;
+    color: white;
+}
+
+circle.summer {
+    fill: red;
+}
+
+div.tooltip.summer {
+    background: red;
+    color: white;
+}
+
+circle.winter {
+    fill: darkblue;
+}
+
+div.tooltip.winter {
+    background: darkblue;
+    color: white;
+}
+
+circle.spring {
+    fill: lightgreen;
+}
+
+div.tooltip.spring {
+    background: lightgreen;
+    color: white;
+}
+
+circle.autumn {
+    fill: coral;
+}
+
+div.tooltip.autumn {
+    background: coral;
+    color: white;
+}

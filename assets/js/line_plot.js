@@ -1,4 +1,5 @@
 const CSVPATH = 'assets/csv/';
+const SEASONS = ['total', 'summer', 'winter', 'spring', 'autumn'];
 
 linePlot = () => {
     const TEXT = {
@@ -141,8 +142,8 @@ linePlot = () => {
             changeTexts('energy');
         });
 
-        initializeFeaturesGraph("#seasons_features_one", 'danceability1');
-        initializeFeaturesGraph("#seasons_features_two", 'danceability2');
+        initializeFeaturesGraph("#seasons_features_one", 'danceability1', 'danceability');
+        initializeFeaturesGraph("#seasons_features_two", 'danceability2', 'danceability');
         initializeLegend('#legend');
         changeTexts('danceability');
     });
@@ -184,7 +185,7 @@ linePlot = () => {
             .call(legendOrdinal);
     };
 
-    let initializeFeaturesGraph = (selector, file) => {
+    let initializeFeaturesGraph = (selector, file, option) => {
         // Adds the svg canvas
         var svg = d3.select(selector)
             .append("svg")
@@ -193,11 +194,20 @@ linePlot = () => {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+        // Define the div for the tooltip
+        var div = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
         // Get the data
         d3.csv(CSVPATH + file + '.csv', function (error, data) {
             data.forEach(function (d) {
                 d.year = parseDate(d.year);
                 d.total = +d.total;
+                d.summer = +d.summer;
+                d.winter = +d.winter;
+                d.spring = +d.spring;
+                d.autumn = +d.autumn;
             });
 
             // Scale the range of the data
@@ -209,6 +219,10 @@ linePlot = () => {
             }), d3.max(data, (d) => {
                 return Math.max(d.total, d.summer, d.winter, d.spring, d.autumn);
             })]);
+
+            let toolText = (attr, d) => {
+                return 'Year : ' + formatTime(d.year) + '<br/>' + option.capitalize() + ': ' + d[attr].toFixed(3)
+            };
 
             // add the X gridlines
             svg.append("g")
@@ -258,6 +272,34 @@ linePlot = () => {
                 .style("stroke", "coral")
                 .attr("d", autumnline(data));
 
+            for (let season of SEASONS) {
+                svg.selectAll("dot")
+                    .data(data)
+                    .enter().append("circle")
+                    .attr('class', season)
+                    .attr("r", 5)
+                    .attr("cx", function (d) {
+                        return x(d.year);
+                    })
+                    .attr("cy", function (d) {
+                        return y(d[season]);
+                    })
+                    .on("mouseover", function (d) {
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", .9)
+                            .attr('class', 'tooltip ' + season);
+                        div.html(toolText(season, d))
+                            .style("left", (d3.event.pageX) + "px")
+                            .style("top", (d3.event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function (d) {
+                        div.transition()
+                            .duration(500)
+                            .style("opacity", 0)
+                    });
+            }
+
             // Add the X Axis
             svg.append("g")
                 .attr("class", "x axis")
@@ -279,6 +321,10 @@ linePlot = () => {
             data.forEach(function (d) {
                 d.year = parseDate(d.year);
                 d.total = +d.total;
+                d.summer = +d.summer;
+                d.winter = +d.winter;
+                d.spring = +d.spring;
+                d.autumn = +d.autumn;
             });
 
             // Scale the range of the data again
@@ -292,34 +338,48 @@ linePlot = () => {
             })]);
 
             // Select the section we want to apply our changes to
-            var svg = d3.select(selector).transition();
+            let svg = d3.select(selector);
+            let svgtran = d3.select(selector).transition();
 
             // Make the changes
-            svg.select(".total")   // change the line
+            svgtran.select(".total")   // change the line
                 .duration(750)
                 .attr("d", totalline(data));
 
-            svg.select(".summer")   // change the line
+            svgtran.select(".summer")   // change the line
                 .duration(750)
                 .attr("d", summerline(data));
 
-            svg.select(".winter")   // change the line
+            svgtran.select(".winter")   // change the line
                 .duration(750)
                 .attr("d", winterline(data));
 
-            svg.select(".spring")   // change the line
+            svgtran.select(".spring")   // change the line
                 .duration(750)
                 .attr("d", springline(data));
 
-            svg.select(".autumn")   // change the line
+            svgtran.select(".autumn")   // change the line
                 .duration(750)
                 .attr("d", autumnline(data));
 
 
-            svg.select(".x.axis") // change the x axis
+            for (let season of SEASONS) {
+                let circles = svg.selectAll('circle.' + season)
+                    .data(data);
+                circles.transition()
+                    .duration(750)
+                    .attr("cx", function (d, i) {
+                        return x(d.year);
+                    })
+                    .attr("cy", (d, i) => {
+                        return y(d[season]);
+                    });
+            }
+
+            svgtran.select(".x.axis") // change the x axis
                 .duration(750)
                 .call(xAxis);
-            svg.select(".y.axis") // change the y axis
+            svgtran.select(".y.axis") // change the y axis
                 .duration(750)
                 .call(yAxis);
         });
