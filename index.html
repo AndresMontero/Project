@@ -15,6 +15,7 @@
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/genres_interaction.js"></script>
     <script type="text/javascript" src="assets/js/line_plot.js"></script>
+    <script type="text/javascript" src="assets/js/cluster.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -44,12 +45,13 @@
         <a href="#title1" class="w3-bar-item w3-button">Introduction</a>
         <a href="#title2" class="w3-bar-item w3-button">Dataset</a>
         <a href="#title3" class="w3-bar-item w3-button">How many songs and albums?</a>
-        <a href="#title4" class="w3-bar-item w3-button">Have you listened to it?</a>
-        <a href="#title5" class="w3-bar-item w3-button">Let's find your favorite artists!</a>
-        <a href="#title6" class="w3-bar-item w3-button">How about the trending genres?</a>
-        <a href="#title7" class="w3-bar-item w3-button">Exploring song Features</a>
-        <a href="#title8" class="w3-bar-item w3-button">How are song features related?</a>
-        <a href="#title9" class="w3-bar-item w3-button">Conclusions</a>
+        <a href="#title4" class="w3-bar-item w3-button">Distribution of the Data</a>
+        <a href="#title5" class="w3-bar-item w3-button">Have you listened to it?</a>
+        <a href="#title6" class="w3-bar-item w3-button">Let's find your favorite artists!</a>
+        <a href="#title7" class="w3-bar-item w3-button">How about the trending genres?</a>
+        <a href="#title8" class="w3-bar-item w3-button">Exploring song Features</a>
+        <a href="#title9" class="w3-bar-item w3-button">How are song features related?</a>
+        <a href="#title10" class="w3-bar-item w3-button">Conclusions</a>
         <!--<a href="#" class="w3-bar-item w3-button">Dresses</a>-->
         <!--<a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">-->
         <!--Jeans <i class="fa fa-caret-down"></i>-->
@@ -186,33 +188,22 @@
         <br/>
         <br/>
 
-        <div id="option_track_album">
-            <button id="updateDistBtn" name="updateDistBtnClk">Go to tracks</button>
-        </div>
-
-        <h3 id="title3"><b> Distribution of the Data </b></h3>
+        <h3 id="title4"><b> Distribution of the Data </b></h3>
 
         <br/>
         <br/>
 
         <div class="banner">
-            <!-- <div class="inline-block">
-                <img src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
-            </div>
-            <div class="inline-block">
-                <img src="assets/images/graphs/distribution_of_tracks_per_year_2000-2018.png">
-            </div>
-            -->
-            <div class="inline-block">
-                <button id="albumsDistBtn" name="updateButton" onclick="document.getElementById('myImage').src='assets/images/graphs/distribution_of_albums_per_year_2000-2018.png'">Albums</button>
+            <div class="inline-block", style="text-align: center">
+                <button id="albumsDistBtn" name="updateButton">
+                    Albums
+                </button>
                 <img id="myImage" src="assets/images/graphs/distribution_of_albums_per_year_2000-2018.png">
-                <button id="tracksDistBtn" name="updateButton" onclick="document.getElementById('myImage').src='assets/images/graphs/distribution_of_tracks_per_year_2000-2018.png'">Tracks</button>
+                <button id="tracksDistBtn" name="updateButton">
+                    Tracks
+                </button>
             </div>
-
-
-
         </div>
-
 
         <br/>
         <br/>
@@ -222,7 +213,7 @@
         In the last year (2018), we see a decrement of music production, but it is due to data collection which
         does not collect the whole year but only until October.
 
-        <h3 id="title4"><b> Have you listened to it? </b></h3>
+        <h3 id="title5"><b> Have you listened to it? </b></h3>
 
         Song preferences and popularities over the years are difficult to predict and never follow a perfect recipe
         since even "similar" people have different music preferences.
@@ -237,16 +228,15 @@
 
         <br/>
         <br/>
-        ************* PODEMOS PONER LOS DOS PLOTS EN UNA MISMA LINEA*************
         <br/>
         <br/>
 
         <div class="banner">
-            <div class="inline-block">
-                <img src="assets/images/graphs/top_10_albums_listened.png">
+            <div style="display: inline-block; width: 49%; text-align: center">
+                <img src="assets/images/graphs/top_10_albums_listened.png" width="490px" height="400px">
             </div>
-            <div class="inline-block">
-                <img src="assets/images/graphs/top_10_tracks_listened.png">
+            <div style="display: inline-block; width: 49%">
+                <img src="assets/images/graphs/top_10_tracks_listened.png" width="490px" height="400px">
             </div>
         </div>
 
@@ -255,12 +245,11 @@
         <br/>
 
         <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~Diegogab/70.embed"></iframe>
-        <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~Diegogab/76.embed"></iframe>
 
         <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~Diegogab/74.embed"></iframe>
 
 
-        <h3 id="title5"><b> Let's find your favorite artists! </b></h3>
+        <h3 id="title6"><b> Let's find your favorite artists! </b></h3>
 
         Artists popularity is closely linked to their song's popularity, in most cases, it can be measured by their
         sales and the number of listens they have. Some artists are able to stay popular for a long time due to
@@ -287,7 +276,7 @@
         <br/>
         <br/>
 
-        <h3 id="title6"><b> How about the trending genres? </b></h3>
+        <h3 id="title7"><b> How about the trending genres? </b></h3>
 
         Music genres are conventional categories that identify songs/artists as belonging to a shared tradition or
         set of conventions. Music can be divided into different genres and these classifications are often
@@ -322,7 +311,7 @@
         <br/>
         <br/>
 
-        <h3 id="title7"><b> Exploring song Features </b></h3>
+        <h3 id="title8"><b> Exploring song Features </b></h3>
         The analyzed dataset contains the song's metadata and audio features of each song. How about exploring some
         of
         these features and their evolution over the years? Are they somehow related to genres/artist evolution?
@@ -371,7 +360,7 @@
         <br/>
         <br/>
 
-        <h3 id="title8"><b> How are song features related? </b></h3>
+        <h3 id="title9"><b> How are song features related? </b></h3>
 
 
         To analyze how song features are related between each other we will plot a 3D kluster analysis,
@@ -389,7 +378,7 @@
         <br/>
 
 
-        <h3 id="title9"><b> Conclusions </b></h3>
+        <h3 id="title10"><b> Conclusions </b></h3>
         The projet objective was to analyze the evolution of music since 2000, show the most
         popular genres, artists and songs, and see how the keyfeatures changed overtime.
         The resulsts obtained are:
