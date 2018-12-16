@@ -1,9 +1,9 @@
 // Texts
 const TEXTINTERACTION = {
-    'genres': 'You can explore the genres popularity, by moving the cursor over the colored ' +
+    'genres': "You can explore the genre's popularity, by moving the cursor over the colored " +
         'areas. They represent the top 10 genres (based on song hotness) in the time interval 2013 ' +
         'to 2018. The genres are: Rock, Pop, International, Instrumental, Experimental, Easy Listening,' +
-        ' Country and Blues. Time interval was considered for the last five years, due to genre ' +
+        ' Country and Blues. The time interval was considered for the last five years, due to the genre ' +
         'variability over time. For every year, each of the genres is represented by their hotness,' +
         ' which is obtained by the mean of all songs hotness released on the specified year.',
     'spoken': 'The genre Spoken has had a hotness peak in 2017 and a reduction in 2018 with ' +
@@ -12,8 +12,8 @@ const TEXTINTERACTION = {
         'Another peak is seen in 2017, which is contributed by the other artists, being Kelhani ' +
         'the artist that contributes most in this year with the release of her album SweetSexySavage.',
     'soul_rnb': 'The genre Soul RnB has had an increased since 2014, with increasing hotness ' +
-        'for the next years. The artists with higher hotness are: Marcy Playground in 2015,El Michels ' +
-        'affair and Sting in 2016, The Who, Chelsea Wolfe and Godspeed you! Black Emperor in 2017, ' +
+        'for the next years. The artists with higher hotness are: Marcy Playground in 2015, El Michels ' +
+        'affair and Sting in 2016, The Who, Chelsea Wolfe, and Godspeed you! Black Emperor in 2017, ' +
         'Barry White, Scott Bradley, Anderson Paak and Mac Miller in 2018 with the release of ' +
         'his album Swimming.',
     'rock': 'Rock has had an increasing hotness since 2015, with artists such as Mephis Mey' +
@@ -23,12 +23,12 @@ const TEXTINTERACTION = {
         ' In 2018, the main contributors are The Prodigy and Kelela which also coincides ' +
         'with the release of her album Take Me Apart.',
     'pop': 'Pop has had an increasing hotness since 2015, and it is the one with ' +
-        'the largest increase of hotness for year 2018. The main artist contributing ' +
+        'the largest increase of hotness for the year 2018. The main artist contributing ' +
         'its popularity are: Eminem, Martin Garrix, David Guetta, Marshmello, ' +
         'Halsey, Monsta X, DJ Snake, OMI, Kiana Leda, Drake Bell. ' +
-        'In 2017, we see that Harshey and Marshmello are the main contributors. For year 2018,' +
-        ' we can see that Eminem and David Gueta are the hotest artists and it coincides with ' +
-        'the recently released salbum Kamikaze which is one of the best selling albums of 2018.',
+        'In 2017, we see that Harshey and Marshmello are the main contributors. For the year 2018,' +
+        ' we can see that Eminem and David Guetta are the hottest artists and it coincides with ' +
+        'the recently released album Kamikaze which is one of the best selling albums of 2018.',
     'international': 'The genre International has had an increasing hotness since 2014, with an important' +
         ' peak in 2016. Top 10 artists with higher hotness are DJ Snake, Cardi B, Kehlani, ' +
         'Las Aves, Bomba Estereo, Simane, La Sonora Dinamita, Ella Fitzgerald, Godspeed ' +
@@ -44,7 +44,7 @@ const TEXTINTERACTION = {
     'easy_listening': 'The genre Easy Listening has had an increasing hotness between years 2014 ' +
         'and 2016, and it decreased a bit in the next years. The main artists of this ' +
         'genre are Niall Horan, Tiziano Ferro, Norah Jones, Evanescence, Marcy Playground, ' +
-        'Lady Antebellum, Godspreed You! Black Emperor, Tycho, Ella Fitzgerald, Chelsea Wolfe. ' +
+        'Lady Antebellum, Godspeed You! Black Emperor, Tycho, Ella Fitzgerald, Chelsea Wolfe. ' +
         'The peak of the genre was in 2016 with one of the biggest contributors being Norah ' +
         'Jones with the release of her most recent album Day Breaks.',
     'country': 'The Country genre has had an increasing hotness during the last two years ' +
@@ -54,7 +54,7 @@ const TEXTINTERACTION = {
         'Keith Urban. Main contributors in 2017 are Niall Horan and Blake Shelton. ' +
         'And the group showing an increasing hotness in 2017 and 2018 is Little Big ' +
         'Town which coincides with the release of their two albums Wanderlust and The Breaker.',
-    'blues': 'Blues has had an increasing in 2015 and during the last two years. ' +
+    'blues': 'Blues has had an increase in 2015 and during the last two years. ' +
         'The main artists contributing the genre hotness are: Yellow Days, John Legend, ' +
         'Ella Fitzgerald, Boz Scaggs, Armin van Buuren, Shwayze, Steve Wonder, Leon Bridges, ' +
         'Govt Mule, The Who. Yellow days is the group showing an increasing hotness in the last' +
@@ -98,7 +98,7 @@ let description;
 
 const DATA = 'assets/csv/Book3.csv';
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
@@ -687,7 +687,7 @@ let initializeGenreGraph = () => {
                 .call(yAxis);
 
             svg.append("text")
-            // this makes it easy to centre the text as the transform is applied to the anchor
+                // this makes it easy to centre the text as the transform is applied to the anchor
                 .attr("text-anchor", "middle")
                 // text is drawn off the screen top left, move down and out and rotate
                 .attr("transform", "translate(" + (w) + "," + (h / 2) + ")rotate(-90)")
@@ -854,10 +854,11 @@ let initializeGenreGraph = () => {
                 buttonText += "Genres";
             }
             // buttonTextInfo += "all types";
-            // } else if (viewState == 2) {
-            // 	buttonText += "type of mining " + viewType + " by sectors";
-            // 	// buttonTextInfo += "all " + viewType + " Areas_ha"
-            // }
+            // } else 
+            if (viewState == 2) {
+                buttonText += "Genres + Artist";
+                // buttonTextInfo += "all " + viewType + " Areas_ha"
+            }
 
             //Set text
             backButton.select("text").html(buttonText);
