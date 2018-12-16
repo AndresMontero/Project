@@ -14,10 +14,12 @@
     <script type="text/javascript" src="assets/js/d3.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/genres_interaction.js"></script>
-    <link rel="shortcut icon" href="#" />
+    <script type="text/javascript" src="assets/js/line_plot.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <link rel="shortcut icon" href="#"/>
 </head>
 
-<body class="w3-content" style="max-width:1200px">
+<body class="w3-content" style="max-width:1300px">
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
     <div class="w3-container w3-display-container w3-padding-16">
@@ -100,7 +102,8 @@
         <br/>
 
 
-        Have you ever wondered how music and people preferences evolved in the last years? Today with the explosion of the internet,
+        Have you ever wondered how music and people preferences evolved in the last years? Today with the explosion of
+        the internet,
         music Services as Apple Music, Spotify, Tidal and other apps and platforms; it has become easier to access,
         obtain and share music. This project aims to analyze the evolution of music since 2000's in terms of
         songs/genres/artists popularity and preferences, evaluate the key features of the songs, such as energy,
@@ -141,18 +144,22 @@
 
         <h3><b> How many songs and albums? </b></h3>
 
-        Music, as all other arts, evolve over the years and dinamically change according to people's interests and demmands. Along
+        Music, as all other arts, evolve over the years and dinamically change according to people's interests and
+        demmands. Along
         history, several genres emerged in different periods of time, in most of the cases influenced by the region of
         origin and particular events occuring at that time. The decade of the 2000s, characterized by the increasing
         interests in internet technologies and social media marks a very important milestone in human's history and for
-        sure must have some impact on music evolution. In the following years, such technological evolution continues with the explosion of streaming and cloud
-        services, and portable and smart devices, which definitely impacts on how people access and consumes music and will definitely impact of their preferences.
+        sure must have some impact on music evolution. In the following years, such technological evolution continues
+        with the explosion of streaming and cloud
+        services, and portable and smart devices, which definitely impacts on how people access and consumes music and
+        will definitely impact of their preferences.
         <br/>
         <br/>
         We aim to analyze
         and understand such music evolution, since 2000 to 2018 in terms of quantity, people's preferences, and songs
-        features. To visually understand the growth of music production/consumption over the years, let's see how many tracks and albums were produced every year.
-        
+        features. To visually understand the growth of music production/consumption over the years, let's see how many
+        tracks and albums were produced every year.
+
         <br/>
         <br/>
         ************* PODEMOS PONER LOS DOS PLOTS EN UNA MISMA LINEA*************
@@ -172,21 +179,30 @@
         <br/>
         <br/>
 
-        The production of tracks and albums has increased exponentially over the years and as expected, the production of albums is correlated with the production of tracks.
-        In the last year (2018), we see a decrement of music production, but it is due to data collection which does not collect the whole year but only until October.
+        The production of tracks and albums has increased exponentially over the years and as expected, the production
+        of albums is correlated with the production of tracks.
+        In the last year (2018), we see a decrement of music production, but it is due to data collection which does not
+        collect the whole year but only until October.
 
         <h3><b> Have you listened to it? </b></h3>
 
-        Song preferences and popularities over the years are difficult to predict and never follow a perfect recipe since even "similar" people have different music preferences.
-        Usually popular songs are the catchy, compelling and commercial ones, meaning they are well crafted and connect to a broad audience and it causes action on the part of the listener.  It may make them cry, laugh, dance, tap their feet, go purchase the song, or simply it causes them to react. Exposure to the song may also cause them become more wanted by people, hearing a song enough times makes them "grow on you". However, and as stated initially, it is impossible to find specific patterns or rules that make songs popular. Let's how songs and albums popularity evolved in the analyzed time interval, the way to measure popularity is represented by the number of listens in the platforms Spotify/FMA.
-   
-   
-   <br/>
-   <br/>
-   ************* PODEMOS PONER LOS DOS PLOTS EN UNA MISMA LINEA*************
-   <br/>
-   <br/>
-   
+        Song preferences and popularities over the years are difficult to predict and never follow a perfect recipe
+        since even "similar" people have different music preferences.
+        Usually popular songs are the catchy, compelling and commercial ones, meaning they are well crafted and connect
+        to a broad audience and it causes action on the part of the listener. It may make them cry, laugh, dance, tap
+        their feet, go purchase the song, or simply it causes them to react. Exposure to the song may also cause them
+        become more wanted by people, hearing a song enough times makes them "grow on you". However, and as stated
+        initially, it is impossible to find specific patterns or rules that make songs popular. Let's how songs and
+        albums popularity evolved in the analyzed time interval, the way to measure popularity is represented by the
+        number of listens in the platforms Spotify/FMA.
+
+
+        <br/>
+        <br/>
+        ************* PODEMOS PONER LOS DOS PLOTS EN UNA MISMA LINEA*************
+        <br/>
+        <br/>
+
         <div class="banner">
             <div class="inline-block">
                 <img src="assets/images/graphs/top_10_albums_listened.png">
@@ -201,23 +217,27 @@
         <br/>
 
 
-
-        
-        
         <h3><b> Trending Genres and Artists </b></h3>
-        
-         Music genres are conventional categories that identify songs/artists as belonging to a shared tradition or set of conventions. Music can be divided into different genres and these classifcations are often subjective and controversial, and some genres may overlap. Over the years many new genres have appeared by the transformation or influence of other genres. This dynamic behaviour, which causes genres popularity vary over time, is also generated by fluctuating people's demmands and interestes. Now, we present an interactive visualization which depicts genre's evolution in the last five years, considering only the top 10 most popular genres. Their popularity (or hotness) is measured by the mean of all artists hotness who released songs that year and that belong to that specific genre. Let's explore the results!
-    
-         
+
+        Music genres are conventional categories that identify songs/artists as belonging to a shared tradition or set
+        of conventions. Music can be divided into different genres and these classifcations are often subjective and
+        controversial, and some genres may overlap. Over the years many new genres have appeared by the transformation
+        or influence of other genres. This dynamic behaviour, which causes genres popularity vary over time, is also
+        generated by fluctuating people's demmands and interestes. Now, we present an interactive visualization which
+        depicts genre's evolution in the last five years, considering only the top 10 most popular genres. Their
+        popularity (or hotness) is measured by the mean of all artists hotness who released songs that year and that
+        belong to that specific genre. Let's explore the results!
+
+
         <br/>
         <br/>
         <div id="chartContainer">
             <h2>Top Genres and Artist according to Hotness during 2013 to 2018</h2>
         </div>
-        
+
         <br/>
         <br/>
-        
+
         <div id="genres_hotness_text">
             <h3> Genres </h3>
             You can explore the genres popularity, by moving the cursor over the colored areas.
@@ -227,73 +247,68 @@
             variability over time. For every year, each of the genres is represented by their hotness,
             which is obtained by the mean of all songs hotness released on the specified year.
         </div>
-        
+
         <br/>
         <br/>
         <br/>
-        
+
         <h3><b> Exploring song Features </b></h3>
-        The analyzed dataset contains song's metadata and audio features of each song. How about exploring some of these features and their evolution over the years? Are they somehow related to genres/artist evolution? These features can also help us measure the variations of music during one year, and to achieve higher granularity we split the analysis by the season of the year (e.g summer, winter, autumn and spring). All the songs that were released during the same season are grouped together and the mean of their valence, energy and danceability is calculated. Let's explore the results.
+        The analyzed dataset contains song's metadata and audio features of each song. How about exploring some of these
+        features and their evolution over the years? Are they somehow related to genres/artist evolution? These features
+        can also help us measure the variations of music during one year, and to achieve higher granularity we split the
+        analysis by the season of the year (e.g summer, winter, autumn and spring). All the songs that were released
+        during the same season are grouped together and the mean of their valence, energy and danceability is
+        calculated. Let's explore the results.
         <br/>
         <br/>
-        
-        Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. This value determines the ease with which a person could dance to a song over the course of the whole song.
+
+        Danceability describes how suitable a track is for dancing based on a combination of musical elements including
+        tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is
+        most danceable. This value determines the ease with which a person could dance to a song over the course of the
+        whole song.
+
         <br/>
-        
-        <img src="assets/images/graphs/danceability_seasons_2000-2010_categorical.png">
-            <img src="assets/images/graphs/danceability_seasons_2010-2018_categorical.png">
-                <br/>
-                <br/>
-                
-                The overall behaviour (line in black) of danceability shows an increasing trend over the last years. We can see a positive slope, representing this increment of songs danceability which coincides with the increasing preference for genres such as pop, rock, international and country (described previously).
-                
-                <br/>
-                As depicted on the plots, weather has an influence on music production. Colder seasons (winter over summer) seem to be a better time to release more danceable songs. Dancing is a good way to keep your body warm!
-                
-                
-                
-                
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                
-                Energy represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
-                <br/>
-                
-                <img src="assets/images/graphs/energy_seasons_2000-2010_categorical.png">
-                    <img src="assets/images/graphs/energy_seasons_2010-2018_categorical.png">
-                        <br/>
-                        <br/>
-                        
-                        Since 2014, song energy has decreased which coincides with the increasing preference for more calmed genres such as pop, instrumental and country during those years. In most of years, it seems that songs released during summer have higher energy than songs released during colder seasons, very logical as people will also have higher energy to sing, party and rock more "energetical" songs during hot summers.
-                        
-                        
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        
-                        Valence describes the musical positiveness conveyed by a song. High valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
-                        <br/>
-                        
-                        
-                        <img src="assets/images/graphs/valence_seasons_2000-2010_categorical.png">
-                            <img src="assets/images/graphs/valence_seasons_2010-2018_categorical.png">
-                                <br/>
-                                <br/>
-                                
-                                <br>
-                                
-                                Valence has had a increasing behaviour until 2010 and to our surprise the following years it has decreased, which has more or less the contrary behaviour than danceability and similar to energy. Valence and danceability are moderately correlated. About the season variation, in most cases and specially in the last 8 years valence is higher during winter seasons compared to summer season, which leads us to conclude that music preferences/production vary according to weather variations. This makes a lot of sense, artists may produce “happier” music (higher valence) during winter seasons.
-                                
-                                
-        
-        
-        
+        <div id="line_interaction" style="margin-top: 30px">
+            <div id="option">
+                <button id="danceabilityBtn" name="updateButton">Danceability</button>
+                <button id="valenceBtn" name="updateButton">Valence</button>
+                <button id="energyBtn" name="updateButton">Energy</button>
+            </div>
+
+            <br/>
+
+            <div id="line_up_text">
+
+            </div>
+
+
+            <div id="seasons_features_one" style="display: inline-block">
+                <h3 id="left_title">
+                    Danceability seasons 2000-2010
+                </h3>
+            </div>
+
+            <div id="seasons_features_two" style="display: inline-block">
+                <h3 id="right_title">
+                    Danceability seasons 2010-2018
+                </h3>
+            </div>
+
+            <div id="legend" style="display: inline-block; vertical-align: bottom">
+
+            </div>
+
+            <div id="line_down_text">
+
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
         <h3><b> How are song features related? </b></h3>
-        
-    
+
+
         WE CAN INCLUDE SOME QUANTITATY ANALYSIS OF THE FEATURES
 
         <br/>
@@ -304,10 +319,6 @@
 
         <br/>
         <br/>
-        
-        
-        
-        
 
 
         <h3><b> Are songs related to some specific event?? </b></h3>
@@ -331,14 +342,6 @@
         <br/>
         <br/>
 
-
-     
-
-     
-
-
-        
-  
 
     </div>
 
